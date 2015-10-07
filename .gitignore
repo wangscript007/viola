@@ -33,6 +33,8 @@
 /.project
 /.settings
 /build
+/cmake/Testing
+/cmake/CTestTestfile.cmake
 /cmake/CMakeFiles/
 /cmake/cmake_install.cmake
 /cmake/CMakeCache.txt

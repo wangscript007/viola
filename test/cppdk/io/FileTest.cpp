@@ -11,5 +11,7 @@ int main(){
 	File* file = new File("foobar");
 
 	delete file;
+
+	return 0;
 }
 

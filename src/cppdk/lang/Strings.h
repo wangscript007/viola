@@ -17,7 +17,7 @@ public:
 	Strings(std::string str);
 	~Strings();
 
-	void append(Strings str);
+	void append(Strings* str);
 	Boolean contains(Strings str);
 	Boolean endWith(Strings str);
 	Boolean equals(Strings str);

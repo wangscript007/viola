@@ -18,3 +18,6 @@ Strings::Strings(std::string str) {
 Strings::~Strings() {
 }
 
+void Strings::append(Strings* str) {
+
+}

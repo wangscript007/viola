@@ -26,8 +26,16 @@ add_library(cppdk SHARED
 include_directories(../src/cppdk/io)
 include_directories(../src/cppdk/lang)
 include_directories(../src/cppdk/util)
+
 add_executable(FileTest.out
  ../test/cppdk/io/FileTest.cpp
 )
 target_link_libraries(FileTest.out cppdk)
 add_test(NAME FileTest COMMAND ../build/FileTest.out)
+
+add_executable(StringsTest.out
+ ../test/cppdk/lang/StringsTest.cpp
+)
+target_link_libraries(StringsTest.out cppdk)
+add_test(NAME StringsTest COMMAND ../build/StringsTest.out)
+

@@ -5,3 +5,8 @@ c++ development kit is shared object like JDK.
 ## cppdk.io.File
 file open/close, read/write.
 
+## cppdk.lang.*
+Boolean, Double, Long, String.
+
+## cppdk.util.*
+ArrayList, HashMap.

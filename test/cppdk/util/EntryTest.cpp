@@ -7,6 +7,7 @@
 
 #include <string>
 #include "Entry.h"
+#include "Integer.h"
 
 int assertEquals(int expected, int actual) {
 	if (expected == actual) {
@@ -18,14 +19,18 @@ int assertEquals(int expected, int actual) {
 int hashCodeTest() {
 	int ret = 0;
 
-	Entry<int, int>* entry = new Entry<int, int>(1, 2);
+	Integer* arg1 = new Integer(1);
+	Integer* arg2 = new Integer(2);
+
+	Entry<Integer*, Integer*>* entry = new Entry<Integer*, Integer*>(arg1,
+			arg2);
 	printf("hashCode: <%d>\n", entry->hashCode());
-	printf("key: <%d>\n", entry->getKey());
-	printf("value: <%d>\n", entry->getValue());
+	printf("key: <%d>\n", entry->getKey()->get());
+	printf("value: <%d>\n", entry->getValue()->get());
 
 	ret = ret + assertEquals(0, entry->hashCode());
-	ret = ret + assertEquals(1, entry->getKey());
-	ret = ret + assertEquals(2, entry->getValue());
+	ret = ret + assertEquals(1, entry->getKey()->get());
+	ret = ret + assertEquals(2, entry->getValue()->get());
 
 	delete entry;
 	return ret;

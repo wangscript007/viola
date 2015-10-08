@@ -12,6 +12,7 @@ set(CMAKE_CXX_FLAGS "-Wall -O2 -std=c++11 -stdlib=libstdc++")
 
 add_library(cppdk SHARED
  ../src/cppdk/io/File.cpp
+ ../src/cppdk/lang/Integer.cpp
  ../src/cppdk/lang/Strings.cpp
  ../src/cppdk/lang/Object.cpp
  ../src/cppdk/util/ArrayList.cpp

@@ -23,6 +23,11 @@ public:
 	}
 	;
 
+	virtual ~Entry() {
+		delete key;
+		delete value;
+	}
+
 	K getKey() {
 		return key;
 	}

@@ -34,7 +34,21 @@ public:
 		map.push_back(entry);
 	}
 	;
-	V get(K key);
+
+	V get(K key) {
+		int i = 0;
+		while (i < map.size()) {
+			Entry<K, V>* entry = map.at(i);
+			if (entry->getKey() == key) {
+				return entry->getValue();
+			}
+			i++;
+		}
+		V ret = NULL;
+		return ret;
+	}
+	;
+
 	V remove(K key);
 
 	void clear() {

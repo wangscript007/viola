@@ -9,8 +9,9 @@
 #define CPPDK_LANG_STRINGS_H_
 
 #include <string>
+#include "Object.h"
 
-class Strings {
+class Strings: public Object {
 
 private:
 	std::string internal;

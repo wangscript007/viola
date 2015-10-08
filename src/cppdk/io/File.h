@@ -13,7 +13,7 @@
 
 class File {
 public:
-	File(Strings* path);
+	File(std::string path);
 	virtual ~File();
 
 	bool createNewFile();

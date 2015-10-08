@@ -7,7 +7,7 @@
 
 #include "File.h"
 
-File::File(Strings* path) {
+File::File(std::string path) {
 	printf("HelloWorld.");
 }
 

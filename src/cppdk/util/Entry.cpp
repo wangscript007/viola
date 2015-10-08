@@ -1,29 +1,36 @@
 /*
- * HashMap.cpp
+ * Entry.cpp
  *
  *  Created on: 2015/10/08
  *      Author: tsubaki
  */
 
-#include "HashMap.h"
+#include "Entry.h"
 
 template<class K, class V>
-HashMap<K, V>::HashMap() {
+Entry<K, V>::Entry() {
 	// TODO Auto-generated constructor stub
 
 }
 
 template<class K, class V>
-HashMap<K, V>::~HashMap() {
+Entry<K, V>::~Entry() {
 	// TODO Auto-generated destructor stub
 }
 
 template<class K, class V>
-void HashMap<K, V>::clear() {
-
+K Entry<K, V>::getKey() {
+	K key;
+	return key;
 }
 
 template<class K, class V>
-int HashMap<K, V>::size() {
+V Entry<K, V>::getValue() {
+	V value;
+	return value;
+}
+
+template<class K, class V>
+int Entry<K, V>::hashCode() {
 	return 0;
 }

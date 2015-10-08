@@ -6,13 +6,45 @@
  */
 
 #include <string>
+#include <cassert>
 #include "Strings.h"
 
-int main() {
+int append() {
+	int ret = 0;
 	std::string s = "foobar";
-	Strings* str = new Strings(s);
-	str->append(str);
+
+	Strings* str = new Strings();
+	str->append(s);
+	printf("str: <%s>\n", str->toString().c_str());
+	ret = ret + strncmp(s.c_str(), "foobar", 6);
 
 	delete str;
-	return 0;
+
+	return ret;
 }
+
+int isEmpty() {
+	int ret = 0;
+	std::string s = "foobar";
+
+	Strings* str = new Strings();
+	printf("bool: <%d>\n", str->isEmpty());
+	ret = ret + !str->isEmpty();
+
+	str->append(s);
+	printf("bool: <%d>\n", str->isEmpty());
+	ret = ret + str->isEmpty();
+
+	delete str;
+
+	return ret;
+}
+
+int main() {
+	int ret = 0;
+	ret = ret + append();
+	ret = ret + isEmpty();
+
+	return ret;
+}
+

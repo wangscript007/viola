@@ -13,12 +13,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../build)
 
 add_library(cppdk SHARED
  ../src/cppdk/io/File.cpp
- ../src/cppdk/lang/Boolean.cpp
- ../src/cppdk/lang/Double.cpp
- ../src/cppdk/lang/Long.cpp
  ../src/cppdk/lang/Strings.cpp
  ../src/cppdk/util/ArrayList.cpp
+ ../src/cppdk/util/Entry.cpp
  ../src/cppdk/util/HashMap.cpp
+ ../src/cppdk/util/HashSet.cpp
 )
 #set_target_properties(cppdk PROPERTIES VERSION ${SERIAL} SOVERSION ${SOSERIAL})
 

@@ -8,16 +8,23 @@
 #include <Strings.h>
 
 Strings::Strings() {
-
 }
 
 Strings::Strings(std::string str) {
-
+	internal = str;
 }
 
 Strings::~Strings() {
 }
 
-void Strings::append(Strings* str) {
+void Strings::append(std::string str) {
+	internal.append(str);
+}
 
+bool Strings::isEmpty() {
+	return internal.empty();
+}
+
+std::string Strings::toString() {
+	return internal;
 }

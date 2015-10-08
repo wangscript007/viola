@@ -9,12 +9,23 @@
 #define CPPDK_FILE_H_
 
 #include <stdio.h>
-#include <string>
+#include <Strings.h>
 
 class File {
 public:
-	File(std::string path);
+	File(Strings* path);
 	virtual ~File();
+
+	bool createNewFile();
+	bool deleteFile();
+	bool exists();
+	std::string getAbsolutePath();
+	std::string getName();
+	bool isFile();
+	bool isDirectory();
+	bool mkdir();
+	bool mkdirs();
+
 };
 
 #endif /* CPPDK_FILE_H_ */

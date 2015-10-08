@@ -5,11 +5,16 @@
  *      Author: tsubaki
  */
 
+#include "Strings.h"
 #include "File.h"
 
-int main(){
-	File* file = new File("foobar");
+int main() {
+	Strings* str = new Strings();
+	File* file = new File(str);
 
 	delete file;
+	delete str;
+
+	return 0;
 }
 

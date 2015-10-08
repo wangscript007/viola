@@ -15,6 +15,17 @@ class File {
 public:
 	File(Strings* path);
 	virtual ~File();
+
+	bool createNewFile();
+	bool deleteFile();
+	bool exists();
+	std::string getAbsolutePath();
+	std::string getName();
+	bool isFile();
+	bool isDirectory();
+	bool mkdir();
+	bool mkdirs();
+
 };
 
 #endif /* CPPDK_FILE_H_ */

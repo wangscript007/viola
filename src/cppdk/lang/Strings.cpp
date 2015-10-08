@@ -20,6 +20,13 @@ Strings::~Strings() {
 void Strings::append(std::string str) {
 	internal.append(str);
 }
+bool Strings::equals(std::string str) {
+	int size = str.size();
+	if (strncmp(internal.c_str(), str.c_str(), size) == 0) {
+		return true;
+	}
+	return false;
+}
 
 bool Strings::isEmpty() {
 	return internal.empty();

@@ -16,10 +16,10 @@ int append() {
 	Strings* str = new Strings();
 	str->append(s);
 	printf("str: <%s>\n", str->toString().c_str());
-	ret = ret + strncmp(s.c_str(), "foobar", 6);
+	ret = ret + !str->equals("foobar");
+	ret = ret + str->equals("notsame");
 
 	delete str;
-
 	return ret;
 }
 

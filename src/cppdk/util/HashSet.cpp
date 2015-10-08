@@ -7,14 +7,15 @@
 
 #include "HashSet.h"
 
-template<class E>
-HashSet<E>::HashSet() {
-	// TODO Auto-generated constructor stub
+/*
+ template<class E>
+ HashSet<E>::HashSet() {
+ // TODO Auto-generated constructor stub
 
-}
+ }
 
-template<class E>
-HashSet<E>::~HashSet() {
-	// TODO Auto-generated destructor stub
-}
-
+ template<class E>
+ HashSet<E>::~HashSet() {
+ // TODO Auto-generated destructor stub
+ }
+ */

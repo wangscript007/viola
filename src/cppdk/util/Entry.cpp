@@ -16,21 +16,22 @@
  Entry<K, V>::~Entry() {
  // TODO Auto-generated destructor stub
  }
+
+
+ template<class K, class V>
+ K Entry<K, V>::getKey() {
+ K key;
+ return key;
+ }
+
+ template<class K, class V>
+ V Entry<K, V>::getValue() {
+ V value;
+ return value;
+ }
+
+ template<class K, class V>
+ int Entry<K, V>::hashCode() {
+ return 0;
+ }
  */
-
-template<class K, class V>
-K Entry<K, V>::getKey() {
-	K key;
-	return key;
-}
-
-template<class K, class V>
-V Entry<K, V>::getValue() {
-	V value;
-	return value;
-}
-
-template<class K, class V>
-int Entry<K, V>::hashCode() {
-	return 0;
-}

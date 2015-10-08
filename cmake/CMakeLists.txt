@@ -43,3 +43,10 @@ add_executable(EntryTest.out
 )
 target_link_libraries(EntryTest.out cppdk)
 add_test(NAME EntryTest COMMAND ../build/EntryTest.out)
+
+add_executable(HashMapTest.out
+ ../test/cppdk/util/HashMapTest.cpp
+)
+target_link_libraries(HashMapTest.out cppdk)
+add_test(NAME HashMapTest COMMAND ../build/HashMapTest.out)
+

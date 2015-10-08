@@ -12,21 +12,28 @@
 
 template<class K, class V>
 class Entry {
+private:
+	K key;
+	V value;
 public:
 
 	Entry(K key, V value) {
-
-	}
-	;
-	virtual ~Entry() {
-
+		this->key = key;
+		this->value = value;
 	}
 	;
 
-	K getKey();
-	V getValue();
+	K getKey() {
+		return key;
+	}
+	V getValue() {
+		return value;
+	}
 
-	int hashCode();
+	int hashCode() {
+		return 0;
+	}
+	;
 
 };
 

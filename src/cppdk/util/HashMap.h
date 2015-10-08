@@ -18,7 +18,6 @@ public:
 	V get(K key);
 	V remove(K key);
 
-
 	void clear();
 	int size();
 };

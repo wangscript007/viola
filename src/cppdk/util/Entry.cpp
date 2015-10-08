@@ -7,16 +7,16 @@
 
 #include "Entry.h"
 
-template<class K, class V>
-Entry<K, V>::Entry() {
-	// TODO Auto-generated constructor stub
+/*template<class K, class V>
+ Entry<K, V>::Entry(K key, V value) {
+ // TODO Auto-generated constructor stub
+ }
 
-}
-
-template<class K, class V>
-Entry<K, V>::~Entry() {
-	// TODO Auto-generated destructor stub
-}
+ template<class K, class V>
+ Entry<K, V>::~Entry() {
+ // TODO Auto-generated destructor stub
+ }
+ */
 
 template<class K, class V>
 K Entry<K, V>::getKey() {

@@ -15,14 +15,17 @@ int main() {
 	HashMap* map = new HashMap();
 	map->put(arg1, arg2);
 	printf("size: <%d>\n", map->size());
-
-	Object* value = map->get(new Integer(5));
+	Integer* five = new Integer(5);
+	Object* value = map->get(five);
 	if (value == NULL) {
 		printf("value is null.\n");
 	}
+	delete five;
 
-	Object* value2 = map->get(arg1);
-	printf("key: <%d>, value: <%d>\n", arg1->get(), ((Integer*) value2)->get());
+	Integer* one = new Integer(1);
+	Object* value2 = map->get(one);
+	printf("key: <%d>, value: <%d>\n", one->get(), ((Integer*) value2)->get());
+	delete one;
 
 	delete map;
 	return 0;

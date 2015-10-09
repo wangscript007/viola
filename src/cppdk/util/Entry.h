@@ -7,7 +7,7 @@
 
 #ifndef CPPDK_UTIL_ENTRY_H_
 #define CPPDK_UTIL_ENTRY_H_
-#pragma once
+
 #include "Object.h"
 
 class Entry: public Object {
@@ -23,6 +23,7 @@ public:
 	Object* getKey();
 	Object* getValue();
 
+	//Override
 	int hashCode();
 
 };

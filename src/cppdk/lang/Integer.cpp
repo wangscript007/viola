@@ -16,9 +16,14 @@ Integer::Integer(int i) {
 }
 
 Integer::~Integer() {
-	// TODO Auto-generated destructor stub
+	//noop
 }
 
 int Integer::get() {
+	return this->i;
+}
+
+//Override
+int Integer::hashCode() {
 	return this->i;
 }

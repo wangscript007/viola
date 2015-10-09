@@ -30,6 +30,10 @@ public:
 	std::string replace(std::string target, std::string replacement);
 	bool startWith(std::string prefix);
 	std::string toString();
+	int length();
+
+	//Override
+	int hashCode();
 };
 
 #endif /* CPPDK_LANG_STRINGS_H_ */

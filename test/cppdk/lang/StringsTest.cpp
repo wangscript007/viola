@@ -40,11 +40,27 @@ int isEmpty() {
 	return ret;
 }
 
+int hashCode() {
+	int ret = 0;
+	Strings* str = new Strings();
+	printf("hashCode: <%d>\n", str->hashCode());
+	ret = ret + str->hashCode();
+
+	str->append("foobar");
+	printf("hashCode: <%d>\n", str->hashCode());
+	if (str->hashCode() == 0) {
+		ret = ret + 1;
+	}
+
+	delete str;
+	return ret;
+}
+
 int main() {
 	int ret = 0;
 	ret = ret + append();
 	ret = ret + isEmpty();
-
+	ret = ret + hashCode();
 	return ret;
 }
 

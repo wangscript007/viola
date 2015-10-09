@@ -16,6 +16,19 @@ HashMap::~HashMap() {
 
 void HashMap::put(Object* key, Object* value) {
 	Entry* entry = new Entry(key, value);
+	int hashCode = entry->hashCode();
+
+	int i = 0;
+	while (i < map.size()) {
+		Entry* old = map.at(i);
+		if (old->hashCode() == hashCode) {
+			map.erase(map.begin() + i);
+			delete old;
+			break;
+		}
+		i++;
+	}
+
 	map.push_back(entry);
 }
 
@@ -23,7 +36,7 @@ Object* HashMap::get(Object* key) {
 	int i = 0;
 	while (i < map.size()) {
 		Entry* entry = map.at(i);
-		if (entry->getKey() == key) {
+		if (entry->getKey()->hashCode() == key->hashCode()) {
 			return entry->getValue();
 		}
 		i++;

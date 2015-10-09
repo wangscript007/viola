@@ -8,6 +8,7 @@
 #include <Strings.h>
 
 Strings::Strings() {
+	//noop;
 }
 
 Strings::Strings(std::string str) {
@@ -15,6 +16,7 @@ Strings::Strings(std::string str) {
 }
 
 Strings::~Strings() {
+	//noop;
 }
 
 void Strings::append(std::string str) {
@@ -25,6 +27,7 @@ bool Strings::equals(std::string str) {
 	if (strncmp(internal.c_str(), str.c_str(), size) == 0) {
 		return true;
 	}
+
 	return false;
 }
 
@@ -34,4 +37,28 @@ bool Strings::isEmpty() {
 
 std::string Strings::toString() {
 	return internal;
+}
+
+int Strings::length() {
+	return internal.length();
+}
+
+//Override
+int Strings::hashCode() {
+	int hashCode = 0;
+	if (this->isEmpty()) {
+		return hashCode;
+	}
+
+	int n = this->length();
+	for (int i = 0; i < n; i++) {
+		int root = 31;
+		for (int j = 0; j < (n - 1); j++) {
+			root = root * root;
+		}
+		char c = internal.at(i);
+		hashCode = hashCode + c * root;
+	}
+
+	return hashCode;
 }

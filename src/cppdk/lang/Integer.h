@@ -19,6 +19,9 @@ public:
 	virtual ~Integer();
 
 	int get();
+
+	//Override
+	int hashCode();
 };
 
 #endif /* CPPDK_LANG_INTEGER_H_ */

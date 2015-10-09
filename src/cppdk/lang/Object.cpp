@@ -8,10 +8,13 @@
 #include <Object.h>
 
 Object::Object() {
+	//noop
 }
 
 Object::~Object() {
+	//noop
 }
+
 
 int Object::hashCode() {
 	return 0;

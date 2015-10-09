@@ -6,6 +6,7 @@
  */
 
 #include "Entry.h"
+#include "stdio.h"
 
 Entry::Entry(Object* key, Object* value) {
 	this->key = key;
@@ -22,7 +23,18 @@ Object* Entry::getValue() {
 	return this->value;
 }
 
+//Override
 int Entry::hashCode() {
-	return 0;
+	int keyHash = 0;
+	if (this->key != NULL) {
+		keyHash = this->key->hashCode();
+	}
+
+	int valueHash = 0;
+	if (this->value != NULL) {
+		valueHash = this->value->hashCode();
+	}
+
+	return keyHash ^ valueHash;
 }
 

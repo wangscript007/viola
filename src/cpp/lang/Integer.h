@@ -14,8 +14,7 @@ class Integer: public Object {
 private:
 	int i;
 public:
-	Integer(int i);
-	Integer();
+	Integer(int value);
 	virtual ~Integer();
 
 	int get();

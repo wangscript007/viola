@@ -15,8 +15,9 @@ Object::~Object() {
 	//noop
 }
 
-void Object::incrementReference() {
+Object* Object::incrementReference() {
 	refCount++;
+	return this;
 }
 
 bool Object::decrementReference() {

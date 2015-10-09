@@ -40,8 +40,7 @@ Object* HashMap::get(Object* key) {
 	while (i < map.size()) {
 		Entry* entry = map.at(i);
 		if (entry->getKey()->hashCode() == key->hashCode()) {
-			entry->getValue()->incrementReference();
-			return entry->getValue();
+			return entry->getValue()->incrementReference();
 		}
 		i++;
 	}
@@ -60,4 +59,8 @@ void HashMap::clear() {
 
 int HashMap::size() {
 	return map.size();
+}
+
+bool HashMap::isEmpty() {
+	return map.empty();
 }

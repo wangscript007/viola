@@ -7,12 +7,8 @@
 
 #include "Integer.h"
 
-Integer::Integer() {
-	this->i = 0;
-}
-
-Integer::Integer(int i) {
-	this->i = i;
+Integer::Integer(int value) {
+	this->i = value;
 }
 
 Integer::~Integer() {

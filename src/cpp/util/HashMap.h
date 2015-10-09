@@ -25,6 +25,7 @@ public:
 
 	void clear();
 	int size();
+	bool isEmpty();
 
 };
 

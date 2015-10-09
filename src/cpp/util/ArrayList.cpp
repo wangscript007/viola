@@ -8,11 +8,43 @@
 #include "ArrayList.h"
 
 ArrayList::ArrayList() {
-	// TODO Auto-generated constructor stub
 
 }
 
 ArrayList::~ArrayList() {
-	// TODO Auto-generated destructor stub
+	this->clear();
 }
 
+void ArrayList::add(Object* obj) {
+	list.push_back(obj->incrementReference());
+}
+
+Object* ArrayList::get(int i) {
+	if (size() <= i) {
+		return NULL;
+	}
+
+	std::list<Object*>::iterator it = list.begin();
+	for (int j = 0; j < i; j++) {
+		it++;
+	}
+	Object* obj = *it;
+	return obj->incrementReference();
+}
+
+void ArrayList::clear() {
+	while (!this->isEmpty()) {
+		Object* obj = list.front();
+		Object::tryDelete(obj);
+		list.pop_front();
+	}
+	list.clear();
+}
+
+int ArrayList::size() {
+	return list.size();
+}
+
+bool ArrayList::isEmpty() {
+	return list.empty();
+}

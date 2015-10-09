@@ -23,12 +23,10 @@ Entry::~Entry() {
 }
 
 Object* Entry::getKey() {
-	this->key->incrementReference();
-	return this->key;
+	return this->key->incrementReference();
 }
 Object* Entry::getValue() {
-	this->key->incrementReference();
-	return this->value;
+	return this->value->incrementReference();
 }
 
 //Override

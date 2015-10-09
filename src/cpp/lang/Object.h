@@ -17,7 +17,7 @@ public:
 	Object();
 	virtual ~Object();
 
-	void incrementReference();
+	Object* incrementReference();
 	bool decrementReference();
 	int getReference();
 

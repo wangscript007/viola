@@ -8,12 +8,22 @@
 #ifndef CPP_UTIL_ARRAYLIST_H_
 #define CPP_UTIL_ARRAYLIST_H_
 
+#include <list>
 #include "Object.h"
 
 class ArrayList: public Object {
+private:
+	std::list<Object*> list;
 public:
 	ArrayList();
 	virtual ~ArrayList();
+
+	void add(Object* obj);
+	Object* get(int i);
+
+	void clear();
+	int size();
+	bool isEmpty();
 };
 
 #endif /* CPP_UTIL_ARRAYLIST_H_ */

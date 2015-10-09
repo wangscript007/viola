@@ -5,11 +5,9 @@
  *      Author: tsubaki
  */
 
-#include "../../../src/cpp/util/Entry.h"
-
 #include <string>
-
-#include "../../../src/cpp/lang/Integer.h"
+#include "Integer.h"
+#include "Entry.h"
 
 int assertEquals(int expected, int actual) {
 	if (expected == actual) {

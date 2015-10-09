@@ -10,7 +10,7 @@
 
 #include <vector>
 
-#include "../../cpp/util/Entry.h"
+#include "Entry.h"
 
 class HashMap: public Object {
 private:

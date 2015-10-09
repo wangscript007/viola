@@ -5,10 +5,9 @@
  *      Author: tsubaki
  */
 
-#include "../../../src/cpp/lang/Strings.h"
-
 #include <string>
-#include <cassert>
+#include "Strings.h"
+
 
 int append() {
 	int ret = 0;

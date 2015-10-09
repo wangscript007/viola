@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "../../cpp/lang/Object.h"
+#include "Object.h"
 
 Object::Object() {
 	//noop

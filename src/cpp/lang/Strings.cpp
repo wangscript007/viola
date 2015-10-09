@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "../../cpp/lang/Strings.h"
+#include "Strings.h"
 
 Strings::Strings() {
 	//noop;

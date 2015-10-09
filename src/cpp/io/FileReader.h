@@ -8,7 +8,8 @@
 #ifndef CPP_IO_FILEREADER_H_
 #define CPP_IO_FILEREADER_H_
 
-#include "../../cpp/io/File.h"
+#include "Object.h"
+#include "File.h"
 
 class FileReader: public Object {
 public:

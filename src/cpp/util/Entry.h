@@ -8,7 +8,7 @@
 #ifndef CPP_UTIL_ENTRY_H_
 #define CPP_UTIL_ENTRY_H_
 
-#include "../../cpp/lang/Object.h"
+#include "Object.h"
 
 class Entry: public Object {
 private:

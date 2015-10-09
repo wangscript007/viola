@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "../../cpp/util/HashMap.h"
+#include "HashMap.h"
 
 HashMap::HashMap() {
 }

@@ -8,7 +8,7 @@
 #ifndef CPP_LANG_INTEGER_H_
 #define CPP_LANG_INTEGER_H_
 
-#include "../../cpp/lang/Object.h"
+#include "Object.h"
 
 class Integer: public Object {
 private:

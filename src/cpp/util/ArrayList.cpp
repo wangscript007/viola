@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "../../cpp/util/ArrayList.h"
+#include "ArrayList.h"
 
 ArrayList::ArrayList() {
 	// TODO Auto-generated constructor stub

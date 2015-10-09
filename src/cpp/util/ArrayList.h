@@ -8,7 +8,7 @@
 #ifndef CPP_UTIL_ARRAYLIST_H_
 #define CPP_UTIL_ARRAYLIST_H_
 
-#include "../../cpp/lang/Object.h"
+#include "Object.h"
 
 class ArrayList: public Object {
 public:

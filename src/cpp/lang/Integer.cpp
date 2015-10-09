@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "../../cpp/lang/Integer.h"
+#include "Integer.h"
 
 Integer::Integer() {
 	this->i = 0;

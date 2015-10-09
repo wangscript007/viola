@@ -10,7 +10,7 @@
 
 #include <string>
 
-#include "../../cpp/lang/Object.h"
+#include "Object.h"
 
 class Strings: public Object {
 

@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "../../cpp/util/Entry.h"
+#include "Entry.h"
 
 #include "stdio.h"
 

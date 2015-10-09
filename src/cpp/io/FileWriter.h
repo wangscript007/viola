@@ -8,6 +8,9 @@
 #ifndef CPP_IO_FILEWRITER_H_
 #define CPP_IO_FILEWRITER_H_
 
+#include "Object.h"
+#include "File.h"
+
 class FileWriter: public Object {
 public:
 	FileWriter(File* file);

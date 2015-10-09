@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "../../cpp/io/FileWriter.h"
+#include "FileWriter.h"
 
 FileWriter::FileWriter(File* file) {
 	// TODO Auto-generated constructor stub

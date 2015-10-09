@@ -5,9 +5,8 @@
  *      Author: tsubaki
  */
 
-#include "../../../src/cpp/util/HashMap.h"
-
-#include "../../../src/cpp/lang/Integer.h"
+#include "HashMap.h"
+#include "Integer.h"
 
 int main() {
 	Integer* arg1 = new Integer(1);

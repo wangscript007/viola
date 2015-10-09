@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "../../cpp/io/File.h"
+#include "File.h"
 
 File::File(std::string path) {
 	printf("HelloWorld.");

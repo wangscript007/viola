@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "../../cpp/util/HashSet.h"
+#include "HashSet.h"
 
 HashSet::HashSet() {
 }

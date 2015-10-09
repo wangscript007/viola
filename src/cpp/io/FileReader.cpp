@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "../../cpp/io/FileReader.h"
+#include "FileReader.h"
 
 FileReader::FileReader(File* file) {
 	// TODO Auto-generated constructor stub

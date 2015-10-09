@@ -33,8 +33,13 @@ public:
 	std::string toString();
 	int length();
 
+
 	//Override
 	int hashCode();
+
+	//Override
+	std::string getClassName();
+
 };
 
 #endif /* CPP_LANG_STRINGS_H_ */

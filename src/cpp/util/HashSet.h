@@ -14,6 +14,12 @@ class HashSet: public Object {
 public:
 	HashSet();
 	virtual ~HashSet();
+
+	//Override
+	int hashCode();
+
+	//Override
+	std::string getClassName();
 };
 
 #endif /* CPP_UTIL_HASHSET_H_ */

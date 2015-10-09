@@ -28,6 +28,12 @@ public:
 	bool mkdir();
 	bool mkdirs();
 
+	//Override
+	int hashCode();
+
+	//Override
+	std::string getClassName();
+
 };
 
 #endif /* CPPDK_FILE_H_ */

@@ -26,6 +26,9 @@ public:
 	//Override
 	int hashCode();
 
+	//Override
+	std::string getClassName();
+
 };
 
 #endif /* CPP_UTIL_ENTRY_H_ */

@@ -17,11 +17,17 @@ public:
 	FileWriter(File* file, bool append);
 	virtual ~FileWriter();
 
-	void write(std::string line);
+	void close();
 	void append(std::string line);
 	void flush();
+	void write(std::string line);
 
-	void close();
+	//Override
+	int hashCode();
+
+	//Override
+	std::string getClassName();
+
 };
 
 #endif /* CPP_IO_FILEWRITER_H_ */

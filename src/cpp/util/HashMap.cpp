@@ -6,6 +6,7 @@
  */
 
 #include "HashMap.h"
+#include "Integer.h"
 
 HashMap::HashMap() {
 }
@@ -39,8 +40,20 @@ Object* HashMap::get(Object* key) {
 	int i = 0;
 	while (i < map.size()) {
 		Entry* entry = map.at(i);
-		if (entry->getKey()->hashCode() == key->hashCode()) {
-			return entry->getValue()->incrementReference();
+		Object* getKey = entry->getKey();
+		Object* getValue = entry->getValue();
+		int getKeyHashCode = getKey->hashCode();
+		Object::tryDelete(2, getKey, getValue);
+
+		/*
+		 printf("arg: <%d>, hashCode: <%d>\n", ((Integer*) key)->get(),
+		 ((Integer*) key)->hashCode());
+		 printf("entry.key: <%d>, entry.hashCode: <%d>\n",
+		 ((Integer*) (entry->getKey()))->get(),
+		 ((Integer*) (entry->getKey()))->hashCode());
+		 */
+		if (getKeyHashCode == key->hashCode()) {
+			return getValue->incrementReference();
 		}
 		i++;
 	}
@@ -63,4 +76,12 @@ int HashMap::size() {
 
 bool HashMap::isEmpty() {
 	return map.empty();
+}
+
+int HashMap::hashCode() {
+	return 0;
+}
+
+std::string HashMap::getClassName() {
+	return "HashMap";
 }

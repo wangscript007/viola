@@ -8,9 +8,15 @@
 #include "File.h"
 
 File::File(std::string path) {
-	printf("HelloWorld.");
 }
 
 File::~File() {
 }
 
+int File::hashCode() {
+	return 0;
+}
+
+std::string File::getClassName() {
+	return "File";
+}

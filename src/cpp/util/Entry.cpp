@@ -7,8 +7,6 @@
 
 #include "Entry.h"
 
-#include "stdio.h"
-
 Entry::Entry(Object* key, Object* value) {
 	this->key = key;
 	this->value = value;
@@ -44,3 +42,7 @@ int Entry::hashCode() {
 	return keyHash ^ valueHash;
 }
 
+//Override
+std::string Entry::getClassName() {
+	return "Entry";
+}

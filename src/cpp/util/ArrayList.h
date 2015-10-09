@@ -24,6 +24,13 @@ public:
 	void clear();
 	int size();
 	bool isEmpty();
+
+	//Override
+	int hashCode();
+
+	//Override
+	std::string getClassName();
+
 };
 
 #endif /* CPP_UTIL_ARRAYLIST_H_ */

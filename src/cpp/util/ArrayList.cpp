@@ -48,3 +48,11 @@ int ArrayList::size() {
 bool ArrayList::isEmpty() {
 	return list.empty();
 }
+
+int ArrayList::hashCode() {
+	return 0;
+}
+
+std::string ArrayList::getClassName() {
+	return "ArrayList";
+}

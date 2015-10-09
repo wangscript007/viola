@@ -23,3 +23,8 @@ int Integer::get() {
 int Integer::hashCode() {
 	return this->i;
 }
+
+//Override
+std::string Integer::getClassName() {
+	return "Integer";
+}

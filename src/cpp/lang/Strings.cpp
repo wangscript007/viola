@@ -62,3 +62,8 @@ int Strings::hashCode() {
 
 	return hashCode;
 }
+
+//Override
+std::string Strings::getClassName() {
+	return "Strings";
+}

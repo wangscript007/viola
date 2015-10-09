@@ -27,6 +27,12 @@ public:
 	int size();
 	bool isEmpty();
 
+	//Override
+	int hashCode();
+
+	//Override
+	std::string getClassName();
+
 };
 
 #endif /* CPP_UTIL_HASHMAP_H_ */

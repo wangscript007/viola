@@ -17,8 +17,14 @@ public:
 	virtual ~FileReader();
 
 	std::string read();
-
 	bool close();
+
+	//Override
+	int hashCode();
+
+	//Override
+	std::string getClassName();
+
 };
 
 #endif /* CPP_IO_FILEREADER_H_ */

@@ -21,6 +21,10 @@ public:
 
 	//Override
 	int hashCode();
+
+	//Override
+	std::string getClassName();
+
 };
 
 #endif /* CPP_LANG_DOUBLE_H_ */

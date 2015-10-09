@@ -16,3 +16,10 @@ FileReader::~FileReader() {
 	// TODO Auto-generated destructor stub
 }
 
+int FileReader::hashCode() {
+	return 0;
+}
+
+std::string FileReader::getClassName() {
+	return "FileReader";
+}

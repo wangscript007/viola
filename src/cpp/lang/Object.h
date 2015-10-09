@@ -8,7 +8,9 @@
 #ifndef CPP_LANG_OBJECT_H_
 #define CPP_LANG_OBJECT_H_
 
+#include <stdio.h>
 #include <stdarg.h>
+#include <string>
 
 class Object {
 private:
@@ -22,6 +24,9 @@ public:
 	int getReference();
 
 	static void tryDelete(Object* obj) {
+		if (obj == NULL) {
+			return;
+		}
 		if (obj->decrementReference()) {
 			delete obj;
 		}
@@ -38,7 +43,8 @@ public:
 		va_end(args);
 	}
 
-	int hashCode();
+	virtual int hashCode();
+	virtual std::string getClassName();
 };
 
 #endif /* CPP_LANG_OBJECT_H_ */

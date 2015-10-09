@@ -14,6 +14,8 @@ int append() {
 	std::string s = "foobar";
 
 	Strings* str = new Strings();
+	printf("className: <%s>\n", str->getClassName().c_str());
+
 	str->append(s);
 	printf("str: <%s>\n", str->toString().c_str());
 	ret = ret + !str->equals("foobar");

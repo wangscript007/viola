@@ -21,3 +21,10 @@ FileWriter::~FileWriter() {
 	// TODO Auto-generated destructor stub
 }
 
+int FileWriter::hashCode() {
+	return 0;
+}
+
+std::string FileWriter::getClassName() {
+	return "FileWriter";
+}

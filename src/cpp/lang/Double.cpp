@@ -20,7 +20,7 @@ double Double::get() {
 }
 
 //Override
-int Integer::hashCode() {
+int Double::hashCode() {
 	int ret = 0;
 
 	//TODO IEEE 754 floating-point "double format" bit layout.
@@ -28,5 +28,9 @@ int Integer::hashCode() {
 
 	ret = (int) (v ^ (v >> 32));
 	return ret;
+}
+
+std::string Double::getClassName() {
+	return "Double";
 }
 

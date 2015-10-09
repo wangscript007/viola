@@ -2,11 +2,11 @@
 
 c++ development kit is shared object like JDK.
 
-## cppdk.io.File
+## cpp.io.File
 file open/close, read/write.
 
-## cppdk.lang.*
+## cpp.lang.*
 Boolean, Integer, Double, Long, String.
 
-## cppdk.util.*
+## cpp.util.*
 ArrayList, HashMap.

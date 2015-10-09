@@ -18,6 +18,7 @@ void HashMap::put(Object* key, Object* value) {
 	Entry* entry = new Entry(key, value);
 	int hashCode = entry->hashCode();
 
+	//TODO not hash.
 	int i = 0;
 	while (i < map.size()) {
 		Entry* old = map.at(i);
@@ -33,6 +34,8 @@ void HashMap::put(Object* key, Object* value) {
 }
 
 Object* HashMap::get(Object* key) {
+
+	//TODO not hash.
 	int i = 0;
 	while (i < map.size()) {
 		Entry* entry = map.at(i);

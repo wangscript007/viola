@@ -11,7 +11,7 @@
 int main() {
 	File* file = new File("./foobar.txt");
 
-	delete file;
+	Object::tryDelete(file);
 	return 0;
 }
 

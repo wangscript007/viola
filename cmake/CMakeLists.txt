@@ -15,6 +15,7 @@ set(test ../test/cpp CACHE STRING description FORCE)
 set(build ../build CACHE STRING description FORCE)
 
 add_library(cppdk SHARED
+ ${src}/ext/Assert.cpp
  ${src}/io/File.cpp
  ${src}/lang/Integer.cpp
  ${src}/lang/Strings.cpp
@@ -27,6 +28,7 @@ add_library(cppdk SHARED
 #set_target_properties(cppdk PROPERTIES VERSION ${SERIAL} SOVERSION ${SOSERIAL})
 
 
+include_directories(${src}/ext)
 include_directories(${src}/io)
 include_directories(${src}/lang)
 include_directories(${src}/util)

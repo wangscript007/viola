@@ -8,13 +8,7 @@
 #include <string>
 #include "Integer.h"
 #include "Entry.h"
-
-int assertEquals(int expected, int actual) {
-	if (expected == actual) {
-		return 0;
-	}
-	return 1;
-}
+#include "Assert.h"
 
 int hashCodeTest() {
 	int ret = 0;
@@ -30,9 +24,9 @@ int hashCodeTest() {
 	printf("key: <%d>\n", key->get());
 	printf("value: <%d>\n", value->get());
 
-	ret = ret + assertEquals(0, entry->hashCode());
-	ret = ret + assertEquals(1, key->get());
-	ret = ret + assertEquals(2, value->get());
+	ret = ret + Assert::assertEquals(0, entry->hashCode());
+	ret = ret + Assert::assertEquals(1, key->get());
+	ret = ret + Assert::assertEquals(2, value->get());
 
 	Object::tryDelete(4, arg1, arg2, key, value);
 	Object::tryDelete(entry);

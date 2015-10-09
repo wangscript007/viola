@@ -12,17 +12,17 @@ int main() {
 	Integer* arg1 = new Integer(1);
 	Integer* arg2 = new Integer(2);
 
-	HashMap<Integer*, Integer*>* map = new HashMap<Integer*, Integer*>();
+	HashMap* map = new HashMap();
 	map->put(arg1, arg2);
 	printf("size: <%d>\n", map->size());
 
-	Integer* value = map->get(new Integer(5));
+	Object* value = map->get(new Integer(5));
 	if (value == NULL) {
 		printf("value is null.\n");
 	}
 
-	Integer* value2 = map->get(arg1);
-	printf("key: <%d>, value: <%d>\n", arg1->get(), value2->get());
+	Object* value2 = map->get(arg1);
+	printf("key: <%d>, value: <%d>\n", arg1->get(), ((Integer*) value2)->get());
 
 	delete map;
 	return 0;

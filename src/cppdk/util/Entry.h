@@ -10,35 +10,20 @@
 #pragma once
 #include "Object.h"
 
-template<class K, class V>
-class Entry {
+class Entry: public Object {
 private:
-	K key;
-	V value;
+	Object* key;
+	Object* value;
 public:
 
-	Entry(K key, V value) {
-		this->key = key;
-		this->value = value;
-	}
-	;
+	Entry(Object* key, Object* value);
 
-	virtual ~Entry() {
-		delete key;
-		delete value;
-	}
+	virtual ~Entry();
 
-	K getKey() {
-		return key;
-	}
-	V getValue() {
-		return value;
-	}
+	Object* getKey();
+	Object* getValue();
 
-	int hashCode() {
-		return 0;
-	}
-	;
+	int hashCode();
 
 };
 

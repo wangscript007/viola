@@ -7,25 +7,40 @@
 
 #include "HashMap.h"
 
-/*
- template<class K, class V>
- HashMap<K, V>::HashMap() {
- // TODO Auto-generated constructor stub
+HashMap::HashMap() {
+}
 
- }
+HashMap::~HashMap() {
+	this->clear();
+}
 
- template<class K, class V>
- HashMap<K, V>::~HashMap() {
- // TODO Auto-generated destructor stub
- }
+void HashMap::put(Object* key, Object* value) {
+	Entry* entry = new Entry(key, value);
+	map.push_back(entry);
+}
 
- template<class K, class V>
- void HashMap<K, V>::clear() {
+Object* HashMap::get(Object* key) {
+	int i = 0;
+	while (i < map.size()) {
+		Entry* entry = map.at(i);
+		if (entry->getKey() == key) {
+			return entry->getValue();
+		}
+		i++;
+	}
+	return NULL;
 
- }
+}
 
- template<class K, class V>
- int HashMap<K, V>::size() {
- return 0;
- }
- */
+void HashMap::clear() {
+	while (!map.empty()) {
+		Entry* entry = map.back();
+		delete entry;
+		map.pop_back();
+	}
+	map.clear();
+}
+
+int HashMap::size() {
+	return map.size();
+}

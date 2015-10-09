@@ -11,53 +11,20 @@
 #include <vector>
 #include "Entry.h"
 
-template<class K, class V>
 class HashMap {
 private:
-	std::vector<Entry<K, V>*> map;
+	std::vector<Entry*> map;
 public:
-	HashMap() {
-	}
-	;
-	virtual ~HashMap() {
-		while (!map.empty()) {
-			Entry<K, V>* entry = map.back();
-			delete entry;
-			map.pop_back();
-		}
-		map.clear();
-	}
-	;
+	HashMap();
+	virtual ~HashMap();
 
-	void put(K key, V value) {
-		Entry<K, V>* entry = new Entry<K, V>(key, value);
-		map.push_back(entry);
-	}
-	;
+	void put(Object* key, Object* value);
+	Object* get(Object* key);
+	Object* remove(Object* key);
 
-	V get(K key) {
-		int i = 0;
-		while (i < map.size()) {
-			Entry<K, V>* entry = map.at(i);
-			if (entry->getKey() == key) {
-				return entry->getValue();
-			}
-			i++;
-		}
-		V ret = NULL;
-		return ret;
-	}
-	;
+	void clear();
+	int size();
 
-	V remove(K key);
-
-	void clear() {
-		map.clear();
-	}
-	;
-	int size() {
-		return map.size();
-	}
 };
 
 #endif /* CPPDK_UTIL_HASHMAP_H_ */

@@ -9,12 +9,9 @@
 #include "File.h"
 
 int main() {
-	Strings* str = new Strings();
-	File* file = new File(str);
+	File* file = new File("./foobar.txt");
 
 	delete file;
-	delete str;
-
 	return 0;
 }
 

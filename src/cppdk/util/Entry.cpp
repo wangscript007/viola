@@ -7,31 +7,22 @@
 
 #include "Entry.h"
 
-/*template<class K, class V>
- Entry<K, V>::Entry(K key, V value) {
- // TODO Auto-generated constructor stub
- }
+Entry::Entry(Object* key, Object* value) {
+	this->key = key;
+	this->value = value;
+}
 
- template<class K, class V>
- Entry<K, V>::~Entry() {
- // TODO Auto-generated destructor stub
- }
+Entry::~Entry() {
+}
 
+Object* Entry::getKey() {
+	return this->key;
+}
+Object* Entry::getValue() {
+	return this->value;
+}
 
- template<class K, class V>
- K Entry<K, V>::getKey() {
- K key;
- return key;
- }
+int Entry::hashCode() {
+	return 0;
+}
 
- template<class K, class V>
- V Entry<K, V>::getValue() {
- V value;
- return value;
- }
-
- template<class K, class V>
- int Entry<K, V>::hashCode() {
- return 0;
- }
- */

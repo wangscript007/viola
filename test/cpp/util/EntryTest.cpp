@@ -9,6 +9,7 @@
 #include "Entry.h"
 #include "Assert.h"
 
+typedef std::shared_ptr<Object> object;
 typedef std::shared_ptr<Integer> integer;
 
 int hashCodeTest() {
@@ -19,8 +20,11 @@ int hashCodeTest() {
 	Entry entry(arg1, arg2);
 	printf("className: <%s>\n", entry.getClassName().c_str());
 
-	Integer* key = (Integer*) entry.getKey().get();
-	Integer* value = (Integer*) entry.getValue().get();
+	object obj1 = entry.getKey();
+	object obj2 = entry.getValue();
+
+	Integer* key = (Integer*) obj1.get();
+	Integer* value = (Integer*) obj2.get();
 	printf("key: <%d>\n", key->get());
 	printf("value: <%d>\n", value->get());
 	printf("hashCode: <%d>\n", entry.hashCode());

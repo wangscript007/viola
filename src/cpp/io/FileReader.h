@@ -11,9 +11,13 @@
 #include "Object.h"
 #include "File.h"
 
+using namespace std;
+
+typedef std::shared_ptr<File> file;
+
 class FileReader: public Object {
 public:
-	FileReader(File* file);
+	FileReader(file file);
 	virtual ~FileReader();
 
 	std::string read();
@@ -23,7 +27,7 @@ public:
 	int hashCode();
 
 	//Override
-	std::string getClassName();
+	string getClassName();
 
 };
 

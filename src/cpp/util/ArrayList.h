@@ -10,6 +10,7 @@
 
 #include <list>
 #include "Object.h"
+using namespace std;
 
 typedef std::shared_ptr<Object> object;
 
@@ -31,7 +32,7 @@ public:
 	int hashCode();
 
 	//Override
-	std::string getClassName();
+	string getClassName();
 
 };
 

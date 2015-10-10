@@ -17,6 +17,7 @@ set(build ../build CACHE STRING description FORCE)
 add_library(cppdk SHARED
  ${src}/ext/Assert.cpp
  ${src}/io/File.cpp
+ ${src}/lang/Double.cpp
  ${src}/lang/Integer.cpp
  ${src}/lang/Strings.cpp
  ${src}/lang/Object.cpp

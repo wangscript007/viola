@@ -30,7 +30,7 @@ int Double::hashCode() {
 	return ret;
 }
 
-std::string Double::getClassName() {
+string Double::getClassName() {
 	return "Double";
 }
 

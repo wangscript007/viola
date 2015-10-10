@@ -10,6 +10,8 @@
 
 #include "Object.h"
 
+using namespace std;
+
 class Integer: public Object {
 private:
 	int i = 0;
@@ -23,7 +25,7 @@ public:
 	int hashCode();
 
 	//Override
-	std::string getClassName();
+	string getClassName();
 
 };
 

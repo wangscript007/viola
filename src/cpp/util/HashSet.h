@@ -9,17 +9,20 @@
 #define CPP_UTIL_HASHSET_H_
 
 #include "Object.h"
+using namespace std;
 
 class HashSet: public Object {
 public:
 	HashSet();
 	virtual ~HashSet();
 
+
+
 	//Override
 	int hashCode();
 
 	//Override
-	std::string getClassName();
+	string getClassName();
 };
 
 #endif /* CPP_UTIL_HASHSET_H_ */

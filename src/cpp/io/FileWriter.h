@@ -10,23 +10,26 @@
 
 #include "Object.h"
 #include "File.h"
+using namespace std;
+
+typedef std::shared_ptr<File> file;
 
 class FileWriter: public Object {
 public:
-	FileWriter(File* file);
-	FileWriter(File* file, bool append);
+	FileWriter(file file);
+	FileWriter(file file, bool append);
 	virtual ~FileWriter();
 
 	void close();
-	void append(std::string line);
+	void append(string line);
 	void flush();
-	void write(std::string line);
+	void write(string line);
 
 	//Override
 	int hashCode();
 
 	//Override
-	std::string getClassName();
+	string getClassName();
 
 };
 

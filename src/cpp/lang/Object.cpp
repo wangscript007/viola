@@ -19,6 +19,6 @@ int Object::hashCode() {
 	return 0;
 }
 
-std::string Object::getClassName() {
+string Object::getClassName() {
 	return "Object";
 }

@@ -11,7 +11,7 @@ Strings::Strings() {
 	//noop;
 }
 
-Strings::Strings(std::string str) {
+Strings::Strings(string str) {
 	internal = str;
 }
 
@@ -19,10 +19,10 @@ Strings::~Strings() {
 	//noop;
 }
 
-void Strings::append(std::string str) {
+void Strings::append(string str) {
 	internal.append(str);
 }
-bool Strings::equals(std::string str) {
+bool Strings::equals(string str) {
 	int size = str.size();
 	if (strncmp(internal.c_str(), str.c_str(), size) == 0) {
 		return true;
@@ -64,6 +64,6 @@ int Strings::hashCode() {
 }
 
 //Override
-std::string Strings::getClassName() {
+string Strings::getClassName() {
 	return "Strings";
 }

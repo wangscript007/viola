@@ -25,6 +25,6 @@ int Integer::hashCode() {
 }
 
 //Override
-std::string Integer::getClassName() {
+string Integer::getClassName() {
 	return "Integer";
 }

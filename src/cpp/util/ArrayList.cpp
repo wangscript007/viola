@@ -47,6 +47,6 @@ int ArrayList::hashCode() {
 	return 0;
 }
 
-std::string ArrayList::getClassName() {
+string ArrayList::getClassName() {
 	return "ArrayList";
 }

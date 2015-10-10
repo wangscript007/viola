@@ -39,6 +39,6 @@ int Entry::hashCode() {
 }
 
 //Override
-std::string Entry::getClassName() {
+string Entry::getClassName() {
 	return "Entry";
 }

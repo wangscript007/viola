@@ -9,20 +9,21 @@
 #define CPPDK_FILE_H_
 
 #include <stdio.h>
-
 #include "Object.h"
 #include "Strings.h"
 
+using namespace std;
+
 class File: public Object {
 public:
-	File(std::string path);
+	File(string path);
 	virtual ~File();
 
 	bool createNewFile();
 	bool deleteFile();
 	bool exists();
-	std::string getAbsolutePath();
-	std::string getName();
+	string getAbsolutePath();
+	string getName();
 	bool isFile();
 	bool isDirectory();
 	bool mkdir();
@@ -32,7 +33,7 @@ public:
 	int hashCode();
 
 	//Override
-	std::string getClassName();
+	string getClassName();
 
 };
 

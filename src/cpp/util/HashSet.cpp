@@ -17,6 +17,6 @@ int HashSet::hashCode() {
 	return 0;
 }
 
-std::string HashSet::getClassName() {
+string HashSet::getClassName() {
 	return "HashSet";
 }

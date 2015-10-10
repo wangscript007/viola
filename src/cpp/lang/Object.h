@@ -13,6 +13,8 @@
 #include <string>
 #include <memory>
 
+using namespace std;
+
 class Object {
 
 public:
@@ -20,7 +22,7 @@ public:
 	virtual ~Object();
 
 	virtual int hashCode();
-	virtual std::string getClassName();
+	virtual string getClassName();
 };
 
 #endif /* CPP_LANG_OBJECT_H_ */

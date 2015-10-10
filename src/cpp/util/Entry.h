@@ -9,7 +9,7 @@
 #define CPP_UTIL_ENTRY_H_
 
 #include "Object.h"
-
+using namespace std;
 typedef std::shared_ptr<Object> object;
 
 class Entry: public Object {
@@ -28,7 +28,7 @@ public:
 	int hashCode();
 
 	//Override
-	std::string getClassName();
+	string getClassName();
 
 };
 

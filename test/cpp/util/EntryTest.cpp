@@ -27,7 +27,7 @@ int hashCodeTest() {
 
 	ret = ret + Assert::assertEquals(1234, key->get());
 	ret = ret + Assert::assertEquals(5678, value->get());
-	ret = ret + Assert::assertEquals(3, entry.hashCode());
+	ret = ret + Assert::assertEquals(4860, entry.hashCode());
 
 	return ret;
 }

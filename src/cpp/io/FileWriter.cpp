@@ -7,12 +7,12 @@
 
 #include "FileWriter.h"
 
-FileWriter::FileWriter(File* file) {
+FileWriter::FileWriter(file file) {
 	// TODO Auto-generated constructor stub
 
 }
 
-FileWriter::FileWriter(File* file, bool append) {
+FileWriter::FileWriter(file file, bool append) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -25,6 +25,6 @@ int FileWriter::hashCode() {
 	return 0;
 }
 
-std::string FileWriter::getClassName() {
+string FileWriter::getClassName() {
 	return "FileWriter";
 }

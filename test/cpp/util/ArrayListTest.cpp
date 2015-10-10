@@ -24,7 +24,7 @@ int hashCodeTest() {
 	printf("size: <%d>\n", list.size());
 
 	Integer* value1 = (Integer*) list.get(0).get();
-	Integer* value2 = (Integer*) list.get(0).get();
+	Integer* value2 = (Integer*) list.get(1).get();
 	printf("[0]: <%d>\n", value1->get());
 	printf("[1]: <%d>\n", value2->get());
 

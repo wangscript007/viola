@@ -18,13 +18,13 @@ integer arg2 = std::make_shared<Integer>(5678);
 
 list.add(arg1);
 list.add(arg2);
-printf("size: <%d>\n", list.size()); // -> size: <2>
+printf("size: <%d>\n", list.size()); // -> <2>
 
 Integer* value1 = (Integer*) list.get(0).get();
-Integer* value2 = (Integer*) list.get(0).get();
-printf("[0]: <%d>\n", value1->get()); // -> [0]: <1234>
-printf("[1]: <%d>\n", value2->get()); // -> [1]: <5678>
+Integer* value2 = (Integer*) list.get(1).get();
+printf("<%d>\n", value1->get()); // -> <1234>
+printf("<%d>\n", value2->get()); // -> <5678>
 
 list.clear();
-printf("size: <%d>\n", list.size()); // -> size: <0>
+printf("size: <%d>\n", list.size()); // -> <0>
 ```

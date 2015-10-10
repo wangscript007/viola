@@ -14,7 +14,7 @@ typedef std::shared_ptr<Integer> integer;
 int hashCodeTest() {
 	int ret = 0;
 
-	ArrayList<integer> list;
+	ArrayList list;
 	printf("className: <%s>\n", list.getClassName().c_str());
 
 	integer arg1 = std::make_shared<Integer>(1234);
@@ -22,14 +22,16 @@ int hashCodeTest() {
 	list.add(arg1);
 	list.add(arg2);
 	printf("size: <%d>\n", list.size());
+	printf("hashCode: <%d>\n", list.hashCode());
 
-	integer obj1 = list.get(0);
-	integer obj2 = list.get(1);
-	printf("[0]: <%d>\n", obj1->get());
-	printf("[1]: <%d>\n", obj2->get());
+	object obj1 = list.get(0);
+	object obj2 = list.get(1);
+	printf("[0]: <%d>\n", ((Integer*) obj1.get())->get());
+	printf("[1]: <%d>\n", ((Integer*) obj2.get())->get());
 
 	list.clear();
 	printf("size: <%d>\n", list.size());
+	printf("hashCode: <%d>\n", list.hashCode());
 
 	return ret;
 }

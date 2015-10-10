@@ -20,10 +20,10 @@ list.add(arg1);
 list.add(arg2);
 printf("size: <%d>\n", list.size()); // -> 2
 
-integer obj1 = list.get(0);
-integer obj2 = list.get(1);
-printf("[0]: <%d>\n", obj1->get()); // -> 1234
-printf("[1]: <%d>\n", obj2->get()); // -> 5678
+object obj1 = list.get(0);
+object obj2 = list.get(1);
+printf("[0]: <%d>\n", ((Integer*) obj1.get())->get()); // -> 1234
+printf("[1]: <%d>\n", ((Integer*) obj2.get())->get()); // -> 5678
 
 list.clear();
 printf("size: <%d>\n", list.size()); // -> 0

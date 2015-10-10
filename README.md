@@ -1,5 +1,5 @@
-# cppdk: c++ development kit
-c++ development kit is shared object like JDK.
+# viola: c++ development kit
+shared object like JDK interface.
 
 ## cpp.io.File
 file open/close, read/write.

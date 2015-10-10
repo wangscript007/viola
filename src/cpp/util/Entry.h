@@ -12,6 +12,7 @@
 using namespace std;
 typedef std::shared_ptr<Object> object;
 
+//template<class T>
 class Entry: public Object {
 private:
 	object key;
@@ -19,7 +20,7 @@ private:
 public:
 
 	Entry(object key, object value);
-	virtual ~Entry();
+	~Entry();
 
 	object getKey();
 	object getValue();

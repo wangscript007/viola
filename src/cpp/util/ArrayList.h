@@ -10,29 +10,68 @@
 
 #include <list>
 #include "Object.h"
+//#include "Integer.h"
 using namespace std;
+//typedef std::shared_ptr<Object> object;
+//typedef std::shared_ptr<Integer> integer;
 
-typedef std::shared_ptr<Object> object;
-
+template<class T>
 class ArrayList: public Object {
 private:
-	std::list<object> list;
+	std::list<T> list;
 public:
-	ArrayList();
-	virtual ~ArrayList();
+	ArrayList<T>() {
+	}
+	;
+	~ArrayList() {
+		list.clear();
+	}
+	;
 
-	void add(object obj);
-	object get(int i);
+	void add(T obj) {
+		list.push_back(obj);
+	}
+	;
+	T get(int i) {
+		if (size() <= i) {
+			return NULL;
+		}
 
-	void clear();
-	int size();
-	bool isEmpty();
+		typename std::list<T>::iterator it;
+		it = list.begin();
+		for (int j = 0; j < i; j++) {
+			it++;
+		}
+
+		T obj = *it;
+		return obj;
+	}
+	;
+
+	void clear() {
+		list.clear();
+	}
+	;
+	int size() {
+		return list.size();
+	}
+	;
+	bool isEmpty() {
+		return list.empty();
+	}
+	;
 
 	//Override
-	int hashCode();
+	int hashCode() {
+		return 0;
+	}
+	;
 
 	//Override
-	string getClassName();
+	string getClassName() {
+		return "ArrayList";
+	}
+	;
 
 };
 

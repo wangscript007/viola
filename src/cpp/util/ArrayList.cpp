@@ -5,48 +5,64 @@
  *      Author: tsubaki
  */
 
-#include "ArrayList.h"
+/*
+ #include "ArrayList.h"
 
-ArrayList::ArrayList() {
+ template<class T>
+ ArrayList<T>::ArrayList() {
 
-}
+ }
 
-ArrayList::~ArrayList() {
-	this->clear();
-}
+ template<class T>
+ ArrayList<T>::~ArrayList() {
+ this->clear();
+ }
 
-void ArrayList::add(object obj) {
-	list.push_back(obj);
-}
+ template<class T>
+ void ArrayList<T>::add(T obj) {
+ list.push_back(obj);
+ }
 
-object ArrayList::get(int i) {
-	if (size() <= i) {
-		return NULL;
-	}
+ template<class T>
+ T ArrayList<T>::get(int i) {
+ if (size() <= i) {
+ return NULL;
+ }
 
-	std::list<object>::iterator it = list.begin();
-	for (int j = 0; j < i; j++) {
-		it++;
-	}
-	return *it;
-}
+ typename std::list<T>::iterator it;
+ it = list.begin();
+ for (int j = 0; j < i; j++) {
+ it++;
+ }
 
-void ArrayList::clear() {
-	list.clear();
-}
+ T obj = *it;
+ return obj;
+ }
 
-int ArrayList::size() {
-	return list.size();
-}
+ template<class T>
+ void ArrayList<T>::clear() {
+ list.clear();
+ }
 
-bool ArrayList::isEmpty() {
-	return list.empty();
-}
+ template<class T>
+ int ArrayList<T>::size() {
+ return list.size();
+ }
 
-int ArrayList::hashCode() {
-	return 0;
-}
+ template<class T>
+ bool ArrayList<T>::isEmpty() {
+ return list.empty();
+ }
 
-string ArrayList::getClassName() {
-	return "ArrayList";
-}
+ template<class T>
+ int ArrayList<T>::hashCode() {
+ return 0;
+ }
+
+ template<class T>
+ string ArrayList<T>::getClassName() {
+ return "ArrayList";
+ }
+
+ template class ArrayList<integer> ;
+ */

@@ -8,7 +8,7 @@
 #include "Entry.h"
 
 Entry::Entry(object key, object value) {
-//	printf("Entry.className: <%s>\n", key.get()->getClassName().c_str());
+	printf("Entry.className: <%s>\n", key.get()->getClassName().c_str());
 	this->key = key;
 	this->value = value;
 }

@@ -17,7 +17,7 @@ using namespace std;
 class File: public Object {
 public:
 	File(string path);
-	virtual ~File();
+	~File();
 
 	bool createNewFile();
 	bool deleteFile();

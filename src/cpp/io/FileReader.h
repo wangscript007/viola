@@ -18,9 +18,9 @@ typedef std::shared_ptr<File> file;
 class FileReader: public Object {
 public:
 	FileReader(file file);
-	virtual ~FileReader();
+	~FileReader();
 
-	std::string read();
+	string read();
 	bool close();
 
 	//Override

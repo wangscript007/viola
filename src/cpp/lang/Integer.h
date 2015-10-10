@@ -17,7 +17,7 @@ private:
 	int i = 0;
 public:
 	Integer(int value);
-	virtual ~Integer();
+	~Integer();
 
 	int get();
 

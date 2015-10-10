@@ -17,7 +17,7 @@ private:
 	double value;
 public:
 	Double(double value);
-	virtual ~Double();
+	~Double();
 
 	double get();
 

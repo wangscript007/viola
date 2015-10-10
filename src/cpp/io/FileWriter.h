@@ -18,7 +18,7 @@ class FileWriter: public Object {
 public:
 	FileWriter(file file);
 	FileWriter(file file, bool append);
-	virtual ~FileWriter();
+	~FileWriter();
 
 	void close();
 	void append(string line);

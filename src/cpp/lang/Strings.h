@@ -29,9 +29,9 @@ public:
 	bool equals(string str);
 	bool equalsIgnoreCase(string str);
 	bool isEmpty();
-	std::string replace(string target, string replacement);
+	string replace(string target, string replacement);
 	bool startWith(string prefix);
-	std::string toString();
+	string toString();
 	int length();
 
 	//Override

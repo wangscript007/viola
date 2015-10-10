@@ -20,7 +20,7 @@ add_library(cppdk SHARED
  ${src}/lang/Integer.cpp
  ${src}/lang/Strings.cpp
  ${src}/lang/Object.cpp
-# ${src}/util/ArrayList.cpp
+ ${src}/util/ArrayList.cpp
  ${src}/util/Entry.cpp
 # ${src}/util/HashMap.cpp
  ${src}/util/HashSet.cpp
@@ -45,15 +45,21 @@ add_executable(StringsTest.out
 target_link_libraries(StringsTest.out cppdk)
 add_test(NAME StringsTest COMMAND ${build}/StringsTest.out)
 
+add_executable(ArrayListTest.out
+ ${test}/util/ArrayListTest.cpp
+)
+target_link_libraries(ArrayListTest.out cppdk)
+add_test(NAME ArrayListTest COMMAND ${build}/ArrayListTest.out)
+
 add_executable(EntryTest.out
  ${test}/util/EntryTest.cpp
 )
 target_link_libraries(EntryTest.out cppdk)
 add_test(NAME EntryTest COMMAND ${build}/EntryTest.out)
 
-add_executable(HashMapTest.out
- ${test}/util/HashMapTest.cpp
-)
-target_link_libraries(HashMapTest.out cppdk)
-add_test(NAME HashMapTest COMMAND ${build}/HashMapTest.out)
+#add_executable(HashMapTest.out
+# ${test}/util/HashMapTest.cpp
+#)
+#target_link_libraries(HashMapTest.out cppdk)
+#add_test(NAME HashMapTest COMMAND ${build}/HashMapTest.out)
 

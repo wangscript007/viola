@@ -10,18 +10,19 @@
 
 #include "Object.h"
 
+typedef std::shared_ptr<Object> object;
+
 class Entry: public Object {
 private:
-	std::shared_ptr<Object> key;
-	std::shared_ptr<Object> value;
+	object key;
+	object value;
 public:
 
-	Entry(Object key, Object value);
-
+	Entry(object key, object value);
 	virtual ~Entry();
 
-	Object* getKey();
-	Object* getValue();
+	object getKey();
+	object getValue();
 
 	//Override
 	int hashCode();

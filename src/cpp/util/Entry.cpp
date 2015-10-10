@@ -6,23 +6,21 @@
  */
 
 #include "Entry.h"
-#include "Integer.h"
 
-Entry::Entry(Object key, Object value) {
-	printf("Entry.className: <%s>\n", key.getClassName().c_str());
-	this->key = std::make_shared<Object>(key);
-	this->value = std::make_shared<Object>(value);
+Entry::Entry(object key, object value) {
+	printf("Entry.className: <%s>\n", key.get()->getClassName().c_str());
+	this->key = key;
+	this->value = value;
 }
 
 Entry::~Entry() {
 }
 
-Object* Entry::getKey() {
-	printf("getKey.className: <%s>\n", key.get()->getClassName().c_str());
-	return key.get();
+object Entry::getKey() {
+	return key;
 }
-Object* Entry::getValue() {
-	return value.get();
+object Entry::getValue() {
+	return value;
 }
 
 //Override

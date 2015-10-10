@@ -15,21 +15,20 @@ ArrayList::~ArrayList() {
 	this->clear();
 }
 
-void ArrayList::add(Object obj) {
-	list.push_back(std::make_shared<Object>(obj));
+void ArrayList::add(object obj) {
+	list.push_back(obj);
 }
 
-Object* ArrayList::get(int i) {
+object ArrayList::get(int i) {
 	if (size() <= i) {
 		return NULL;
 	}
 
-	std::list<std::shared_ptr<Object>>::iterator it = list.begin();
+	std::list<object>::iterator it = list.begin();
 	for (int j = 0; j < i; j++) {
 		it++;
 	}
-	std::shared_ptr<Object> obj = *it;
-	return obj.get();
+	return *it;
 }
 
 void ArrayList::clear() {

@@ -8,10 +8,9 @@
 #include "Entry.h"
 #include "Integer.h"
 
-Entry::Entry(Object* key, Object* value) {
-	printf("Entry.className: <%s>\n", key->getClassName().c_str());
-	Object kkey = key;
-	this->key = std::make_shared<Object>(kkey);
+Entry::Entry(Object key, Object value) {
+	printf("Entry.className: <%s>\n", key.getClassName().c_str());
+	this->key = std::make_shared<Object>(key);
 	this->value = std::make_shared<Object>(value);
 }
 

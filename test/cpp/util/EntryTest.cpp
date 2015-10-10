@@ -13,9 +13,8 @@
 int hashCodeTest() {
 	int ret = 0;
 
-	Integer* arg1 = new Integer(1);
-	Integer* arg2 = new Integer(2);
-
+	Integer arg1(1);
+	Integer arg2(2);
 	Entry entry(arg1, arg2);
 	printf("className: <%s>\n", entry.getClassName().c_str());
 

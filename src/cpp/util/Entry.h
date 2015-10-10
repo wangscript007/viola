@@ -16,7 +16,7 @@ private:
 	std::shared_ptr<Object> value;
 public:
 
-	Entry(Object* key, Object* value);
+	Entry(Object key, Object value);
 
 	virtual ~Entry();
 

@@ -12,8 +12,8 @@
 
 class Entry: public Object {
 private:
-	Object* key;
-	Object* value;
+	std::shared_ptr<Object> key;
+	std::shared_ptr<Object> value;
 public:
 
 	Entry(Object* key, Object* value);

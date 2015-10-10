@@ -6,37 +6,36 @@
  */
 
 #include "Entry.h"
+#include "Integer.h"
 
 Entry::Entry(Object* key, Object* value) {
-	this->key = key;
-	this->value = value;
-
-	this->key->incrementReference();
-	this->value->incrementReference();
+	printf("Entry.className: <%s>\n", key->getClassName().c_str());
+	Object kkey = key;
+	this->key = std::make_shared<Object>(kkey);
+	this->value = std::make_shared<Object>(value);
 }
 
 Entry::~Entry() {
-	Object::tryDelete(key);
-	Object::tryDelete(value);
 }
 
 Object* Entry::getKey() {
-	return this->key->incrementReference();
+	printf("getKey.className: <%s>\n", key.get()->getClassName().c_str());
+	return key.get();
 }
 Object* Entry::getValue() {
-	return this->value->incrementReference();
+	return value.get();
 }
 
 //Override
 int Entry::hashCode() {
 	int keyHash = 0;
-	if (this->key != NULL) {
-		keyHash = this->key->hashCode();
+	if (this->key.get() != NULL) {
+		keyHash = key.get()->hashCode();
 	}
 
 	int valueHash = 0;
-	if (this->value != NULL) {
-		valueHash = this->value->hashCode();
+	if (this->value.get() != NULL) {
+		valueHash = value.get()->hashCode();
 	}
 
 	return keyHash ^ valueHash;

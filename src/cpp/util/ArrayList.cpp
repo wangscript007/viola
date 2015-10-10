@@ -15,8 +15,8 @@ ArrayList::~ArrayList() {
 	this->clear();
 }
 
-void ArrayList::add(Object* obj) {
-	list.push_back(obj->incrementReference());
+void ArrayList::add(Object obj) {
+	list.push_back(std::make_shared<Object>(obj));
 }
 
 Object* ArrayList::get(int i) {
@@ -24,20 +24,15 @@ Object* ArrayList::get(int i) {
 		return NULL;
 	}
 
-	std::list<Object*>::iterator it = list.begin();
+	std::list<std::shared_ptr<Object>>::iterator it = list.begin();
 	for (int j = 0; j < i; j++) {
 		it++;
 	}
-	Object* obj = *it;
-	return obj->incrementReference();
+	std::shared_ptr<Object> obj = *it;
+	return obj.get();
 }
 
 void ArrayList::clear() {
-	while (!this->isEmpty()) {
-		Object* obj = list.front();
-		Object::tryDelete(obj);
-		list.pop_front();
-	}
 	list.clear();
 }
 

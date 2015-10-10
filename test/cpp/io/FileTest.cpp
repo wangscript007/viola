@@ -12,7 +12,7 @@ int main() {
 	File* file = new File("./foobar.txt");
 	printf("className: <%s>\n", file->getClassName().c_str());
 
-	Object::tryDelete(file);
+	delete file;
 	return 0;
 }
 

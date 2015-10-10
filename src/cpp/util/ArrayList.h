@@ -13,12 +13,12 @@
 
 class ArrayList: public Object {
 private:
-	std::list<Object*> list;
+	std::list<std::shared_ptr<Object>> list;
 public:
 	ArrayList();
 	virtual ~ArrayList();
 
-	void add(Object* obj);
+	void add(Object obj);
 	Object* get(int i);
 
 	void clear();

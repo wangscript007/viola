@@ -12,7 +12,7 @@
 
 class Integer: public Object {
 private:
-	int i;
+	int i = 0;
 public:
 	Integer(int value);
 	virtual ~Integer();

@@ -8,7 +8,7 @@ set(SERIAL "0.0.1")
 set(SOSERIAL "1")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ../build)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../build)
-set(CMAKE_CXX_FLAGS "-Wall -O2 -std=c++11 -stdlib=libstdc++")
+set(CMAKE_CXX_FLAGS "-Wall -O2 -std=c++11 -stdlib=libc++")
 
 set(src ../src/cpp CACHE STRING description FORCE)
 set(test ../test/cpp CACHE STRING description FORCE)
@@ -20,9 +20,9 @@ add_library(cppdk SHARED
  ${src}/lang/Integer.cpp
  ${src}/lang/Strings.cpp
  ${src}/lang/Object.cpp
- ${src}/util/ArrayList.cpp
+# ${src}/util/ArrayList.cpp
  ${src}/util/Entry.cpp
- ${src}/util/HashMap.cpp
+# ${src}/util/HashMap.cpp
  ${src}/util/HashSet.cpp
 )
 #set_target_properties(cppdk PROPERTIES VERSION ${SERIAL} SOVERSION ${SOSERIAL})

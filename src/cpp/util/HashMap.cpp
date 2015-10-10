@@ -15,45 +15,34 @@ HashMap::~HashMap() {
 	this->clear();
 }
 
-void HashMap::put(Object* key, Object* value) {
-	Entry* entry = new Entry(key, value);
-	int hashCode = entry->hashCode();
+void HashMap::put(Object key, Object value) {
+	Entry entry(key, value);
+	int hashCode = entry.hashCode();
 
 	//TODO not hash.
 	int i = 0;
 	while (i < map.size()) {
-		Entry* old = map.at(i);
+		Entry* old = map.at(i).get();
 		if (old->hashCode() == hashCode) {
 			map.erase(map.begin() + i);
-			Object::tryDelete(old);
 			break;
 		}
 		i++;
 	}
 
-	map.push_back(entry);
+	map.push_back(std::make_shared<Entry>(entry));
 }
 
-Object* HashMap::get(Object* key) {
+Object* HashMap::get(Object key) {
 
 	//TODO not hash.
 	int i = 0;
 	while (i < map.size()) {
-		Entry* entry = map.at(i);
-		Object* getKey = entry->getKey();
-		Object* getValue = entry->getValue();
-		int getKeyHashCode = getKey->hashCode();
-		Object::tryDelete(2, getKey, getValue);
+		Entry* entry = map.at(i).get();
+		int storedHashCode = entry->getKey()->hashCode();
 
-		/*
-		 printf("arg: <%d>, hashCode: <%d>\n", ((Integer*) key)->get(),
-		 ((Integer*) key)->hashCode());
-		 printf("entry.key: <%d>, entry.hashCode: <%d>\n",
-		 ((Integer*) (entry->getKey()))->get(),
-		 ((Integer*) (entry->getKey()))->hashCode());
-		 */
-		if (getKeyHashCode == key->hashCode()) {
-			return getValue->incrementReference();
+		if (storedHashCode == key.hashCode()) {
+			return entry->getValue();
 		}
 		i++;
 	}
@@ -62,11 +51,6 @@ Object* HashMap::get(Object* key) {
 }
 
 void HashMap::clear() {
-	while (!map.empty()) {
-		Entry* entry = map.back();
-		Object::tryDelete(entry);
-		map.pop_back();
-	}
 	map.clear();
 }
 

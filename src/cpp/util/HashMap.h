@@ -14,7 +14,7 @@
 
 class HashMap: public Object {
 private:
-	std::vector<Entry*> map;
+	std::vector<std::shared_ptr<Entry*>> map;
 public:
 	HashMap();
 	virtual ~HashMap();

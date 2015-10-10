@@ -11,7 +11,7 @@ Boolean, Integer, Double, Long, String.
 ArrayList, HashMap.
 
 ```
-ArrayList<integer> list;
+ArrayList list;
 printf("className: <%s>\n", list.getClassName().c_str());
 
 integer arg1 = std::make_shared<Integer>(1234);
@@ -22,8 +22,8 @@ printf("size: <%d>\n", list.size()); // -> 2
 
 object obj1 = list.get(0);
 object obj2 = list.get(1);
-printf("[0]: <%d>\n", ((Integer*) obj1.get())->get()); // -> 1234
-printf("[1]: <%d>\n", ((Integer*) obj2.get())->get()); // -> 5678
+printf("obj1: <%d>\n", ((Integer*) obj1.get())->get()); // -> 1234
+printf("obj2: <%d>\n", ((Integer*) obj2.get())->get()); // -> 5678
 
 list.clear();
 printf("size: <%d>\n", list.size()); // -> 0

@@ -10,12 +10,10 @@
 
 #include <list>
 #include "Object.h"
-//#include "Integer.h"
+
 using namespace std;
 typedef std::shared_ptr<Object> object;
-//typedef std::shared_ptr<Integer> integer;
 
-//template<class T>
 class ArrayList: public Object {
 private:
 	list<object> list;

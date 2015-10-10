@@ -24,11 +24,17 @@ void Strings::append(string str) {
 }
 bool Strings::equals(string str) {
 	int size = str.size();
-	if (strncmp(internal.c_str(), str.c_str(), size) == 0) {
-		return true;
+	int internalSize = internal.size();
+
+	if (size != internalSize) {
+		return false;
 	}
 
-	return false;
+	if (strncmp(internal.c_str(), str.c_str(), size) != 0) {
+		return false;
+	}
+
+	return true;
 }
 
 bool Strings::isEmpty() {

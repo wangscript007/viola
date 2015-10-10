@@ -26,8 +26,8 @@ int hashCodeTest() {
 
 	object obj1 = list.get(0);
 	object obj2 = list.get(1);
-	printf("[0]: <%d>\n", ((Integer*) obj1.get())->get());
-	printf("[1]: <%d>\n", ((Integer*) obj2.get())->get());
+	printf("obj1: <%d>\n", ((Integer*) obj1.get())->get());
+	printf("obj2: <%d>\n", ((Integer*) obj2.get())->get());
 
 	list.clear();
 	printf("size: <%d>\n", list.size());

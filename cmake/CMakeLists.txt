@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.4)
-project(cppdk CXX)
+project(viola CXX)
 enable_testing()
 
 set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")

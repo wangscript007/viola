@@ -46,9 +46,9 @@ bool ArrayList::isEmpty() {
 }
 
 /*
- int hashCode = 1;
- for (E e : list)
- hashCode = 31*hashCode + (e==null ? 0 : e.hashCode());
+ * int hashCode = 1;
+ * for (E e : list)
+ * hashCode = 31*hashCode + (e==null ? 0 : e.hashCode());
  */
 int ArrayList::hashCode() {
 	int hashCode = 1;

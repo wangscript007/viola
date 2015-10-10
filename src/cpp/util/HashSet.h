@@ -14,9 +14,7 @@ using namespace std;
 class HashSet: public Object {
 public:
 	HashSet();
-	virtual ~HashSet();
-
-
+	~HashSet();
 
 	//Override
 	int hashCode();

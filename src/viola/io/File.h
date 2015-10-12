@@ -5,8 +5,8 @@
  *      Author: tsubaki
  */
 
-#ifndef CPPDK_FILE_H_
-#define CPPDK_FILE_H_
+#ifndef VIOLA_FILE_H_
+#define VIOLA_FILE_H_
 
 #include <stdio.h>
 
@@ -41,4 +41,4 @@ public:
 
 };
 
-#endif /* CPPDK_FILE_H_ */
+#endif /* VIOLA_FILE_H_ */

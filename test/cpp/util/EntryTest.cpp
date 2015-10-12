@@ -33,6 +33,10 @@ int hashCodeTest() {
 	ret = ret + Assert::assertEquals(5678, value->get());
 	ret = ret + Assert::assertEquals(4860, entry.hashCode());
 
+	integer arg3 = std::make_shared<Integer>(9012);
+	Entry entry2(arg1, arg3);
+	printf("hashCode: <%d>\n", entry2.hashCode());
+
 	return ret;
 }
 

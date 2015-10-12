@@ -14,7 +14,7 @@ set(src ../src/cpp CACHE STRING description FORCE)
 set(test ../test/cpp CACHE STRING description FORCE)
 set(build ../build CACHE STRING description FORCE)
 
-add_library(cppdk SHARED
+add_library(viola SHARED
  ${src}/ext/Assert.cpp
  ${src}/io/File.cpp
  ${src}/lang/Double.cpp
@@ -37,30 +37,36 @@ include_directories(${src}/util)
 add_executable(FileTest.out
  ${test}/io/FileTest.cpp
 )
-target_link_libraries(FileTest.out cppdk)
+target_link_libraries(FileTest.out viola)
 add_test(NAME FileTest COMMAND ${build}/FileTest.out)
+
+add_executable(ObjectTest.out
+ ${test}/lang/ObjectTest.cpp
+)
+target_link_libraries(ObjectTest.out viola)
+add_test(NAME ObjectTest COMMAND ${build}/ObjectTest.out)
 
 add_executable(StringsTest.out
  ${test}/lang/StringsTest.cpp
 )
-target_link_libraries(StringsTest.out cppdk)
+target_link_libraries(StringsTest.out viola)
 add_test(NAME StringsTest COMMAND ${build}/StringsTest.out)
 
 add_executable(ArrayListTest.out
  ${test}/util/ArrayListTest.cpp
 )
-target_link_libraries(ArrayListTest.out cppdk)
+target_link_libraries(ArrayListTest.out viola)
 add_test(NAME ArrayListTest COMMAND ${build}/ArrayListTest.out)
 
 add_executable(EntryTest.out
  ${test}/util/EntryTest.cpp
 )
-target_link_libraries(EntryTest.out cppdk)
+target_link_libraries(EntryTest.out viola)
 add_test(NAME EntryTest COMMAND ${build}/EntryTest.out)
 
 #add_executable(HashMapTest.out
 # ${test}/util/HashMapTest.cpp
 #)
-#target_link_libraries(HashMapTest.out cppdk)
+#target_link_libraries(HashMapTest.out viola)
 #add_test(NAME HashMapTest COMMAND ${build}/HashMapTest.out)
 

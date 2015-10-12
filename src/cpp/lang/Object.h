@@ -21,6 +21,7 @@ public:
 	Object();
 	virtual ~Object();
 
+	bool equals(Object* obj);
 	virtual int hashCode();
 	virtual string getClassName();
 };

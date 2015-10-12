@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#include <string>
 #include "Strings.h"
-
 
 int append() {
 	int ret = 0;
@@ -18,6 +16,8 @@ int append() {
 
 	str->append(s);
 	printf("str: <%s>\n", str->toString().c_str());
+	printf("hashCode: <%d>\n", str->hashCode());
+
 	ret = ret + !str->equals("foobar");
 	ret = ret + str->equals("notsame");
 

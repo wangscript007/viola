@@ -16,7 +16,19 @@ Object::~Object() {
 }
 
 int Object::hashCode() {
-	return 0;
+	return reinterpret_cast<uintptr_t>(this);
+}
+
+bool Object::equals(Object* obj) {
+	if (obj == NULL) {
+		return false;
+	}
+
+	if (hashCode() != obj->hashCode()) {
+		return false;
+	}
+
+	return true;
 }
 
 string Object::getClassName() {

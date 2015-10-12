@@ -73,9 +73,9 @@ add_executable(EntryTest.out
 target_link_libraries(EntryTest.out viola)
 add_test(NAME EntryTest COMMAND ${build}/test/EntryTest.out)
 
-#add_executable(HashMapTest.out
-# ${test}/util/HashMapTest.cpp
-#)
-#target_link_libraries(HashMapTest.out viola)
-#add_test(NAME HashMapTest COMMAND ${build}/test/HashMapTest.out)
+add_executable(HashMapTest.out
+ ${test}/util/HashMapTest.cpp
+)
+target_link_libraries(HashMapTest.out viola)
+add_test(NAME HashMapTest COMMAND ${build}/test/HashMapTest.out)
 

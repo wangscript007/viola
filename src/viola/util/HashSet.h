@@ -9,6 +9,7 @@
 #define VIOLA_UTIL_HASHSET_H_
 
 #include "Object.h"
+
 using namespace std;
 
 class HashSet: public Object {

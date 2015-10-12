@@ -8,13 +8,18 @@
 #ifndef VIOLA_UTIL_HASHMAP_H_
 #define VIOLA_UTIL_HASHMAP_H_
 
+#include <vector>
 #include "Object.h"
+#include "Entry.h"
 #include "HashSet.h"
 
 using namespace std;
 typedef std::shared_ptr<Object> object;
+typedef std::shared_ptr<Entry> entry;
 
 class HashMap: public Object {
+private:
+	vector<entry> vector;
 public:
 	HashMap();
 	~HashMap();
@@ -22,7 +27,7 @@ public:
 	bool containsKey(object key);
 	bool containsValue(object value);
 
-	void put(object key, object value);
+	object put(object key, object value);
 	object putIfAbsent(object key, object value);
 	object get(object key);
 	object remove(object key);

@@ -17,7 +17,7 @@ class Object {
 
 public:
 	Object();
-	virtual ~Object();
+	~Object();
 
 	bool equals(Object* obj);
 	int hashCode();

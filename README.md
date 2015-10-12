@@ -55,5 +55,8 @@ map.put(key, value);
 object got = map.get(key);
 printf("got: <%s>\n", ((Strings*) got.get())->toString().c_str());
 
+bool contains = map.containsKey(key);
+printf("containsKey: <%d>\n", contains);
+
 map.clear();
 ```

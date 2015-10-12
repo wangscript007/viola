@@ -22,8 +22,8 @@ public:
 	virtual ~Object();
 
 	bool equals(Object* obj);
-	virtual int hashCode();
-	virtual string getClassName();
+	int hashCode();
+	string getClassName();
 };
 
 #endif /* CPP_LANG_OBJECT_H_ */

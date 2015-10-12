@@ -65,11 +65,16 @@ int equalsTest() {
 
 	bool bool1 = str.equals("foobar");
 	bool bool2 = str.equals("notsame");
+
 	printf("foobar->equals(foobar): <%d>\n", bool1);
 	printf("foobar->equals(notsame): <%d>\n", bool2);
 
 	ret = ret + !bool1;
 	ret = ret + bool2;
+
+	Strings* strp = new Strings("foobar");
+	printf("foobar->equals(foobar): <%d>\n", str.equals(strp));
+	delete strp;
 
 	return ret;
 }

@@ -26,6 +26,31 @@ int Integer::hashCode() {
 }
 
 //Override
+bool Integer::equals(Object* obj) {
+	return this->equals((Integer*) obj);
+}
+
+//Override
+bool Integer::equals(Integer* obj) {
+	return this->equals(obj->get());
+}
+
+//Override
+bool Integer::equals(object obj) {
+	return this->equals((Integer*) obj.get());
+}
+
+//Override
+bool Integer::equals(int obj) {
+
+	if (get() != obj) {
+		return false;
+	}
+
+	return true;
+}
+
+//Override
 string Integer::getClassName() {
 	return "Integer";
 }

@@ -29,6 +29,9 @@ public:
 	int hashCode();
 
 	//Override
+	bool equals(Object* obj);
+
+	//Override
 	string getClassName();
 
 };

@@ -21,6 +21,15 @@ int main() {
 	printf("obj2.long: <%lu>, obj2.hashCode: <%d>\n",
 			d2.get()->doubleToLongBits(), d2.get()->hashCode());
 
+	Double* d3 = new Double(1.2);
+	Object* d4 = new Double(1.2);
+	ret = ret + !d1.get()->equals(1.2);
+	ret = ret + !d1.get()->equals(d3);
+	ret = ret + !d1.get()->equals(d1);
+	ret = ret + !d1.get()->equals(d4);
+	delete d3;
+	delete d4;
+
 	return ret;
 }
 

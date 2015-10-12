@@ -44,6 +44,31 @@ int Double::hashCode() {
 	return ret;
 }
 
+//Override
+bool Double::equals(Object* obj) {
+	return this->equals((Double*) obj);
+}
+
+//Override
+bool Double::equals(Double* obj) {
+	return this->equals(obj->get());
+}
+
+//Override
+bool Double::equals(object obj) {
+	return this->equals((Double*) obj.get());
+}
+
+//Override
+bool Double::equals(double obj) {
+
+	if (get() != obj) {
+		return false;
+	}
+
+	return true;
+}
+
 string Double::getClassName() {
 	return "Double";
 }

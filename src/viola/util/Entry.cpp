@@ -37,6 +37,11 @@ int Entry::hashCode() {
 	return keyHash ^ valueHash;
 }
 
+bool Entry::equals(Object* obj) {
+	return true;
+}
+
+
 //Override
 string Entry::getClassName() {
 	return "Entry";

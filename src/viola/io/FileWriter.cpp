@@ -25,6 +25,11 @@ int FileWriter::hashCode() {
 	return 0;
 }
 
+bool FileWriter::equals(Object* obj) {
+	return true;
+}
+
+
 string FileWriter::getClassName() {
 	return "FileWriter";
 }

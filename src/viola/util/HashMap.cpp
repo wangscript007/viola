@@ -103,6 +103,11 @@ int HashMap::hashCode() {
 	return hashCode;
 }
 
+bool HashMap::equals(Object* obj) {
+	return true;
+}
+
+
 string HashMap::getClassName() {
 	return "HashMap";
 }

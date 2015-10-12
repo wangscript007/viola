@@ -13,6 +13,7 @@
 #include "Object.h"
 
 using namespace std;
+typedef std::shared_ptr<Object> object;
 
 class Double: public Object {
 private:
@@ -27,6 +28,13 @@ public:
 
 	//Override
 	int hashCode();
+
+	//Override
+	bool equals(Object* obj);
+	bool equals(Double* obj);
+
+	bool equals(object obj);
+	bool equals(double arg);
 
 	//Override
 	string getClassName();

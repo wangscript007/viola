@@ -67,6 +67,11 @@ int ArrayList::hashCode() {
 	return hashCode;
 }
 
+
+bool ArrayList::equals(Object* obj) {
+	return true;
+}
+
 string ArrayList::getClassName() {
 	return "ArrayList";
 }

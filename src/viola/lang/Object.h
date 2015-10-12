@@ -20,8 +20,8 @@ public:
 	virtual ~Object();
 
 	virtual int hashCode();
-	bool equals(Object* obj);
-	string getClassName();
+	virtual bool equals(Object* obj);
+	virtual string getClassName();
 };
 
 #endif /* VIOLA_LANG_OBJECT_H_ */

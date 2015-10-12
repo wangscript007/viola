@@ -11,6 +11,7 @@
 #include "Object.h"
 
 using namespace std;
+typedef std::shared_ptr<Object> object;
 
 class Integer: public Object {
 private:
@@ -23,6 +24,13 @@ public:
 
 	//Override
 	int hashCode();
+
+	//Override
+	bool equals(Object* obj);
+	bool equals(Integer* obj);
+
+	bool equals(object obj);
+	bool equals(int arg);
 
 	//Override
 	string getClassName();

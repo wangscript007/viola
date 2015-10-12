@@ -17,6 +17,10 @@ int File::hashCode() {
 	return 0;
 }
 
+bool File::equals(Object* obj) {
+	return true;
+}
+
 string File::getClassName() {
 	return "File";
 }

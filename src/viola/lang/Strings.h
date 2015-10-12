@@ -12,6 +12,7 @@
 #include "Object.h"
 
 using namespace std;
+typedef std::shared_ptr<Object> object;
 
 class Strings: public Object {
 
@@ -34,9 +35,14 @@ public:
 	bool isEmpty();
 	string toString();
 
-	//Override
-	bool equals(string str);
 	bool equalsIgnoreCase(string str);
+
+	//Override
+	bool equals(Object* obj);
+	bool equals(Strings* str);
+
+	bool equals(object obj);
+	bool equals(string str);
 
 	//Override
 	int hashCode();

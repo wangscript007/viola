@@ -20,6 +20,11 @@ int FileReader::hashCode() {
 	return 0;
 }
 
+bool FileReader::equals(Object* obj) {
+	return true;
+}
+
+
 std::string FileReader::getClassName() {
 	return "FileReader";
 }

@@ -22,6 +22,19 @@ Strings::~Strings() {
 void Strings::append(string str) {
 	internal.append(str);
 }
+
+bool Strings::equals(Object* obj) {
+	return this->equals((Strings*) obj);
+}
+
+bool Strings::equals(Strings* str) {
+	return this->equals(str->toString());
+}
+
+bool Strings::equals(object obj) {
+	return this->equals((Strings*) obj.get());
+}
+
 bool Strings::equals(string str) {
 	int size = str.size();
 	int internalSize = internal.size();

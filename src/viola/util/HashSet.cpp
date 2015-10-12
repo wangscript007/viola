@@ -24,9 +24,13 @@ int HashSet::hashCode() {
 }
 
 bool HashSet::equals(Object* obj) {
-	return true;
-}
+	HashSet* set = (HashSet*) obj;
+	if (hashCode() == set->hashCode()) {
+		return true;
+	}
 
+	return false;
+}
 
 string HashSet::getClassName() {
 	return "HashSet";

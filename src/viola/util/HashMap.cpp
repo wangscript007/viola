@@ -104,9 +104,12 @@ int HashMap::hashCode() {
 }
 
 bool HashMap::equals(Object* obj) {
-	return true;
+	HashMap* map = (HashMap*) obj;
+	if (hashCode() == map->hashCode()) {
+		return true;
+	}
+	return false;
 }
-
 
 string HashMap::getClassName() {
 	return "HashMap";

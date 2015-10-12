@@ -38,9 +38,12 @@ int Entry::hashCode() {
 }
 
 bool Entry::equals(Object* obj) {
-	return true;
+	Entry* entry = (Entry*) obj;
+	if (hashCode() == entry->hashCode()) {
+		return true;
+	}
+	return false;
 }
-
 
 //Override
 string Entry::getClassName() {

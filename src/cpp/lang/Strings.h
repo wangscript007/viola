@@ -25,14 +25,18 @@ public:
 
 	void append(string str);
 	bool contains(string str);
+	string replace(string target, string replacement);
+
+	bool startWith(string prefix);
 	bool endWith(string suffix);
+
+	int length();
+	bool isEmpty();
+	string toString();
+
+	//Override
 	bool equals(string str);
 	bool equalsIgnoreCase(string str);
-	bool isEmpty();
-	string replace(string target, string replacement);
-	bool startWith(string prefix);
-	string toString();
-	int length();
 
 	//Override
 	int hashCode();

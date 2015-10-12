@@ -23,7 +23,7 @@ add_library(viola SHARED
  ${src}/lang/Object.cpp
  ${src}/util/ArrayList.cpp
  ${src}/util/Entry.cpp
-# ${src}/util/HashMap.cpp
+ ${src}/util/HashMap.cpp
  ${src}/util/HashSet.cpp
 )
 #set_target_properties(cppdk PROPERTIES VERSION ${SERIAL} SOVERSION ${SOSERIAL})

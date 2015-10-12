@@ -18,12 +18,12 @@ bool HashMap::containsKey(object key) {
 	std::vector<entry>::iterator it;
 	it = vector.begin();
 	for (int i = 0; i < size(); i++) {
-		it++;
 		entry entry = *it;
-		Entry* entryp = entry.get();
-		if (entryp->getKey()->hashCode() == key->hashCode()) {
+		object obj = entry.get()->getKey();
+		if (obj.get()->hashCode() == key.get()->hashCode()) {
 			return true;
 		}
+		it++;
 	}
 	return false;
 }
@@ -47,12 +47,12 @@ object HashMap::get(object key) {
 	std::vector<entry>::iterator it;
 	it = vector.begin();
 	for (int i = 0; i < size(); i++) {
-		it++;
 		entry entry = *it;
-		Entry* entryp = entry.get();
-		if (entryp->getKey()->hashCode() == key->hashCode()) {
+		object obj = entry.get()->getKey();
+		if (obj.get()->hashCode() == key.get()->hashCode()) {
 			return entry->getValue();
 		}
+		it++;
 	}
 
 	return NULL;
@@ -61,14 +61,15 @@ object HashMap::get(object key) {
 object HashMap::remove(object key) {
 	std::vector<entry>::iterator it;
 	it = vector.begin();
+
 	for (int i = 0; i < size(); i++) {
-		it++;
 		entry entry = *it;
-		Entry* entryp = entry.get();
-		if (entryp->getKey()->hashCode() == key->hashCode()) {
+		object obj = entry.get()->getKey();
+		if (obj.get()->hashCode() == key.get()->hashCode()) {
 			vector.erase(it);
 			return entry;
 		}
+		it++;
 	}
 
 	return NULL;
@@ -85,7 +86,21 @@ bool HashMap::isEmpty() {
 }
 
 int HashMap::hashCode() {
-	return 0;
+	int hashCode = 1;
+
+	std::vector<entry>::iterator it;
+	it = vector.begin();
+	for (int i = 0; i < size(); i++) {
+		entry entry = *it;
+		Entry* entryp = entry.get();
+		int tmp = 0;
+		if (entryp != NULL) {
+			tmp = entryp->hashCode();
+		}
+		hashCode = 31 * hashCode + tmp;
+		i++;
+	}
+	return hashCode;
 }
 
 string HashMap::getClassName() {

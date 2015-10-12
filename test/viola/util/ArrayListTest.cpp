@@ -11,7 +11,8 @@
 
 typedef std::shared_ptr<Integer> integer;
 
-int dump(ArrayList* list) {
+void dump(ArrayList* list) {
+	printf("[dump]\n");
 	printf("className: <%s>\n", list->getClassName().c_str());
 	printf("size: <%d>\n", list->size());
 	printf("hashCode: <%d>\n", list->hashCode());
@@ -21,7 +22,6 @@ int dump(ArrayList* list) {
 		printf("obj<%d>: <%d>\n", i, ((Integer*) obj.get())->get());
 	}
 
-	return 0;
 }
 
 int hashCodeTest() {

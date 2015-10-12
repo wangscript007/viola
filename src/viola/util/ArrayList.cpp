@@ -55,13 +55,14 @@ int ArrayList::hashCode() {
 
 	std::list<object>::iterator it;
 	it = list.begin();
-	for (int j = 0; j < list.size(); j++) {
+	for (int i = 0; i < list.size(); i++) {
 		object obj = *it;
 		int tmp = 0;
 		if (obj.get() != NULL) {
 			tmp = obj.get()->hashCode();
 		}
 		hashCode = 31 * hashCode + tmp;
+		i++;
 	}
 	return hashCode;
 }

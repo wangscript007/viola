@@ -17,10 +17,10 @@ class Object {
 
 public:
 	Object();
-	~Object();
+	virtual ~Object();
 
+	virtual int hashCode();
 	bool equals(Object* obj);
-	int hashCode();
 	string getClassName();
 };
 

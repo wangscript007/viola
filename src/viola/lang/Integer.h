@@ -14,7 +14,7 @@ using namespace std;
 
 class Integer: public Object {
 private:
-	int i = 0;
+	int i;
 public:
 	Integer(int value);
 	~Integer();

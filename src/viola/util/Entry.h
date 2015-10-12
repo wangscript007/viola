@@ -5,8 +5,8 @@
  *      Author: tsubaki
  */
 
-#ifndef CPP_UTIL_ENTRY_H_
-#define CPP_UTIL_ENTRY_H_
+#ifndef VIOLA_UTIL_ENTRY_H_
+#define VIOLA_UTIL_ENTRY_H_
 
 #include "Object.h"
 using namespace std;
@@ -33,4 +33,4 @@ public:
 
 };
 
-#endif /* CPP_UTIL_ENTRY_H_ */
+#endif /* VIOLA_UTIL_ENTRY_H_ */

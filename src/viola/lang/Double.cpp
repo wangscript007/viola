@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include <Double.h>
+#include "Double.h"
 
 Double::Double(double value) {
 	this->value = value;
@@ -19,12 +19,26 @@ double Double::get() {
 	return this->value;
 }
 
+unsigned long Double::doubleToLongBits() {
+	union {
+		double input;
+		long output;
+	} data;
+
+	data.input = this->value;
+
+	std::bitset<sizeof(double) * CHAR_BIT> bits(data.output);
+
+	unsigned long ret = bits.to_ulong();
+
+	return ret;
+}
+
 //Override
 int Double::hashCode() {
 	int ret = 0;
 
-	//TODO IEEE 754 floating-point "double format" bit layout.
-	unsigned long v = 0;
+	unsigned long v = this->doubleToLongBits();
 
 	ret = (int) (v ^ (v >> 32));
 	return ret;

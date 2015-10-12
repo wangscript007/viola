@@ -7,6 +7,22 @@ file open/close, read/write.
 ## cpp.lang.*
 Boolean, Integer, Double, Long, String.
 
+```
+Strings* str = new Strings();
+printf("className: <%s>\n", str->getClassName().c_str());
+
+str->append(s);
+printf("str: <%s>\n", str->toString().c_str());
+printf("hashCode: <%d>\n", str->hashCode());
+
+bool bool1 = str->equals("foobar");
+bool bool2 = str->equals("notsame");
+printf("foobar->equals(foobar): <%d>\n", bool1);
+printf("foobar->equals(notsame): <%d>\n", bool2);
+
+delete str;
+```
+
 ## cpp.util.*
 ArrayList, HashMap.
 

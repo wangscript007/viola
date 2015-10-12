@@ -5,8 +5,8 @@
  *      Author: tsubaki
  */
 
-#ifndef CPP_UTIL_ARRAYLIST_H_
-#define CPP_UTIL_ARRAYLIST_H_
+#ifndef VIOLA_UTIL_ARRAYLIST_H_
+#define VIOLA_UTIL_ARRAYLIST_H_
 
 #include <list>
 #include "Object.h"
@@ -36,4 +36,4 @@ public:
 
 };
 
-#endif /* CPP_UTIL_ARRAYLIST_H_ */
+#endif /* VIOLA_UTIL_ARRAYLIST_H_ */

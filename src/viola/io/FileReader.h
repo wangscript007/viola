@@ -5,11 +5,11 @@
  *      Author: tsubaki
  */
 
-#ifndef CPP_IO_FILEREADER_H_
-#define CPP_IO_FILEREADER_H_
+#ifndef VIOLA_IO_FILEREADER_H_
+#define VIOLA_IO_FILEREADER_H_
 
-#include "Object.h"
 #include "File.h"
+#include "Object.h"
 
 using namespace std;
 
@@ -31,4 +31,4 @@ public:
 
 };
 
-#endif /* CPP_IO_FILEREADER_H_ */
+#endif /* VIOLA_IO_FILEREADER_H_ */

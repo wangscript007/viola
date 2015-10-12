@@ -5,8 +5,8 @@
  *      Author: tsubaki
  */
 
-#ifndef CPP_UTIL_HASHSET_H_
-#define CPP_UTIL_HASHSET_H_
+#ifndef VIOLA_UTIL_HASHSET_H_
+#define VIOLA_UTIL_HASHSET_H_
 
 #include "Object.h"
 using namespace std;
@@ -23,4 +23,4 @@ public:
 	string getClassName();
 };
 
-#endif /* CPP_UTIL_HASHSET_H_ */
+#endif /* VIOLA_UTIL_HASHSET_H_ */

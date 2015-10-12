@@ -5,11 +5,11 @@
  *      Author: tsubaki
  */
 
-#ifndef CPP_IO_FILEWRITER_H_
-#define CPP_IO_FILEWRITER_H_
+#ifndef VIOLA_IO_FILEWRITER_H_
+#define VIOLA_IO_FILEWRITER_H_
 
-#include "Object.h"
 #include "File.h"
+#include "Object.h"
 using namespace std;
 
 typedef std::shared_ptr<File> file;
@@ -33,4 +33,4 @@ public:
 
 };
 
-#endif /* CPP_IO_FILEWRITER_H_ */
+#endif /* VIOLA_IO_FILEWRITER_H_ */

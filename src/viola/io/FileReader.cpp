@@ -7,7 +7,7 @@
 
 #include "FileReader.h"
 
-FileReader::FileReader(File* file) {
+FileReader::FileReader(file file) {
 	// TODO Auto-generated constructor stub
 
 }

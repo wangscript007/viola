@@ -5,11 +5,9 @@
  *      Author: tsubaki
  */
 
-#ifndef CPP_LANG_OBJECT_H_
-#define CPP_LANG_OBJECT_H_
+#ifndef VIOLA_LANG_OBJECT_H_
+#define VIOLA_LANG_OBJECT_H_
 
-//#include <stdio.h>
-//#include <stdarg.h>
 #include <string>
 #include <memory>
 
@@ -26,4 +24,4 @@ public:
 	string getClassName();
 };
 
-#endif /* CPP_LANG_OBJECT_H_ */
+#endif /* VIOLA_LANG_OBJECT_H_ */

@@ -5,8 +5,8 @@
  *      Author: tsubaki
  */
 
-#ifndef CPP_LANG_STRINGS_H_
-#define CPP_LANG_STRINGS_H_
+#ifndef VIOLA_LANG_STRINGS_H_
+#define VIOLA_LANG_STRINGS_H_
 
 #include <string>
 #include "Object.h"
@@ -46,4 +46,4 @@ public:
 
 };
 
-#endif /* CPP_LANG_STRINGS_H_ */
+#endif /* VIOLA_LANG_STRINGS_H_ */

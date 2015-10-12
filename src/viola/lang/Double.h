@@ -5,8 +5,10 @@
  *      Author: tsubaki
  */
 
-#ifndef CPP_LANG_DOUBLE_H_
-#define CPP_LANG_DOUBLE_H_
+#ifndef VIOLA_LANG_DOUBLE_H_
+#define VIOLA_LANG_DOUBLE_H_
+
+#include <bitset>
 
 #include "Object.h"
 
@@ -15,11 +17,13 @@ using namespace std;
 class Double: public Object {
 private:
 	double value;
+
 public:
 	Double(double value);
 	~Double();
 
 	double get();
+	unsigned long doubleToLongBits();
 
 	//Override
 	int hashCode();
@@ -29,4 +33,4 @@ public:
 
 };
 
-#endif /* CPP_LANG_DOUBLE_H_ */
+#endif /* VIOLA_LANG_DOUBLE_H_ */

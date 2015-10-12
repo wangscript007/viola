@@ -5,8 +5,8 @@
  *      Author: tsubaki
  */
 
-#ifndef CPP_EXT_ASSERT_H_
-#define CPP_EXT_ASSERT_H_
+#ifndef VIOLA_EXT_ASSERT_H_
+#define VIOLA_EXT_ASSERT_H_
 
 class Assert {
 public:
@@ -22,4 +22,4 @@ public:
 
 };
 
-#endif /* CPP_EXT_ASSERT_H_ */
+#endif /* VIOLA_EXT_ASSERT_H_ */

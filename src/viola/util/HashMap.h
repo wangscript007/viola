@@ -5,8 +5,8 @@
  *      Author: tsubaki
  */
 
-#ifndef CPP_UTIL_HASHMAP_H_
-#define CPP_UTIL_HASHMAP_H_
+#ifndef VIOLA_UTIL_HASHMAP_H_
+#define VIOLA_UTIL_HASHMAP_H_
 
 #include "Object.h"
 #include "HashSet.h"
@@ -42,4 +42,4 @@ public:
 	string getClassName();
 };
 
-#endif /* CPP_UTIL_HASHMAP_H_ */
+#endif /* VIOLA_UTIL_HASHMAP_H_ */

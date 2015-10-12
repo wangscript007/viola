@@ -5,8 +5,8 @@
  *      Author: tsubaki
  */
 
-#ifndef CPP_LANG_INTEGER_H_
-#define CPP_LANG_INTEGER_H_
+#ifndef VIOLA_LANG_INTEGER_H_
+#define VIOLA_LANG_INTEGER_H_
 
 #include "Object.h"
 
@@ -29,4 +29,4 @@ public:
 
 };
 
-#endif /* CPP_LANG_INTEGER_H_ */
+#endif /* VIOLA_LANG_INTEGER_H_ */

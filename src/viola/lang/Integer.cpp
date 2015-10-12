@@ -13,6 +13,7 @@ Integer::Integer(int value) {
 
 Integer::~Integer() {
 	//noop
+	//printf("deleted\n");
 }
 
 int Integer::get() {

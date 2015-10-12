@@ -6,7 +6,7 @@ set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
 set(CMAKE_BUILD_TYPE Release)
 set(SERIAL "0.0.1")
 set(SOSERIAL "1")
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ../build)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ../build/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../build/test)
 set(CMAKE_CXX_FLAGS "-Wall -O2 -std=c++11 -stdlib=libc++")
 

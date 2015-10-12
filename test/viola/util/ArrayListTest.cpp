@@ -15,20 +15,22 @@ int hashCodeTest() {
 	int ret = 0;
 
 	ArrayList list;
-	printf("className: <%s>\n", list.getClassName().c_str());
+	{
+		printf("className: <%s>\n", list.getClassName().c_str());
 
-	integer arg1 = std::make_shared<Integer>(1234);
-	integer arg2 = std::make_shared<Integer>(5678);
-	list.add(arg1);
-	list.add(arg2);
-	printf("size: <%d>\n", list.size());
-	printf("hashCode: <%d>\n", list.hashCode());
+		integer arg1 = std::make_shared<Integer>(1234);
+		integer arg2 = std::make_shared<Integer>(5678);
+		list.add(arg1);
+		list.add(arg2);
+		printf("size: <%d>\n", list.size());
+		printf("hashCode: <%d>\n", list.hashCode());
 
-	object obj1 = list.get(0);
-	object obj2 = list.get(1);
-	printf("obj1: <%d>\n", ((Integer*) obj1.get())->get());
-	printf("obj2: <%d>\n", ((Integer*) obj2.get())->get());
-
+		object obj1 = list.get(0);
+		object obj2 = list.get(1);
+		printf("obj1: <%d>\n", ((Integer*) obj1.get())->get());
+		printf("obj2: <%d>\n", ((Integer*) obj2.get())->get());
+	}
+	printf("before clear.\n");
 	list.clear();
 	printf("size: <%d>\n", list.size());
 	printf("hashCode: <%d>\n", list.hashCode());

@@ -1,12 +1,12 @@
 # viola: c++ development kit
 shared object like JDK interface.
 
-## cpp.io.File
+## viola.io.File
 file open/close, read/write.
 
-## cpp.lang.*
-Boolean, Integer, Double, Long, String.
+## viola.lang.*
 
+String
 ```
 Strings str;
 printf("className: <%s>\n", str.getClassName().c_str());
@@ -21,9 +21,9 @@ printf("foobar->equals(foobar): <%d>\n", bool1);
 printf("foobar->equals(notsame): <%d>\n", bool2);
 ```
 
-## cpp.util.*
-ArrayList
+## viola.util.*
 
+ArrayList
 ```
 ArrayList list;
 printf("className: <%s>\n", list.getClassName().c_str());
@@ -44,7 +44,6 @@ printf("size: <%d>\n", list.size()); // -> 0
 ```
 
 HashMap
-
 ```
 HashMap map;
 

@@ -22,7 +22,7 @@ printf("foobar->equals(notsame): <%d>\n", bool2);
 ```
 
 ## cpp.util.*
-ArrayList, HashMap.
+ArrayList
 
 ```
 ArrayList list;
@@ -41,4 +41,19 @@ printf("obj2: <%d>\n", ((Integer*) obj2.get())->get()); // -> 5678
 
 list.clear();
 printf("size: <%d>\n", list.size()); // -> 0
+```
+
+HashMap
+
+```
+HashMap map;
+
+strings key = std::make_shared<Strings>("foobar");
+strings value = std::make_shared<Strings>("hoge");
+
+map.put(key, value);
+object got = map.get(key);
+printf("got: <%s>\n", ((Strings*) got.get())->toString().c_str());
+
+map.clear();
 ```

@@ -10,9 +10,11 @@
 Entry::Entry(object key, object value) {
 	this->key = key;
 	this->value = value;
+	this->next = NULL;
 }
 
 Entry::~Entry() {
+//	printf("deleted.\n");
 }
 
 object Entry::getKey() {
@@ -20,6 +22,18 @@ object Entry::getKey() {
 }
 object Entry::getValue() {
 	return value;
+}
+
+void Entry::setValue(object value) {
+	this->value = value;
+}
+
+Entry* Entry::getNext() {
+	return next;
+}
+
+void Entry::setNext(Entry* next) {
+	this->next = next;
 }
 
 //Override
@@ -38,8 +52,13 @@ int Entry::hashCode() {
 }
 
 bool Entry::equals(Object* obj) {
+	if (obj == this) {
+		return true;
+	}
+
 	Entry* entry = (Entry*) obj;
-	if (hashCode() == entry->hashCode()) {
+	if (this->key.get()->equals(entry->getKey().get())
+			&& this->value.get()->equals(entry->getValue().get())) {
 		return true;
 	}
 	return false;

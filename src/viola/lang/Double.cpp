@@ -62,11 +62,11 @@ bool Double::equals(object obj) {
 //Override
 bool Double::equals(double obj) {
 
-	if (get() != obj) {
-		return false;
+	if (get() == obj) {
+		return true;
 	}
 
-	return true;
+	return false;
 }
 
 string Double::getClassName() {

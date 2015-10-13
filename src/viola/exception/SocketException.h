@@ -13,7 +13,7 @@
 class SocketException: public IOException {
 public:
 	SocketException();
-	~SocketException();
+	virtual ~SocketException();
 };
 
 #endif /* VIOLA_EXCEPTION_SOCKETEXCEPTION_H_ */

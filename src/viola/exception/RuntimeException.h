@@ -13,7 +13,7 @@
 class RuntimeException: public Exception {
 public:
 	RuntimeException();
-	~RuntimeException();
+	virtual ~RuntimeException();
 };
 
 #endif /* VIOLA_LANG_RUNTIMEEXCEPTION_H_ */

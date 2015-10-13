@@ -13,7 +13,7 @@
 class Exception: public Throwable {
 public:
 	Exception();
-	~Exception();
+	virtual ~Exception();
 };
 
 #endif /* VIOLA_LANG_EXCEPTION_H_ */

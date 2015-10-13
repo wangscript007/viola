@@ -43,11 +43,11 @@ bool Integer::equals(object obj) {
 //Override
 bool Integer::equals(int obj) {
 
-	if (get() != obj) {
-		return false;
+	if (get() == obj) {
+		return true;
 	}
 
-	return true;
+	return false;
 }
 
 //Override

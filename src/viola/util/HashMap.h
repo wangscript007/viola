@@ -11,7 +11,7 @@
 #include <vector>
 #include "Object.h"
 #include "Entry.h"
-#include "HashSet.h"
+#include "EntrySet.h"
 
 using namespace std;
 typedef std::shared_ptr<Object> object;
@@ -19,9 +19,15 @@ typedef std::shared_ptr<Entry> entry;
 
 class HashMap: public Object {
 private:
-	vector<entry> vector;
+	entry* table;
+	int capacity;
+	int threshold;
+	int hash(int keyHashCode);
+	int tableSizeFor(int capacity);
+	void resize();
 public:
 	HashMap();
+	HashMap(int capacity);
 	~HashMap();
 
 	bool containsKey(object key);
@@ -32,12 +38,11 @@ public:
 	object get(object key);
 	object remove(object key);
 
-	HashSet entrySet();
-	HashSet keySet();
-	HashSet values();
+	EntrySet entrySet();
 
 	void clear();
 	int size();
+	int getCapacity();
 	bool isEmpty();
 
 	//Override

@@ -16,7 +16,7 @@ typedef std::shared_ptr<Object> object;
 class Throwable: public Object {
 public:
 	Throwable();
-	~Throwable();
+	virtual ~Throwable();
 };
 
 #endif /* VIOLA_LANG_THROWABLE_H_ */

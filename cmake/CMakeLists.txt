@@ -26,15 +26,19 @@ add_library(viola SHARED
  ${src}/lang/Object.cpp
  ${src}/util/ArrayList.cpp
  ${src}/util/Entry.cpp
+ ${src}/util/EntrySet.cpp
  ${src}/util/HashMap.cpp
- ${src}/util/HashSet.cpp
 )
 #set_target_properties(viola PROPERTIES VERSION ${SERIAL} SOVERSION ${SOSERIAL})
 
 
+include_directories(${src}/exception)
 include_directories(${src}/ext)
 include_directories(${src}/io)
 include_directories(${src}/lang)
+include_directories(${src}/math)
+include_directories(${src}/net)
+include_directories(${src}/time)
 include_directories(${src}/util)
 
 add_executable(FileTest.out

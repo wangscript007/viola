@@ -13,7 +13,7 @@
 class IOException: public Exception {
 public:
 	IOException();
-	~IOException();
+	virtual ~IOException();
 };
 
 #endif /* VIOLA_IO_IOEXCEPTION_H_ */

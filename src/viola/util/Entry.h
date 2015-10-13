@@ -17,13 +17,19 @@ class Entry: public Object {
 private:
 	object key;
 	object value;
+	Entry* next;
 public:
 
 	Entry(object key, object value);
 	~Entry();
 
 	object getKey();
+
 	object getValue();
+	void setValue(object value);
+
+	Entry* getNext();
+	void setNext(Entry* next);
 
 	//Override
 	int hashCode();

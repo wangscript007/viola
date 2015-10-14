@@ -28,11 +28,11 @@ void Entry::setValue(object value) {
 	this->value = value;
 }
 
-Entry* Entry::getNext() {
+object Entry::getNext() {
 	return next;
 }
 
-void Entry::setNext(Entry* next) {
+void Entry::setNext(object next) {
 	this->next = next;
 }
 

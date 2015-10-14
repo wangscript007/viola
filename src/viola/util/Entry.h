@@ -17,7 +17,7 @@ class Entry: public Object {
 private:
 	object key;
 	object value;
-	Entry* next;
+	object next;
 public:
 
 	Entry(object key, object value);
@@ -28,8 +28,8 @@ public:
 	object getValue();
 	void setValue(object value);
 
-	Entry* getNext();
-	void setNext(Entry* next);
+	object getNext();
+	void setNext(object next);
 
 	//Override
 	int hashCode();

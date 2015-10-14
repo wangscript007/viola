@@ -35,39 +35,38 @@ bool HashMap::containsKey(object key) {
 object HashMap::put(object key, object value) {
 	int h = hash(key->hashCode());
 	int index = (capacity - 1) & h;
-	entry p = table[index];
+	object p = table[index];
 	if (p == NULL) {
 		table[index] = std::make_shared<Entry>(key, value);
 		return NULL;
 	} else {
-		Entry* e = NULL;
-		object k = p->getKey();
+		object e = NULL;
+		object k = ((Entry*) p.get())->getKey();
 		int phash = hash(k->hashCode());
 		if (phash == h && key->equals(k.get())) {
-			e = p.get();
+			e = p;
 		} else {
-			Entry* pp = p.get();
 			for (int binCount = 0;; ++binCount) {
-				if (pp->getNext() == NULL) {
+				object e = ((Entry*) p.get())->getNext();
+				if (e == NULL) {
 					entry ent = std::make_shared<Entry>(key, value);
-					Entry* ep = ent.get();
-					printf("collision. <%s>\n", ep->toString().c_str());
-					printf("before: <%s>\n",this->toString().c_str());
-					pp->setNext(ep);
-					printf("after: <%s>\n",this->toString().c_str());
+					printf("collision. <%s>\n", ent->toString().c_str());
+					printf("before: <%s>\n", this->toString().c_str());
+					((Entry*) p.get())->setNext(ent);
+					printf("after: <%s>\n", this->toString().c_str());
 					break;
 				}
-				e = pp->getNext();
-				int ehash = hash(e->getKey()->hashCode());
-				if (ehash == h && key->equals(e->getKey().get())) {
+				Entry* tmp = (Entry*) e.get();
+				int ehash = hash(tmp->getKey()->hashCode());
+				if (ehash == h && key->equals(tmp->getKey().get())) {
 					break;
 				}
-				pp = e;
+				p = e;
 			}
 		}
 		if (e != NULL) {
-			object oldValue = e->getValue();
-			e->setValue(value);
+			object oldValue = ((Entry*) e.get())->getValue();
+			((Entry*) p.get())->setValue(value);
 			return oldValue;
 		}
 	}
@@ -90,58 +89,63 @@ object HashMap::putIfAbsent(object key, object value) {
 object HashMap::get(object key) {
 	int h = hash(key->hashCode());
 	int index = (capacity - 1) & h;
-	entry first = table[index];
+	object first = table[index];
 	if (first == NULL) {
 		return NULL;
 	}
-	int fHash = hash(first->getKey()->hashCode());
-	if (fHash == h && key->equals(first->getKey().get())) {
-		return first->getValue();
+	int fHash = hash(((Entry*) first.get())->getKey()->hashCode());
+	if (fHash == h && key->equals(((Entry*) first.get())->getKey().get())) {
+		return ((Entry*) first.get())->getValue();
 	}
-	Entry* e = first->getNext();
+	object e = ((Entry*) first.get())->getNext();
 	if (e == NULL) {
 		return NULL;
 	}
 	do {
-		int eHash = hash(e->getKey()->hashCode());
-		if (eHash == h && key->equals(e->getKey().get())) {
-			return e->getValue();
+		int eHash = hash(((Entry*) e.get())->getKey()->hashCode());
+		if (eHash == h && key->equals(((Entry*) e.get())->getKey().get())) {
+			return ((Entry*) e.get())->getValue();
 		}
-	} while ((e = e->getNext()) != NULL);
+	} while ((e = ((Entry*) e.get())->getNext()) != NULL);
 
 	return NULL;
 }
 object HashMap::remove(object key) {
 	int h = hash(key->hashCode());
 	int index = (capacity - 1) & h;
-	entry first = table[index];
+	object first = table[index];
 	if (first == NULL) {
 		return NULL;
 	}
 
-	entry node = NULL;
-	Entry* e = NULL;
-	int fHash = hash(first->getKey()->hashCode());
-	if (fHash == h && key->equals(first->getKey().get())) {
+	object node = NULL;
+	object e = NULL;
+	int fHash = hash(((Entry*) first.get())->getKey()->hashCode());
+	if (fHash == h && key->equals(((Entry*) first.get())->getKey().get())) {
 		node = first;
-	} else if ((e = first->getNext()) != NULL) {
+	} else if ((e = ((Entry*) first.get())->getNext()) != NULL) {
+		Entry* ent = NULL;
 		do {
-			int eHash = hash(e->getKey()->hashCode());
-			if (eHash == h && key->equals(e->getKey().get())) {
-				node = std::make_shared<Entry>(e->getKey(), e->getValue());
+			ent = ((Entry*) first.get());
+			int eHash = hash(ent->getKey()->hashCode());
+			if (eHash == h && key->equals(ent->getKey().get())) {
+				node = std::make_shared<Entry>(ent->getKey(), ent->getValue());
 				break;
 			}
-			first = std::make_shared<Entry>(e->getKey(), e->getValue());
-		} while ((e = e->getNext()) != NULL);
+			first = std::make_shared<Entry>(ent->getKey(), ent->getValue());
+
+		} while ((ent = (Entry*) ent->getNext().get()) != NULL);
 	}
 	if (node == NULL) {
 		return NULL;
 	}
 	if (node->equals(first.get())) {
-		Entry* n = node->getNext();
+		Entry* n = (Entry*) ((Entry*) node.get())->getNext().get();
 		table[index] = std::make_shared<Entry>(n->getKey(), n->getValue());
 	} else {
-		first->setNext(node->getNext());
+		Entry* fp = ((Entry*) first.get());
+		Entry* np = ((Entry*) node.get());
+		fp->setNext(np->getNext());
 	}
 	return node;
 }
@@ -166,7 +170,7 @@ int HashMap::size() {
 		Entry* p = e.get();
 		do {
 			size++;
-		} while ((p = p->getNext()) != NULL);
+		} while ((p = ((Entry*) p->getNext().get())) != NULL);
 	}
 	return size;
 }
@@ -207,7 +211,7 @@ string HashMap::toString() {
 		do {
 			str.append(p->toString());
 			str.append(", ");
-		} while ((p = p->getNext()) != NULL);
+		} while ((p = ((Entry*) p->getNext().get())) != NULL);
 
 		if (i < size() - 1) {
 			str.append(", ");

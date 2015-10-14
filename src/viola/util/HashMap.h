@@ -22,9 +22,7 @@ private:
 	entry* table;
 	int capacity;
 	int threshold;
-	int hash(int keyHashCode);
-	int tableSizeFor(int capacity);
-	void resize();
+
 public:
 	HashMap();
 	HashMap(int capacity);
@@ -52,7 +50,15 @@ public:
 	bool equals(Object* obj);
 
 	//Override
+	string toString();
+
+	//Override
 	string getClassName();
+
+private:
+	int hash(int keyHashCode);
+	int tableSizeFor(int capacity);
+	void resize();
 };
 
 #endif /* VIOLA_UTIL_HASHMAP_H_ */

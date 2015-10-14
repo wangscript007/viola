@@ -17,12 +17,13 @@ void dump(HashMap* map) {
 	printf("capacity: <%d>\n", map->getCapacity());
 	printf("size: <%d>\n", map->size());
 	printf("isEmpty: <%d>\n", map->isEmpty());
+	printf("toString: <%s>\n", map->toString().c_str());
 }
 
 int containsKeyTest() {
 	printf("[containsKeyTest]\n");
 	int ret = 0;
-	HashMap map;
+	HashMap map(4);
 	dump(&map);
 
 	strings key = std::make_shared<Strings>("foobar");
@@ -36,16 +37,16 @@ int containsKeyTest() {
 
 	bool contains = map.containsKey(key);
 //	dump(&map);
-	printf("key.hashCode: <%d>\n", key.get()->hashCode());
+	printf("key.hashCode: <%d>\n", key->hashCode());
 	printf("containsKey: <%d>\n", contains);
 	ret = ret + !contains;
 
 	strings key2 = std::make_shared<Strings>("foobar");
 	bool contains2 = map.containsKey(key2);
-//	dump(&map);
-	printf("key2.hashCode: <%d>\n", key2.get()->hashCode());
+	printf("key2.hashCode: <%d>\n", key2->hashCode());
 	printf("key2.containsKey: <%d>\n", contains2);
 	ret = ret + !contains2;
+	dump(&map);
 
 	map.clear();
 	dump(&map);
@@ -69,12 +70,12 @@ int putTest() {
 	dump(&map);
 
 	object got = map.get(key);
-	printf("got.hashCode<%d>\n", got.get()->hashCode());
-//	dump(&map);
+	printf("got.hashCode<%d>\n", got->hashCode());
 	printf("got: <%s>\n", ((Strings*) got.get())->toString().c_str());
-	if (!value.get()->equals(((Strings*) got.get())->toString())) {
+	if (!value->equals(got.get())) {
 		ret = ret + 1;
 	}
+	dump(&map);
 
 	map.clear();
 	dump(&map);
@@ -92,7 +93,8 @@ int capacityTest() {
 	strings key2 = std::make_shared<Strings>("foobar2");
 	strings key3 = std::make_shared<Strings>("foobar3");
 	strings key4 = std::make_shared<Strings>("foobar4");
-	strings value = std::make_shared<Strings>("hoge");
+	strings value = std::make_shared<Strings>("hoge1");
+	strings value2 = std::make_shared<Strings>("hoge2");
 
 	object previous1 = map.put(key1, value);
 	if (previous1 != NULL) {
@@ -112,6 +114,13 @@ int capacityTest() {
 	object previous4 = map.put(key4, value);
 	if (previous4 != NULL) {
 		ret = ret + 1;
+	}
+	dump(&map);
+	object previous5 = map.put(key4, value2);
+	if (previous5 == NULL) {
+		ret = ret + 1;
+	}else{
+		printf("old: <%s>\n", previous5->toString().c_str());
 	}
 	dump(&map);
 

@@ -21,6 +21,8 @@ public:
 
 	virtual int hashCode();
 	virtual bool equals(Object* obj);
+	virtual string toString();
+
 	virtual string getClassName();
 };
 

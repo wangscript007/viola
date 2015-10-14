@@ -16,6 +16,7 @@ void dump(ArrayList* list) {
 	printf("className: <%s>\n", list->getClassName().c_str());
 	printf("size: <%d>\n", list->size());
 	printf("hashCode: <%d>\n", list->hashCode());
+	printf("toString: <%s>\n", list->toString().c_str());
 
 	for (int i = 0; i < list->size(); i++) {
 		object obj = list->get(i);

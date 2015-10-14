@@ -75,6 +75,19 @@ bool ArrayList::equals(Object* obj) {
 	return false;
 }
 
+//Override
+string ArrayList::toString() {
+	string str("ArrayList[");
+	for (int i = 0; i < size(); i++) {
+		str.append(this->get(i)->toString());
+		if (i < size() - 1) {
+			str.append(", ");
+		}
+	}
+	str.append("]");
+	return str;
+}
+
 string ArrayList::getClassName() {
 	return "ArrayList";
 }

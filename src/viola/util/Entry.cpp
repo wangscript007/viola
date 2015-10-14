@@ -65,6 +65,16 @@ bool Entry::equals(Object* obj) {
 }
 
 //Override
+string Entry::toString() {
+	string str("Entry[");
+	str.append(this->key->toString());
+	str.append(": ");
+	str.append(this->value->toString());
+	str.append("]");
+	return str;
+}
+
+//Override
 string Entry::getClassName() {
 	return "Entry";
 }

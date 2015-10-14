@@ -33,6 +33,9 @@ public:
 	bool equals(long arg);
 
 	//Override
+	string toString();
+
+	//Override
 	string getClassName();
 };
 

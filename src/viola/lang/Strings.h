@@ -33,9 +33,11 @@ public:
 
 	int length();
 	bool isEmpty();
-	string toString();
 
 	bool equalsIgnoreCase(string str);
+
+	//Override
+	int hashCode();
 
 	//Override
 	bool equals(Object* obj);
@@ -45,7 +47,7 @@ public:
 	bool equals(string str);
 
 	//Override
-	int hashCode();
+	string toString();
 
 	//Override
 	string getClassName();

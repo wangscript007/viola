@@ -38,6 +38,9 @@ public:
 	bool equals(Object* obj);
 
 	//Override
+	string toString();
+
+	//Override
 	string getClassName();
 
 };

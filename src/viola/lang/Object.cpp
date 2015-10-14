@@ -34,3 +34,10 @@ bool Object::equals(Object* obj) {
 string Object::getClassName() {
 	return "Object";
 }
+
+string Object::toString() {
+	string str("Object[");
+	str.append(std::to_string(this->hashCode()));
+	str.append("]");
+	return str;
+}

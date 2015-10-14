@@ -69,6 +69,13 @@ bool Double::equals(double obj) {
 	return false;
 }
 
+string Double::toString() {
+	string str("Double[");
+	str.append(std::to_string(this->hashCode()));
+	str.append("]");
+	return str;
+}
+
 string Double::getClassName() {
 	return "Double";
 }

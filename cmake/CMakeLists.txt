@@ -29,8 +29,6 @@ add_library(viola SHARED
  ${src}/util/EntrySet.cpp
  ${src}/util/HashMap.cpp
 )
-#set_target_properties(viola PROPERTIES VERSION ${SERIAL} SOVERSION ${SOSERIAL})
-
 
 include_directories(${src}/exception)
 include_directories(${src}/ext)

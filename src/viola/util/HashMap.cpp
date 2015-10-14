@@ -202,7 +202,8 @@ bool HashMap::equals(Object* obj) {
 }
 
 string HashMap::toString() {
-	string str("HashMap[");
+	Strings str;
+	str.append("HashMap[");
 	for (int i = 0; i < capacity; i++) {
 		entry e = table[i];
 
@@ -220,7 +221,9 @@ string HashMap::toString() {
 		}
 	}
 	str.append("]");
-	return str;
+	str.replace(", , ", ", ");
+	str.replace(", ]", "]");
+	return str.toString();
 }
 
 string HashMap::getClassName() {

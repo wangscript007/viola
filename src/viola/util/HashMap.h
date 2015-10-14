@@ -10,6 +10,7 @@
 
 #include <vector>
 #include "Object.h"
+#include "Strings.h"
 #include "Entry.h"
 #include "EntrySet.h"
 

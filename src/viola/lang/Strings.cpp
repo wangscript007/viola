@@ -23,6 +23,17 @@ void Strings::append(string str) {
 	internal.append(str);
 }
 
+string Strings::replace(string str1, string str2) {
+	std::string::size_type Pos(internal.find(str1));
+
+	while (Pos != std::string::npos) {
+		internal.replace(Pos, str1.length(), str2);
+		Pos = internal.find(str1, Pos + str2.length());
+	}
+
+	return internal;
+}
+
 bool Strings::equals(Object* obj) {
 	return this->equals((Strings*) obj);
 }

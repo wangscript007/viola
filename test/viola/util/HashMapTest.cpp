@@ -86,7 +86,7 @@ int putTest() {
 int capacityTest() {
 	printf("[capacityTest]\n");
 	int ret = 0;
-	HashMap map(2);
+	HashMap map(1);
 	//dump(&map);
 
 	strings key1 = std::make_shared<Strings>("foobar1");

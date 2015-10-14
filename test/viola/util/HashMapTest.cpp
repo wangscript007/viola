@@ -18,6 +18,7 @@ void dump(HashMap* map) {
 	printf("size: <%d>\n", map->size());
 	printf("isEmpty: <%d>\n", map->isEmpty());
 	printf("toString: <%s>\n", map->toString().c_str());
+	printf("---------------------\n");
 }
 
 int containsKeyTest() {

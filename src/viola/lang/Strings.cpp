@@ -17,6 +17,7 @@ Strings::Strings(string str) {
 
 Strings::~Strings() {
 	//noop;
+	//printf("deleted: <%s>\n", internal.c_str());
 }
 
 void Strings::append(string str) {

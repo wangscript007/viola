@@ -70,7 +70,9 @@ object HashMap::put(object key, object value) {
 	}
 
 	if (size() > threshold) {
+		printf("resize\n");
 		resize();
+		printf("resized\n");
 	}
 	return NULL;
 
@@ -130,10 +132,10 @@ object HashMap::remove(object key) {
 			ent = fp;
 			int eHash = hash(ent->getKey()->hashCode());
 			if (eHash == h && key->equals(ent->getKey().get())) {
-				node = std::make_shared<Entry>(ent->getKey(), ent->getValue());
+				node = std::make_shared<Entry>(ent);
 				break;
 			}
-			first = std::make_shared<Entry>(ent->getKey(), ent->getValue());
+			first = std::make_shared<Entry>(ent);
 
 		} while ((ent = (Entry*) ent->getNext().get()) != NULL);
 	}
@@ -146,9 +148,7 @@ object HashMap::remove(object key) {
 		if (n == NULL) {
 			table[index] = NULL;
 		} else {
-			entry tmp = std::make_shared<Entry>(n->getKey(), n->getValue());
-			tmp->setNext(n->getNext());
-			table[index] = tmp;
+			table[index] = std::make_shared<Entry>(n);
 		}
 	} else {
 		Entry* fp = ((Entry*) first.get());
@@ -299,8 +299,9 @@ entry* HashMap::resize() {
 		}
 	}
 	threshold = newThreshold;
-	entry* newTable = new entry[threshold];
+	entry* newTable = new entry[newCapacity];
 	table = newTable;
+
 	if (oldTable == NULL) {
 		return newTable;
 	}
@@ -314,7 +315,44 @@ entry* HashMap::resize() {
 			int ehash = hash(e->getKey()->hashCode());
 			newTable[ehash & (newCapacity - 1)] = e;
 		} else {
-			//TODO a
+			Entry* ent = (Entry*) e->getNext().get();
+			Entry* loHead = NULL;
+			Entry* loTail = NULL;
+			Entry* hiHead = NULL;
+			Entry* hiTail = NULL;
+			Entry* next;
+			do {
+				next = (Entry*) ent->getNext().get();
+				int ehash = hash(ent->getKey()->hashCode());
+				if ((ehash & oldCapacity) == 0) {
+					if (loTail == NULL) {
+						loHead = ent;
+					} else {
+						entry tmp = std::make_shared<Entry>(ent);
+						loTail->setNext(tmp);
+					}
+					loTail = ent;
+				} else {
+					if (hiTail == NULL) {
+						hiHead = ent;
+					} else {
+						entry tmp = std::make_shared<Entry>(ent);
+						hiTail->setNext(tmp);
+					}
+					hiTail = ent;
+				}
+
+			} while ((ent = next) != NULL);
+			if (loTail != NULL) {
+				loTail->setNext(NULL);
+				entry tmp = std::make_shared<Entry>(loHead);
+				newTable[i] = tmp;
+			}
+			if (hiTail != NULL) {
+				hiTail->setNext(NULL);
+				entry tmp = std::make_shared<Entry>(hiHead);
+				newTable[i + oldCapacity] = tmp;
+			}
 		}
 	}
 

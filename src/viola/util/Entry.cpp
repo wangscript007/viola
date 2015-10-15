@@ -7,6 +7,12 @@
 
 #include "Entry.h"
 
+Entry::Entry(Entry* e) {
+	this->key = e->getKey();
+	this->value = e->getValue();
+	this->next = e->getNext();
+}
+
 Entry::Entry(object key, object value) {
 	this->key = key;
 	this->value = value;

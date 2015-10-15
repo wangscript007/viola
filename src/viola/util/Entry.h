@@ -21,6 +21,7 @@ private:
 public:
 
 	Entry(object key, object value);
+	Entry(Entry* e);
 	~Entry();
 
 	object getKey();

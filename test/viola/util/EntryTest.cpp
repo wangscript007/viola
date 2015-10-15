@@ -21,7 +21,7 @@ void dump(Entry* entry) {
 	printf("toString: <%s>\n", entry->toString().c_str());
 }
 
-int hashCodeTest() {
+int hashCode() {
 	int ret = 0;
 
 	integer arg1 = std::make_shared<Integer>(1234);
@@ -37,7 +37,7 @@ int hashCodeTest() {
 	return ret;
 }
 
-int getsetTest() {
+int getset() {
 	int ret = 0;
 
 	integer arg1 = std::make_shared<Integer>(1234);
@@ -59,8 +59,8 @@ int getsetTest() {
 
 int main() {
 	int ret = 0;
-	ret = ret + hashCodeTest();
-	ret = ret + getsetTest();
+	ret = ret + hashCode();
+	ret = ret + getset();
 
 	return ret;
 }

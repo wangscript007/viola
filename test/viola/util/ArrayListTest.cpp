@@ -25,7 +25,7 @@ void dump(ArrayList* list) {
 
 }
 
-int hashCodeTest() {
+int hashCode() {
 	int ret = 0;
 
 	ArrayList list;
@@ -50,7 +50,7 @@ int hashCodeTest() {
 
 int main() {
 	int ret = 0;
-	ret = ret + hashCodeTest();
+	ret = ret + hashCode();
 
 	return ret;
 }

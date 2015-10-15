@@ -143,7 +143,13 @@ object HashMap::remove(object key) {
 	if (node->equals(first.get())) {
 		Entry* np = (Entry*) node.get();
 		Entry* n = (Entry*) np->getNext().get();
-		table[index] = std::make_shared<Entry>(n->getKey(), n->getValue());
+		if (n == NULL) {
+			table[index] = NULL;
+		} else {
+			entry tmp = std::make_shared<Entry>(n->getKey(), n->getValue());
+			tmp->setNext(n->getNext());
+			table[index] = tmp;
+		}
 	} else {
 		Entry* fp = ((Entry*) first.get());
 		Entry* np = ((Entry*) node.get());

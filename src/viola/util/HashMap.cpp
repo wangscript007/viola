@@ -9,14 +9,14 @@
 
 HashMap::HashMap() {
 	capacity = 16;
-	table = new entry[capacity];
 	threshold = tableSizeFor(capacity);
+	table = new entry[threshold];
 }
 
 HashMap::HashMap(int capacity) {
 	this->capacity = capacity;
-	table = new entry[capacity];
 	threshold = tableSizeFor(capacity);
+	table = new entry[threshold];
 }
 
 HashMap::~HashMap() {
@@ -164,6 +164,10 @@ void HashMap::clear() {
 	}
 }
 
+int HashMap::getThreshold() {
+	return threshold;
+}
+
 int HashMap::getCapacity() {
 	return capacity;
 }
@@ -240,8 +244,29 @@ int HashMap::hash(int keyHashCode) {
 	return keyHashCode ^ (keyHashCode >> 16);
 }
 
+/*
+ int n = cap - 1;
+ n |= n >>> 1;
+ n |= n >>> 2;
+ n |= n >>> 4;
+ n |= n >>> 8;
+ n |= n >>> 16;
+ return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+ */
 int HashMap::tableSizeFor(int capacity) {
-	return 0;
+	int n = capacity - 1;
+	n |= n >> 1;
+	n |= n >> 2;
+	n |= n >> 4;
+	n |= n >> 8;
+	n |= n >> 16;
+	if (n < 0) {
+		return 1;
+	}
+	if (n >= maxCapacity) {
+		return maxCapacity;
+	}
+	return n + 1;
 }
 void HashMap::resize() {
 

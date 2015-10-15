@@ -23,8 +23,7 @@ object ArrayList::get(int i) {
 		return NULL;
 	}
 
-	std::list<object>::iterator it;
-	it = list.begin();
+	std::list<object>::iterator it = list.begin();
 	for (int j = 0; j < i; j++) {
 		it++;
 	}
@@ -53,8 +52,7 @@ bool ArrayList::isEmpty() {
 int ArrayList::hashCode() {
 	int hashCode = 1;
 
-	std::list<object>::iterator it;
-	it = list.begin();
+	std::list<object>::iterator it = list.begin();
 	for (int i = 0; i < list.size(); i++) {
 		object obj = *it;
 		int tmp = 0;

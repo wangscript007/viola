@@ -23,6 +23,7 @@ private:
 	entry* table;
 	int capacity;
 	int threshold;
+	int maxCapacity = 1 << 30;
 
 public:
 	HashMap();
@@ -41,6 +42,7 @@ public:
 
 	void clear();
 	int size();
+	int getThreshold();
 	int getCapacity();
 	bool isEmpty();
 

@@ -15,6 +15,7 @@ void dump(HashMap* map) {
 	printf("className: <%s>\n", map->getClassName().c_str());
 	printf("hashCode: <%d>\n", map->hashCode());
 	printf("capacity: <%d>\n", map->getCapacity());
+	printf("threshold: <%d>\n", map->getThreshold());
 	printf("size: <%d>\n", map->size());
 	printf("isEmpty: <%d>\n", map->isEmpty());
 	printf("toString: <%s>\n", map->toString().c_str());
@@ -24,7 +25,8 @@ void dump(HashMap* map) {
 int containsKey() {
 	printf("[containsKey]\n");
 	int ret = 0;
-	HashMap map(4);
+	HashMap map(150);
+	dump(&map);
 
 	strings key = std::make_shared<Strings>("foobar");
 	strings value = std::make_shared<Strings>("hoge");
@@ -52,7 +54,8 @@ int containsKey() {
 int put() {
 	printf("[put]\n");
 	int ret = 0;
-	HashMap map;
+	HashMap map(77);
+	dump(&map);
 
 	strings key = std::make_shared<Strings>("foobar");
 	strings value = std::make_shared<Strings>("hoge");
@@ -76,7 +79,8 @@ int put() {
 int remove() {
 	printf("[remove]\n");
 	int ret = 0;
-	HashMap map;
+	HashMap map(300);
+	dump(&map);
 
 	strings key = std::make_shared<Strings>("foobar");
 	strings value = std::make_shared<Strings>("hoge");

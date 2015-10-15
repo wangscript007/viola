@@ -61,7 +61,7 @@ public:
 private:
 	int hash(int keyHashCode);
 	int tableSizeFor(int capacity);
-	void resize();
+	entry* resize();
 };
 
 #endif /* VIOLA_UTIL_HASHMAP_H_ */

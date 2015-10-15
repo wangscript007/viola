@@ -268,6 +268,56 @@ int HashMap::tableSizeFor(int capacity) {
 	}
 	return n + 1;
 }
-void HashMap::resize() {
+entry* HashMap::resize() {
+	entry* oldTable = table;
+	int oldCapacity = capacity;
+	int oldThreshold = threshold;
+
+	int newCapacity = 0;
+	int newThreshold = 0;
+	if (oldCapacity > 0) {
+		if (oldCapacity >= maxCapacity) {
+			threshold = INT_MAX;
+			return oldTable;
+		} else if ((newCapacity = oldThreshold << 1) < maxCapacity
+				&& oldCapacity >= 16) {
+			newThreshold = oldThreshold << 1;
+		}
+	} else if (oldThreshold > 0) {
+		newCapacity = oldThreshold;
+	} else {
+		newCapacity = 16;
+		newThreshold = (int) (16 * 0.75);
+	}
+	if (newThreshold == 0) {
+		float ft = (float) (newCapacity * 0.75);
+		bool tmp = newCapacity < maxCapacity && ft < (float) maxCapacity;
+		if (tmp) {
+			newThreshold = (int) ft;
+		} else {
+			newThreshold = INT_MAX;
+		}
+	}
+	threshold = newThreshold;
+	entry* newTable = new entry[threshold];
+	table = newTable;
+	if (oldTable == NULL) {
+		return newTable;
+	}
+	for (int i = 0; i < oldCapacity; i++) {
+		entry e = oldTable[i];
+		if (e == NULL) {
+			continue;
+		}
+		oldTable[i] = NULL;
+		if (e->getNext() == NULL) {
+			int ehash = hash(e->getKey()->hashCode());
+			newTable[ehash & (newCapacity - 1)] = e;
+		} else {
+			//TODO a
+		}
+	}
+
+	return newTable;
 
 }

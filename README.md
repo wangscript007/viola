@@ -40,12 +40,11 @@ list->add(arg1);
 list->add(arg2);
 printf("size: <%d>\n", list->size()); // -> 2
 
-object obj1 = list->get(0);
-object obj2 = list->get(1);
-printf("obj1: <%d>\n", ((Integer*) obj1.get())->get()); // -> 1234
-printf("obj2: <%d>\n", ((Integer*) obj2.get())->get()); // -> 5678
-
-list.clear();
+for(int i = 0; i < list->size(); i++){
+	integer obj = (Integer* )list->get(i).get();
+	printf("obj: <%d>\n", obj->get()); // -> 1234, 5678
+}
+list->clear();
 printf("size: <%d>\n", list->size()); // -> 0
 ```
 
@@ -56,7 +55,7 @@ hashMap map = make_shared<HashMap>();
 strings key = make_shared<Strings>("foobar");
 strings value = make_shared<Strings>("hoge");
 
-map.put(key, value);
+map->put(key, value);
 object got = map->get(key);
 printf("got: <%s>\n", ((Strings*) got.get())->toString().c_str()); // -> hoge
 

@@ -21,8 +21,8 @@ void dump(arrayList list) {
 	printf("toString: <%s>\n", list->toString().c_str());
 
 	for (int i = 0; i < list->size(); i++) {
-		object obj = list->get(i);
-		printf("obj<%d>: <%d>\n", i, ((Integer*) obj.get())->get());
+		Integer* obj = (Integer*) list->get(i).get();
+		printf("obj<%d>: <%d>\n", i, obj->get());
 	}
 
 }

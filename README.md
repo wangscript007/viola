@@ -41,7 +41,7 @@ list->add(arg2);
 printf("size: <%d>\n", list->size()); // -> 2
 
 for(int i = 0; i < list->size(); i++){
-	integer obj = (Integer* )list->get(i).get();
+	Integer\* obj = (Integer\* )list->get(i).get();
 	printf("obj: <%d>\n", obj->get()); // -> 1234, 5678
 }
 list->clear();

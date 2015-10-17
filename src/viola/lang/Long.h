@@ -22,21 +22,15 @@ public:
 
 	long get();
 
-	//Override
-	int hashCode();
-
-	//Override
-	bool equals(Object* obj);
 	bool equals(Long* obj);
-
 	bool equals(object obj);
 	bool equals(long arg);
 
 	//Override
-	string toString();
-
-	//Override
+	int hashCode();
+	bool equals(Object* obj);
 	string getClassName();
+	string toString();
 };
 
 #endif /* VIOLA_LANG_LONG_H_ */

@@ -16,18 +16,10 @@ set(build ../build CACHE STRING description FORCE)
 
 file(GLOB MY_PUBLIC_HEADERS "${src}/**/*.h")
 file(COPY ${MY_PUBLIC_HEADERS} DESTINATION ${build}/include)
+file(GLOB ALL_SRC "${src}/**/*.cpp")
 
 add_library(viola SHARED
- ${src}/ext/Assert.cpp
- ${src}/io/File.cpp
- ${src}/lang/Double.cpp
- ${src}/lang/Integer.cpp
- ${src}/lang/Strings.cpp
- ${src}/lang/Object.cpp
- ${src}/util/ArrayList.cpp
- ${src}/util/Entry.cpp
- ${src}/util/EntrySet.cpp
- ${src}/util/HashMap.cpp
+ ${ALL_SRC}
 )
 
 include_directories(${src}/exception)
@@ -38,6 +30,12 @@ include_directories(${src}/math)
 include_directories(${src}/net)
 include_directories(${src}/time)
 include_directories(${src}/util)
+
+add_executable(ExceptionTest.out
+ ${test}/exception/ExceptionTest.cpp
+)
+target_link_libraries(ExceptionTest.out viola)
+add_test(NAME ExceptionTest COMMAND ${build}/test/ExceptionTest.out)
 
 add_executable(FileTest.out
  ${test}/io/FileTest.cpp

@@ -36,7 +36,8 @@ string Object::getClassName() {
 }
 
 string Object::toString() {
-	string str("Object[");
+	string str(getClassName());
+	str.append("[");
 	str.append(std::to_string(this->hashCode()));
 	str.append("]");
 	return str;

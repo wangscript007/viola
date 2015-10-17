@@ -36,21 +36,15 @@ public:
 
 	bool equalsIgnoreCase(string str);
 
-	//Override
-	int hashCode();
-
-	//Override
-	bool equals(Object* obj);
 	bool equals(Strings* str);
-
 	bool equals(object obj);
 	bool equals(string str);
 
 	//Override
-	string toString();
-
-	//Override
+	int hashCode();
+	bool equals(Object* obj);
 	string getClassName();
+	string toString();
 
 };
 

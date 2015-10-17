@@ -35,21 +35,6 @@ unsigned long Double::doubleToLongBits() {
 }
 
 //Override
-int Double::hashCode() {
-	int ret = 0;
-
-	unsigned long v = this->doubleToLongBits();
-
-	ret = (int) (v ^ (v >> 32));
-	return ret;
-}
-
-//Override
-bool Double::equals(Object* obj) {
-	return this->equals((Double*) obj);
-}
-
-//Override
 bool Double::equals(Double* obj) {
 	return this->equals(obj->get());
 }
@@ -69,14 +54,30 @@ bool Double::equals(double obj) {
 	return false;
 }
 
-string Double::toString() {
-	string str("Double[");
-	str.append(std::to_string(this->hashCode()));
-	str.append("]");
-	return str;
+//Override
+int Double::hashCode() {
+	int ret = 0;
+
+	unsigned long v = this->doubleToLongBits();
+
+	ret = (int) (v ^ (v >> 32));
+	return ret;
+}
+//Override
+bool Double::equals(Object* obj) {
+	return this->equals((Double*) obj);
 }
 
+//Override
 string Double::getClassName() {
 	return "Double";
 }
 
+//Override
+string Double::toString() {
+	string str(getClassName());
+	str.append("]");
+	str.append(std::to_string(this->hashCode()));
+	str.append("]");
+	return str;
+}

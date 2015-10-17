@@ -8,11 +8,21 @@
 #include "Exception.h"
 
 Exception::Exception() {
-	// TODO Auto-generated constructor stub
 
 }
 
+Exception::Exception(string message) {
+	this->message = message;
+}
+
+Exception::Exception(string message, Throwable* cause) {
+	this->message = message;
+	this->cause = cause;
+}
 Exception::~Exception() {
-	// TODO Auto-generated destructor stub
+}
+
+string Exception::getClassName() {
+	return "Exception";
 }
 

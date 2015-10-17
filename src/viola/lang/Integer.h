@@ -22,21 +22,15 @@ public:
 
 	int get();
 
-	//Override
-	int hashCode();
-
-	//Override
-	bool equals(Object* obj);
 	bool equals(Integer* obj);
-
 	bool equals(object obj);
 	bool equals(int arg);
 
 	//Override
-	string toString();
-
-	//Override
+	int hashCode();
+	bool equals(Object* obj);
 	string getClassName();
+	string toString();
 
 };
 

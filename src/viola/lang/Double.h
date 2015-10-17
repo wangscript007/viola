@@ -26,21 +26,15 @@ public:
 	double get();
 	unsigned long doubleToLongBits();
 
-	//Override
-	int hashCode();
-
-	//Override
-	bool equals(Object* obj);
 	bool equals(Double* obj);
-
 	bool equals(object obj);
 	bool equals(double arg);
 
 	//Override
-	string toString();
-
-	//Override
+	int hashCode();
+	bool equals(Object* obj);
 	string getClassName();
+	string toString();
 
 };
 

@@ -13,7 +13,11 @@
 class Error: public Throwable {
 public:
 	Error();
+	Error(string message);
+	Error(string message, Throwable* cause);
 	virtual ~Error();
+
+	virtual string getClassName();
 };
 
 #endif /* VIOLA_LANG_ERROR_H_ */

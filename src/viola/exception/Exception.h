@@ -13,7 +13,11 @@
 class Exception: public Throwable {
 public:
 	Exception();
+	Exception(string message);
+	Exception(string message, Throwable* cause);
 	virtual ~Exception();
+
+	virtual string getClassName();
 };
 
 #endif /* VIOLA_LANG_EXCEPTION_H_ */

@@ -6,7 +6,7 @@ file open/close, read/write.
 
 ## viola.lang.*
 
-String
+Strings
 ```
 Strings str;
 printf("className: <%s>\n", str.getClassName().c_str());

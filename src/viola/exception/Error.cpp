@@ -8,11 +8,21 @@
 #include "Error.h"
 
 Error::Error() {
-	// TODO Auto-generated constructor stub
 
+}
+
+Error::Error(string message) {
+	this->message = message;
+}
+
+Error::Error(string message, Throwable* cause) {
+	this->message = message;
+	this->cause = cause;
 }
 
 Error::~Error() {
-	// TODO Auto-generated destructor stub
 }
 
+string Error::getClassName() {
+	return "Error";
+}

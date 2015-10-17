@@ -35,10 +35,6 @@ string Strings::replace(string str1, string str2) {
 	return internal;
 }
 
-bool Strings::equals(Object* obj) {
-	return this->equals((Strings*) obj);
-}
-
 bool Strings::equals(Strings* str) {
 	return this->equals(str->toString());
 }
@@ -66,10 +62,6 @@ bool Strings::isEmpty() {
 	return internal.empty();
 }
 
-std::string Strings::toString() {
-	return internal;
-}
-
 int Strings::length() {
 	return internal.length();
 }
@@ -95,6 +87,16 @@ int Strings::hashCode() {
 }
 
 //Override
+bool Strings::equals(Object* obj) {
+	return this->equals((Strings*) obj);
+}
+
+//Override
 string Strings::getClassName() {
 	return "Strings";
+}
+
+//Override
+std::string Strings::toString() {
+	return internal;
 }

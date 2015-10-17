@@ -1,7 +1,14 @@
 # viola: c++ development kit
 shared object like JDK interface.
 
-## viola.io.File
+## Required
+```
+-std=c++11 -stdlib=libc++
+```
+
+## viola.io.*
+
+File
 file open/close, read/write.
 
 ## viola.lang.*
@@ -25,37 +32,39 @@ printf("foobar->equals(notsame): <%d>\n", bool2);
 
 ArrayList
 ```
-ArrayList list;
+
+arrayList list = make_shared<ArrayList>();
 printf("className: <%s>\n", list.getClassName().c_str());
 
-integer arg1 = std::make_shared<Integer>(1234);
-integer arg2 = std::make_shared<Integer>(5678);
-list.add(arg1);
-list.add(arg2);
-printf("size: <%d>\n", list.size()); // -> 2
+integer arg1 = make_shared<Integer>(1234);
+integer arg2 = make_shared<Integer>(5678);
+list->add(arg1);
+list->add(arg2);
+printf("size: <%d>\n", list->size()); // -> 2
 
-object obj1 = list.get(0);
-object obj2 = list.get(1);
+object obj1 = list->get(0);
+object obj2 = list->get(1);
 printf("obj1: <%d>\n", ((Integer*) obj1.get())->get()); // -> 1234
 printf("obj2: <%d>\n", ((Integer*) obj2.get())->get()); // -> 5678
 
 list.clear();
-printf("size: <%d>\n", list.size()); // -> 0
+printf("size: <%d>\n", list->size()); // -> 0
 ```
 
 HashMap
 ```
-HashMap map;
+hashMap map = make_shared<HashMap>();
 
-strings key = std::make_shared<Strings>("foobar");
-strings value = std::make_shared<Strings>("hoge");
+strings key = make_shared<Strings>("foobar");
+strings value = make_shared<Strings>("hoge");
 
 map.put(key, value);
-object got = map.get(key);
+object got = map->get(key);
 printf("got: <%s>\n", ((Strings*) got.get())->toString().c_str());
 
-bool contains = map.containsKey(key);
+bool contains = map->containsKey(key);
 printf("containsKey: <%d>\n", contains);
 
-map.clear();
+map->clear();
+printf("size: <%d>\n", map->size()); // -> 0
 ```

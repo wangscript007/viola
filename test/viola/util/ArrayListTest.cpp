@@ -9,9 +9,11 @@
 #include "ArrayList.h"
 #include "Assert.h"
 
+using namespace std;
 typedef std::shared_ptr<Integer> integer;
+typedef std::shared_ptr<ArrayList> arrayList;
 
-void dump(ArrayList* list) {
+void dump(arrayList list) {
 	printf("[dump]\n");
 	printf("className: <%s>\n", list->getClassName().c_str());
 	printf("size: <%d>\n", list->size());
@@ -28,23 +30,20 @@ void dump(ArrayList* list) {
 int hashCode() {
 	int ret = 0;
 
-	ArrayList list;
+	arrayList list = make_shared<ArrayList>();
 	{
-		integer arg1 = std::make_shared<Integer>(1234);
-		integer arg2 = std::make_shared<Integer>(5678);
-		list.add(arg1);
-		list.add(arg2);
+		integer arg1 = make_shared<Integer>(1234);
+		integer arg2 = make_shared<Integer>(5678);
+		list->add(arg1);
+		list->add(arg2);
 
-		dump(&list);
+		dump(list);
 
 	}
 
-	list.clear();
-	printf("before cleared.\n");
+	list->clear();
 
-	dump(&list);
-
-//	delete list;
+	dump(list);
 	return ret;
 }
 

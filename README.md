@@ -15,6 +15,13 @@ file open/close, read/write.
 
 Strings
 ```
+#include "Strings.h"
+
+using namespace std;
+typedef std::shared_ptr<Strings> strings;
+
+...
+
 strings str = make_shared<Strings>();
 
 str->append("foobar");
@@ -31,6 +38,15 @@ printf("foobar->equals(notsame): <%d>\n", bool2); // -> 0
 
 ArrayList
 ```
+#include "Integer.h"
+#include "ArrayList.h"
+
+using namespace std;
+typedef std::shared_ptr<Integer> integer;
+typedef std::shared_ptr<ArrayList> arrayList;
+
+...
+
 arrayList list = make_shared<ArrayList>();
 
 integer arg1 = make_shared<Integer>(1234);
@@ -41,7 +57,7 @@ list->add(arg2);
 printf("size: <%d>\n", list->size()); // -> 2
 
 for(int i = 0; i < list->size(); i++){
-	Integer\\* obj = (Integer*)list->get(i).get();
+	Integer\* obj = (Integer*)list->get(i).get();
 	printf("obj: <%d>\n", obj->get()); // -> 1234, 5678
 }
 list->clear();
@@ -50,6 +66,15 @@ printf("size: <%d>\n", list->size()); // -> 0
 
 HashMap
 ```
+#include "HashMap.h"
+#include "Strings.h"
+
+using namespace std;
+typedef std::shared_ptr<Strings> strings;
+typedef std::shared_ptr<HashMap> hashMap;
+
+...
+
 hashMap map = make_shared<HashMap>();
 
 strings key = make_shared<Strings>("foobar");

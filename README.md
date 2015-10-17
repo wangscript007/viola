@@ -16,28 +16,26 @@ file open/close, read/write.
 Strings
 ```
 strings str = make_shared<Strings>();
-printf("className: <%s>\n", str->getClassName().c_str());
 
 str->append("foobar");
-printf("str: <%s>\n", str->toString().c_str());
+printf("str: <%s>\n", str->toString().c_str()); // -> foobar
 printf("hashCode: <%d>\n", str->hashCode());
 
 bool bool1 = str->equals("foobar");
 bool bool2 = str->equals("notsame");
-printf("foobar->equals(foobar): <%d>\n", bool1);
-printf("foobar->equals(notsame): <%d>\n", bool2);
+printf("foobar->equals(foobar): <%d>\n", bool1); // -> 1
+printf("foobar->equals(notsame): <%d>\n", bool2); // -> 0
 ```
 
 ## viola.util.*
 
 ArrayList
 ```
-
 arrayList list = make_shared<ArrayList>();
-printf("className: <%s>\n", list.getClassName().c_str());
 
 integer arg1 = make_shared<Integer>(1234);
 integer arg2 = make_shared<Integer>(5678);
+
 list->add(arg1);
 list->add(arg2);
 printf("size: <%d>\n", list->size()); // -> 2
@@ -60,10 +58,10 @@ strings value = make_shared<Strings>("hoge");
 
 map.put(key, value);
 object got = map->get(key);
-printf("got: <%s>\n", ((Strings*) got.get())->toString().c_str());
+printf("got: <%s>\n", ((Strings*) got.get())->toString().c_str()); // -> hoge
 
 bool contains = map->containsKey(key);
-printf("containsKey: <%d>\n", contains);
+printf("containsKey: <%d>\n", contains); // -> 1
 
 map->clear();
 printf("size: <%d>\n", map->size()); // -> 0

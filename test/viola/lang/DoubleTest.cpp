@@ -7,13 +7,14 @@
 
 #include "Double.h"
 
+using namespace std;
 typedef std::shared_ptr<Double> doublep;
 
 int main() {
 	int ret = 0;
 
-	doublep d1 = std::make_shared<Double>(1.2);
-	doublep d2 = std::make_shared<Double>(3.4);
+	doublep d1 = make_shared<Double>(1.2);
+	doublep d2 = make_shared<Double>(3.4);
 	printf("obj1.className: <%s>\n", d1.get()->getClassName().c_str());
 
 	printf("obj1.long: <%lu>, obj1.hashCode: <%d>\n",

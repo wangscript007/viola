@@ -18,7 +18,7 @@ Strings
 strings str = make_shared<Strings>();
 printf("className: <%s>\n", str->getClassName().c_str());
 
-str.append("foobar");
+str->append("foobar");
 printf("str: <%s>\n", str->toString().c_str());
 printf("hashCode: <%d>\n", str->hashCode());
 

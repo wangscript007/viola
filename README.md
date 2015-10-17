@@ -15,15 +15,15 @@ file open/close, read/write.
 
 Strings
 ```
-Strings str;
-printf("className: <%s>\n", str.getClassName().c_str());
+strings str = make_shared<Strings>();
+printf("className: <%s>\n", str->getClassName().c_str());
 
-str.append(s);
-printf("str: <%s>\n", str.toString().c_str());
-printf("hashCode: <%d>\n", str.hashCode());
+str.append("foobar");
+printf("str: <%s>\n", str->toString().c_str());
+printf("hashCode: <%d>\n", str->hashCode());
 
-bool bool1 = str.equals("foobar");
-bool bool2 = str.equals("notsame");
+bool bool1 = str->equals("foobar");
+bool bool2 = str->equals("notsame");
 printf("foobar->equals(foobar): <%d>\n", bool1);
 printf("foobar->equals(notsame): <%d>\n", bool2);
 ```

@@ -209,6 +209,31 @@ bool HashMap::equals(Object* obj) {
 	return false;
 }
 
+std::string HashMap::toString(entry* e, int capa) {
+	Strings str;
+	str.append("HashMap[");
+	for (int i = 0; i < capa; i++) {
+		entry n = e[i];
+
+		if (n == NULL) {
+			continue;
+		}
+		Entry* p = n.get();
+		do {
+			str.append(p->toString());
+			str.append(", ");
+		} while ((p = ((Entry*) p->getNext().get())) != NULL);
+
+		if (i < size() - 1) {
+			str.append(", ");
+		}
+	}
+	str.append("]");
+	str.replace(", , ", ", ");
+	str.replace(", ]", "]");
+	return str.toString();
+}
+
 std::string HashMap::toString() {
 	Strings str;
 	str.append("HashMap[");
@@ -297,6 +322,7 @@ entry* HashMap::resize() {
 		}
 	}
 	threshold = newThreshold;
+	capacity = newCapacity;
 	entry* newTable = new entry[newCapacity];
 	table = newTable;
 
@@ -313,7 +339,7 @@ entry* HashMap::resize() {
 			int ehash = hash(e->getKey()->hashCode());
 			newTable[ehash & (newCapacity - 1)] = e;
 		} else {
-			Entry* ent = (Entry*) e->getNext().get();
+			Entry* ent = (Entry*) e.get();
 			Entry* loHead = NULL;
 			Entry* loTail = NULL;
 			Entry* hiHead = NULL;

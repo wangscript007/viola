@@ -117,7 +117,7 @@ int remove() {
 int capacity() {
 	printf("[capacity]\n");
 	int ret = 0;
-	hashMap map = make_shared<HashMap>(3);
+	hashMap map = make_shared<HashMap>(2);
 
 	strings key1 = make_shared<Strings>("foobar1");
 	strings key2 = make_shared<Strings>("foobar2");
@@ -130,27 +130,33 @@ int capacity() {
 	if (previous1 != NULL) {
 		ret = ret + 1;
 	}
+	dump(map);
 
 	object previous2 = map->put(key2, value);
 	if (previous2 != NULL) {
 		ret = ret + 1;
 	}
+	dump(map);
 
 	object previous3 = map->put(key3, value);
 	if (previous3 != NULL) {
 		ret = ret + 1;
 	}
+	dump(map);
 
 	object previous4 = map->put(key4, value);
 	if (previous4 != NULL) {
 		ret = ret + 1;
 	}
+	dump(map);
 
 	object previous5 = map->put(key4, value2);
 	if (previous5 == NULL) {
 		ret = ret + 1;
 	} else {
-		printf("old: <%s>\n", previous5->toString().c_str());
+		if (!((Strings*) previous5.get())->equals("hoge1")) {
+			ret = ret + 1;
+		}
 	}
 	dump(map);
 
@@ -161,7 +167,7 @@ int capacity() {
 	dump(map);
 
 	map->clear();
-	return 0;
+	return ret;
 }
 
 int main() {

@@ -45,6 +45,8 @@ public:
 	int getCapacity();
 	bool isEmpty();
 
+	std::string toString(entry* e, int capacity);
+
 	//Override
 	int hashCode();
 	bool equals(Object* obj);

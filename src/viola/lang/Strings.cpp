@@ -11,7 +11,7 @@ Strings::Strings() {
 	//noop;
 }
 
-Strings::Strings(string str) {
+Strings::Strings(std::string str) {
 	internal = str;
 }
 
@@ -20,11 +20,11 @@ Strings::~Strings() {
 	//printf("deleted: <%s>\n", internal.c_str());
 }
 
-void Strings::append(string str) {
+void Strings::append(std::string str) {
 	internal.append(str);
 }
 
-string Strings::replace(string str1, string str2) {
+std::string Strings::replace(std::string str1, std::string str2) {
 	std::string::size_type Pos(internal.find(str1));
 
 	while (Pos != std::string::npos) {
@@ -43,7 +43,7 @@ bool Strings::equals(object obj) {
 	return this->equals((Strings*) obj.get());
 }
 
-bool Strings::equals(string str) {
+bool Strings::equals(std::string str) {
 	int size = str.size();
 	int internalSize = internal.size();
 
@@ -92,7 +92,7 @@ bool Strings::equals(Object* obj) {
 }
 
 //Override
-string Strings::getClassName() {
+std::string Strings::getClassName() {
 	return "Strings";
 }
 

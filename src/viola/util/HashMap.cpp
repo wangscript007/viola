@@ -70,9 +70,7 @@ object HashMap::put(object key, object value) {
 	}
 
 	if (size() > threshold) {
-		printf("resize\n");
 		resize();
-		printf("resized\n");
 	}
 	return NULL;
 
@@ -211,7 +209,7 @@ bool HashMap::equals(Object* obj) {
 	return false;
 }
 
-string HashMap::toString() {
+std::string HashMap::toString() {
 	Strings str;
 	str.append("HashMap[");
 	for (int i = 0; i < capacity; i++) {
@@ -236,7 +234,7 @@ string HashMap::toString() {
 	return str.toString();
 }
 
-string HashMap::getClassName() {
+std::string HashMap::getClassName() {
 	return "HashMap";
 }
 

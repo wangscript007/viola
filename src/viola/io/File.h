@@ -13,18 +13,16 @@
 #include "Object.h"
 #include "Strings.h"
 
-using namespace std;
-
 class File: public Object {
 public:
-	File(string path);
+	File(std::string path);
 	~File();
 
 	bool createNewFile();
 	bool deleteFile();
 	bool exists();
-	string getAbsolutePath();
-	string getName();
+	std::string getAbsolutePath();
+	std::string getName();
 	bool isFile();
 	bool isDirectory();
 	bool mkdir();
@@ -37,7 +35,7 @@ public:
 	bool equals(Object* obj);
 
 	//Override
-	string getClassName();
+	std::string getClassName();
 
 };
 

@@ -11,18 +11,18 @@ Exception::Exception() {
 
 }
 
-Exception::Exception(string message) {
+Exception::Exception(std::string message) {
 	this->message = message;
 }
 
-Exception::Exception(string message, Throwable* cause) {
+Exception::Exception(std::string message, Throwable* cause) {
 	this->message = message;
 	this->cause = cause;
 }
 Exception::~Exception() {
 }
 
-string Exception::getClassName() {
+std::string Exception::getClassName() {
 	return "Exception";
 }
 

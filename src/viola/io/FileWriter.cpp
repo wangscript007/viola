@@ -30,6 +30,6 @@ bool FileWriter::equals(Object* obj) {
 }
 
 
-string FileWriter::getClassName() {
+std::string FileWriter::getClassName() {
 	return "FileWriter";
 }

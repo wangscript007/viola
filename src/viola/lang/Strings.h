@@ -11,40 +11,39 @@
 #include <string>
 #include "Object.h"
 
-using namespace std;
 typedef std::shared_ptr<Object> object;
 
 class Strings: public Object {
 
 private:
-	string internal;
+	std::string internal;
 
 public:
 	Strings();
-	Strings(string str);
+	Strings(std::string str);
 	~Strings();
 
-	void append(string str);
-	bool contains(string str);
-	string replace(string target, string replacement);
+	void append(std::string str);
+	bool contains(std::string str);
+	std::string replace(std::string target, std::string replacement);
 
-	bool startWith(string prefix);
-	bool endWith(string suffix);
+	bool startWith(std::string prefix);
+	bool endWith(std::string suffix);
 
 	int length();
 	bool isEmpty();
 
-	bool equalsIgnoreCase(string str);
+	bool equalsIgnoreCase(std::string str);
 
 	bool equals(Strings* str);
 	bool equals(object obj);
-	bool equals(string str);
+	bool equals(std::string str);
 
 	//Override
 	int hashCode();
 	bool equals(Object* obj);
-	string getClassName();
-	string toString();
+	std::string getClassName();
+	std::string toString();
 
 };
 

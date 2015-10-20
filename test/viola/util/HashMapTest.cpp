@@ -117,7 +117,7 @@ int remove() {
 int capacity() {
 	printf("[capacity]\n");
 	int ret = 0;
-	hashMap map = make_shared<HashMap>(1);
+	hashMap map = make_shared<HashMap>(3);
 
 	strings key1 = make_shared<Strings>("foobar1");
 	strings key2 = make_shared<Strings>("foobar2");

@@ -74,8 +74,8 @@ bool ArrayList::equals(Object* obj) {
 }
 
 //Override
-string ArrayList::toString() {
-	string str("ArrayList[");
+std::string ArrayList::toString() {
+	std::string str("ArrayList[");
 	for (int i = 0; i < size(); i++) {
 		str.append(this->get(i)->toString());
 		if (i < size() - 1) {
@@ -86,6 +86,6 @@ string ArrayList::toString() {
 	return str;
 }
 
-string ArrayList::getClassName() {
+std::string ArrayList::getClassName() {
 	return "ArrayList";
 }

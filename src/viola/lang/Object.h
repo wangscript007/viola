@@ -12,8 +12,6 @@
 #include <memory>
 #include <limits.h>
 
-using namespace std;
-
 class Object {
 
 public:
@@ -22,8 +20,8 @@ public:
 
 	virtual int hashCode();
 	virtual bool equals(Object* obj);
-	virtual string getClassName();
-	virtual string toString();
+	virtual std::string getClassName();
+	virtual std::string toString();
 };
 
 #endif /* VIOLA_LANG_OBJECT_H_ */

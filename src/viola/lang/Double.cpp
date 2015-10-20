@@ -69,13 +69,13 @@ bool Double::equals(Object* obj) {
 }
 
 //Override
-string Double::getClassName() {
+std::string Double::getClassName() {
 	return "Double";
 }
 
 //Override
-string Double::toString() {
-	string str(getClassName());
+std::string Double::toString() {
+	std::string str(getClassName());
 	str.append("]");
 	str.append(std::to_string(this->hashCode()));
 	str.append("]");

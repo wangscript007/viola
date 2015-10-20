@@ -7,7 +7,7 @@
 
 #include "File.h"
 
-File::File(string path) {
+File::File(std::string path) {
 }
 
 File::~File() {
@@ -21,6 +21,6 @@ bool File::equals(Object* obj) {
 	return true;
 }
 
-string File::getClassName() {
+std::string File::getClassName() {
 	return "File";
 }

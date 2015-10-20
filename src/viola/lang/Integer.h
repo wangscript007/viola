@@ -10,7 +10,6 @@
 
 #include "Object.h"
 
-using namespace std;
 typedef std::shared_ptr<Object> object;
 
 class Integer: public Object {
@@ -29,8 +28,8 @@ public:
 	//Override
 	int hashCode();
 	bool equals(Object* obj);
-	string getClassName();
-	string toString();
+	std::string getClassName();
+	std::string toString();
 
 };
 

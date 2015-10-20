@@ -45,13 +45,13 @@ bool Long::equals(Object* obj) {
 }
 
 //Override
-string Long::getClassName() {
+std::string Long::getClassName() {
 	return "Long";
 }
 
 //Override
-string Long::toString() {
-	string str(getClassName());
+std::string Long::toString() {
+	std::string str(getClassName());
 	str.append("]");
 	str.append(std::to_string(this->hashCode()));
 	str.append("]");

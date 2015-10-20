@@ -11,8 +11,6 @@
 #include "File.h"
 #include "Object.h"
 
-using namespace std;
-
 typedef std::shared_ptr<File> file;
 
 class FileReader: public Object {
@@ -20,7 +18,7 @@ public:
 	FileReader(file file);
 	~FileReader();
 
-	string read();
+	std::string read();
 	bool close();
 
 	//Override
@@ -30,7 +28,7 @@ public:
 	bool equals(Object* obj);
 
 	//Override
-	string getClassName();
+	std::string getClassName();
 
 };
 

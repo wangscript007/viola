@@ -14,7 +14,6 @@
 #include "Entry.h"
 #include "EntrySet.h"
 
-using namespace std;
 typedef std::shared_ptr<Object> object;
 typedef std::shared_ptr<Entry> entry;
 
@@ -48,15 +47,9 @@ public:
 
 	//Override
 	int hashCode();
-
-	//Override
 	bool equals(Object* obj);
-
-	//Override
-	string toString();
-
-	//Override
-	string getClassName();
+	std::string toString();
+	std::string getClassName();
 
 private:
 	int hash(int keyHashCode);

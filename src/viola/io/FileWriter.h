@@ -10,7 +10,6 @@
 
 #include "File.h"
 #include "Object.h"
-using namespace std;
 
 typedef std::shared_ptr<File> file;
 
@@ -21,9 +20,9 @@ public:
 	~FileWriter();
 
 	void close();
-	void append(string line);
+	void append(std::string line);
 	void flush();
-	void write(string line);
+	void write(std::string line);
 
 	//Override
 	int hashCode();
@@ -32,7 +31,7 @@ public:
 	bool equals(Object* obj);
 
 	//Override
-	string getClassName();
+	std::string getClassName();
 
 };
 

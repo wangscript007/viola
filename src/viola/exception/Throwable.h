@@ -10,24 +10,23 @@
 
 #include "Object.h"
 
-using namespace std;
 typedef std::shared_ptr<Object> object;
 
 class Throwable: public Object {
 protected:
-	string message;
+	std::string message;
 	Throwable* cause;
 public:
 	Throwable();
-	Throwable(string message);
-	Throwable(string message, Throwable* cause);
+	Throwable(std::string message);
+	Throwable(std::string message, Throwable* cause);
 	virtual ~Throwable();
 
-	string getMessage();
+	std::string getMessage();
 	Throwable* getCause();
 
-	virtual string getClassName();
-	virtual string toString();
+	virtual std::string getClassName();
+	virtual std::string toString();
 };
 
 #endif /* VIOLA_LANG_THROWABLE_H_ */

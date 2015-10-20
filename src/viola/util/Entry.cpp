@@ -71,8 +71,8 @@ bool Entry::equals(Object* obj) {
 }
 
 //Override
-string Entry::toString() {
-	string str("Entry[");
+std::string Entry::toString() {
+	std::string str("Entry[");
 	str.append(this->key->toString());
 	str.append(": ");
 	str.append(this->value->toString());
@@ -81,6 +81,6 @@ string Entry::toString() {
 }
 
 //Override
-string Entry::getClassName() {
+std::string Entry::getClassName() {
 	return "Entry";
 }

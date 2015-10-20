@@ -9,7 +9,7 @@
 #define VIOLA_UTIL_ENTRY_H_
 
 #include "Object.h"
-using namespace std;
+
 typedef std::shared_ptr<Object> object;
 
 //template<class T>
@@ -34,16 +34,9 @@ public:
 
 	//Override
 	int hashCode();
-
-	//Override
 	bool equals(Object* obj);
-
-	//Override
-	string toString();
-
-	//Override
-	string getClassName();
-
+	std::string toString();
+	std::string getClassName();
 };
 
 #endif /* VIOLA_UTIL_ENTRY_H_ */

@@ -31,12 +31,12 @@ bool Object::equals(Object* obj) {
 	return true;
 }
 
-string Object::getClassName() {
+std::string Object::getClassName() {
 	return "Object";
 }
 
-string Object::toString() {
-	string str(getClassName());
+std::string Object::toString() {
+	std::string str(getClassName());
 	str.append("[");
 	str.append(std::to_string(this->hashCode()));
 	str.append("]");

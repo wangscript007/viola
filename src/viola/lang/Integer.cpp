@@ -51,13 +51,13 @@ bool Integer::equals(Object* obj) {
 }
 
 //Override
-string Integer::getClassName() {
+std::string Integer::getClassName() {
 	return "Integer";
 }
 
 //Override
-string Integer::toString() {
-	string str(getClassName());
+std::string Integer::toString() {
+	std::string str(getClassName());
 	str.append("[");
 	str.append(std::to_string(this->hashCode()));
 	str.append("]");

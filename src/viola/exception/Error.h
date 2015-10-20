@@ -13,11 +13,11 @@
 class Error: public Throwable {
 public:
 	Error();
-	Error(string message);
-	Error(string message, Throwable* cause);
+	Error(std::string message);
+	Error(std::string message, Throwable* cause);
 	virtual ~Error();
 
-	virtual string getClassName();
+	virtual std::string getClassName();
 };
 
 #endif /* VIOLA_LANG_ERROR_H_ */

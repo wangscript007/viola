@@ -16,6 +16,7 @@ set(build ../build CACHE STRING description FORCE)
 
 file(GLOB MY_PUBLIC_HEADERS "${src}/**/*.h")
 file(COPY ${MY_PUBLIC_HEADERS} DESTINATION ${build}/include)
+file(COPY ${src}/viola.h DESTINATION ${build}/include)
 file(GLOB ALL_SRC "${src}/**/*.cpp")
 
 add_library(viola SHARED
@@ -30,6 +31,7 @@ include_directories(${src}/math)
 include_directories(${src}/net)
 include_directories(${src}/time)
 include_directories(${src}/util)
+include_directories(${src})
 
 add_executable(ExceptionTest.out
  ${test}/exception/ExceptionTest.cpp

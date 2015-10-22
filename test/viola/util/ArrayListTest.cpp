@@ -5,15 +5,9 @@
  *      Author: tsubaki
  */
 
-#include "Integer.h"
-#include "ArrayList.h"
-#include "Assert.h"
+#include "viola.h"
 
-using namespace std;
-typedef std::shared_ptr<Integer> integer;
-typedef std::shared_ptr<ArrayList> arrayList;
-
-void dump(arrayList list) {
+void dump(_ArrayList list) {
 	printf("[dump]\n");
 	printf("className: <%s>\n", list->getClassName().c_str());
 	printf("size: <%d>\n", list->size());
@@ -30,15 +24,14 @@ void dump(arrayList list) {
 int hashCode() {
 	int ret = 0;
 
-	arrayList list = make_shared<ArrayList>();
+	_ArrayList list = std::make_shared<ArrayList>();
 	{
-		integer arg1 = make_shared<Integer>(1234);
-		integer arg2 = make_shared<Integer>(5678);
+		_Integer arg1 = std::make_shared<Integer>(1234);
+		_Integer arg2 = std::make_shared<Integer>(5678);
 		list->add(arg1);
 		list->add(arg2);
 
 		dump(list);
-
 	}
 
 	list->clear();

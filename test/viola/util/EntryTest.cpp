@@ -5,12 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "Integer.h"
-#include "Entry.h"
-#include "Assert.h"
-
-typedef std::shared_ptr<Object> object;
-typedef std::shared_ptr<Integer> integer;
+#include "viola.h"
 
 void dump(Entry* entry) {
 	printf("[dump]\n");
@@ -24,9 +19,9 @@ void dump(Entry* entry) {
 int hashCode() {
 	int ret = 0;
 
-	integer arg1 = std::make_shared<Integer>(1234);
-	integer arg2 = std::make_shared<Integer>(5678);
-	integer arg3 = std::make_shared<Integer>(9012);
+	_Integer arg1 = std::make_shared<Integer>(1234);
+	_Integer arg2 = std::make_shared<Integer>(5678);
+	_Integer arg3 = std::make_shared<Integer>(9012);
 
 	Entry entry1(arg1, arg2);
 	Entry entry2(arg1, arg3);
@@ -40,13 +35,13 @@ int hashCode() {
 int getset() {
 	int ret = 0;
 
-	integer arg1 = std::make_shared<Integer>(1234);
-	integer arg2 = std::make_shared<Integer>(5678);
+	_Integer arg1 = std::make_shared<Integer>(1234);
+	_Integer arg2 = std::make_shared<Integer>(5678);
 	Entry entry(arg1, arg2);
 	dump(&entry);
 
-	object obj1 = entry.getKey();
-	object obj2 = entry.getValue();
+	_Object obj1 = entry.getKey();
+	_Object obj2 = entry.getValue();
 
 	Integer* key = (Integer*) obj1.get();
 	Integer* value = (Integer*) obj2.get();

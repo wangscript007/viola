@@ -5,14 +5,9 @@
  *      Author: tsubaki
  */
 
-#include "HashMap.h"
-#include "Strings.h"
+#include "viola.h"
 
-using namespace std;
-typedef std::shared_ptr<Strings> strings;
-typedef std::shared_ptr<HashMap> hashMap;
-
-void dump(hashMap map) {
+void dump(_HashMap map) {
 	printf("[dump] in. ---------\n");
 	printf("className: <%s>\n", map->getClassName().c_str());
 	printf("hashCode: <%d>\n", map->hashCode());
@@ -27,11 +22,11 @@ void dump(hashMap map) {
 int containsKey() {
 	printf("[containsKey]\n");
 	int ret = 0;
-	hashMap map = make_shared<HashMap>(100);
+	_HashMap map = std::make_shared<HashMap>(100);
 	dump(map);
 
-	strings key = make_shared<Strings>("foobar");
-	strings value = make_shared<Strings>("hoge");
+	_String key = std::make_shared<Strings>("foobar");
+	_String value = std::make_shared<Strings>("hoge");
 
 	object previous = map->put(key, value);
 	if (previous != NULL) {
@@ -43,7 +38,7 @@ int containsKey() {
 	printf("containsKey: <%d>\n", contains);
 	ret = ret + !contains;
 
-	strings key2 = make_shared<Strings>("foobar");
+	_String key2 = std::make_shared<Strings>("foobar");
 	bool contains2 = map->containsKey(key2);
 	printf("key2.hashCode: <%d>\n", key2->hashCode());
 	printf("key2.containsKey: <%d>\n", contains2);
@@ -56,18 +51,18 @@ int containsKey() {
 int put() {
 	printf("[put]\n");
 	int ret = 0;
-	hashMap map = make_shared<HashMap>(130);
+	_HashMap map = std::make_shared<HashMap>(130);
 	dump(map);
 
-	strings key = make_shared<Strings>("foobar");
-	strings value = make_shared<Strings>("hoge");
+	_String key = std::make_shared<Strings>("foobar");
+	_String value = std::make_shared<Strings>("hoge");
 
-	object previous = map->put(key, value);
+	_Object previous = map->put(key, value);
 	if (previous != NULL) {
 		ret = ret + 1;
 	}
 
-	object got = map->get(key);
+	_Object got = map->get(key);
 	printf("got.hashCode<%d>\n", got->hashCode());
 	printf("got: <%s>\n", ((Strings*) got.get())->toString().c_str());
 	if (!value->equals(got.get())) {
@@ -81,17 +76,17 @@ int put() {
 int remove() {
 	printf("[remove]\n");
 	int ret = 0;
-	hashMap map = make_shared<HashMap>(300);
+	_HashMap map = std::make_shared<HashMap>(300);
 	dump(map);
 
-	strings key = make_shared<Strings>("foobar");
-	strings value = make_shared<Strings>("hoge");
+	_String key = std::make_shared<Strings>("foobar");
+	_String value = std::make_shared<Strings>("hoge");
 
-	object previous = map->put(key, value);
+	_Object previous = map->put(key, value);
 	if (previous != NULL) {
 		ret = ret + 1;
 	}
-	object got = map->get(key);
+	_Object got = map->get(key);
 	printf("got.hashCode<%d>\n", got->hashCode());
 	printf("got: <%s>\n", ((Strings*) got.get())->toString().c_str());
 	if (!value->equals(got.get())) {
@@ -99,7 +94,7 @@ int remove() {
 	}
 	dump(map);
 
-	object removed = map->remove(key);
+	_Object removed = map->remove(key);
 	if (removed != NULL) {
 		printf("removed.hashCode<%d>\n", removed->hashCode());
 		printf("removed: <%s>\n",
@@ -117,40 +112,40 @@ int remove() {
 int capacity() {
 	printf("[capacity]\n");
 	int ret = 0;
-	hashMap map = make_shared<HashMap>(2);
+	_HashMap map = std::make_shared<HashMap>(2);
 
-	strings key1 = make_shared<Strings>("foobar1");
-	strings key2 = make_shared<Strings>("foobar2");
-	strings key3 = make_shared<Strings>("foobar3");
-	strings key4 = make_shared<Strings>("foobar4");
-	strings value = make_shared<Strings>("hoge1");
-	strings value2 = make_shared<Strings>("hoge2");
+	_String key1 = std::make_shared<Strings>("foobar1");
+	_String key2 = std::make_shared<Strings>("foobar2");
+	_String key3 = std::make_shared<Strings>("foobar3");
+	_String key4 = std::make_shared<Strings>("foobar4");
+	_String value = std::make_shared<Strings>("hoge1");
+	_String value2 = std::make_shared<Strings>("hoge2");
 
-	object previous1 = map->put(key1, value);
+	_Object previous1 = map->put(key1, value);
 	if (previous1 != NULL) {
 		ret = ret + 1;
 	}
 	dump(map);
 
-	object previous2 = map->put(key2, value);
+	_Object previous2 = map->put(key2, value);
 	if (previous2 != NULL) {
 		ret = ret + 1;
 	}
 	dump(map);
 
-	object previous3 = map->put(key3, value);
+	_Object previous3 = map->put(key3, value);
 	if (previous3 != NULL) {
 		ret = ret + 1;
 	}
 	dump(map);
 
-	object previous4 = map->put(key4, value);
+	_Object previous4 = map->put(key4, value);
 	if (previous4 != NULL) {
 		ret = ret + 1;
 	}
 	dump(map);
 
-	object previous5 = map->put(key4, value2);
+	_Object previous5 = map->put(key4, value2);
 	if (previous5 == NULL) {
 		ret = ret + 1;
 	} else {

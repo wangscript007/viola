@@ -5,8 +5,7 @@
  *      Author: tsubaki
  */
 
-#include "File.h"
-#include "Strings.h"
+#include "viola.h"
 
 int main() {
 	File* file = new File("./foobar.txt");

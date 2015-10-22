@@ -5,15 +5,12 @@
  *      Author: tsubaki
  */
 
-#include "Strings.h"
-
-using namespace std;
-typedef std::shared_ptr<Strings> strings;
+#include "viola.h"
 
 int isEmptyTest() {
 	int ret = 0;
 
-	strings str = make_shared<Strings>();
+	_String str = std::make_shared<Strings>();
 	printf("bool: <%d>\n", str->isEmpty());
 	ret = ret + !str->isEmpty();
 
@@ -27,7 +24,7 @@ int isEmptyTest() {
 int hashCodeTest() {
 	int ret = 0;
 
-	strings str = make_shared<Strings>();
+	_String str = std::make_shared<Strings>();
 	printf("hashCode: <%d>\n", str->hashCode());
 	ret = ret + str->hashCode();
 
@@ -44,7 +41,7 @@ int equalsTest() {
 	int ret = 0;
 	std::string s = "foobar";
 
-	strings str = make_shared<Strings>();
+	_String str = std::make_shared<Strings>();
 	printf("className: <%s>\n", str->getClassName().c_str());
 
 	str->append(s);
@@ -60,7 +57,7 @@ int equalsTest() {
 	ret = ret + !bool1;
 	ret = ret + bool2;
 
-	strings str2 = make_shared<Strings>();
+	_String str2 = std::make_shared<Strings>();
 	printf("foobar->equals(foobar): <%d>\n", str->equals(str2));
 
 	return ret;

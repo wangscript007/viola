@@ -5,16 +5,13 @@
  *      Author: tsubaki
  */
 
-#include "Object.h"
-
-using namespace std;
-typedef std::shared_ptr<Object> object;
+#include "viola.h"
 
 int main() {
 	int ret = 0;
 
-	object arg1 = make_shared<Object>();
-	object arg2 = make_shared<Object>();
+	_Object arg1 = std::make_shared<Object>();
+	_Object arg2 = std::make_shared<Object>();
 
 	printf("obj1.className: <%s>\n", arg1.get()->getClassName().c_str());
 

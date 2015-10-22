@@ -11,8 +11,6 @@
 #include <string>
 #include "Object.h"
 
-typedef std::shared_ptr<Object> object;
-
 class Strings: public Object {
 
 private:
@@ -36,7 +34,7 @@ public:
 	bool equalsIgnoreCase(std::string str);
 
 	bool equals(Strings* str);
-	bool equals(object obj);
+	bool equals(std::shared_ptr<Object> obj);
 	bool equals(std::string str);
 
 	//Override

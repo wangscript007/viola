@@ -14,12 +14,9 @@
 #include "Entry.h"
 #include "EntrySet.h"
 
-typedef std::shared_ptr<Object> object;
-typedef std::shared_ptr<Entry> entry;
-
 class HashMap: public Object {
 private:
-	entry* table;
+	std::shared_ptr<Entry>* table;
 	int capacity;
 	int threshold;
 	int maxCapacity = 1 << 30;
@@ -29,13 +26,15 @@ public:
 	HashMap(int capacity);
 	~HashMap();
 
-	bool containsKey(object key);
-	bool containsValue(object value);
+	bool containsKey(std::shared_ptr<Object> key);
+	bool containsValue(std::shared_ptr<Object> value);
 
-	object put(object key, object value);
-	object putIfAbsent(object key, object value);
-	object get(object key);
-	object remove(object key);
+	std::shared_ptr<Object> put(std::shared_ptr<Object> key,
+			std::shared_ptr<Object> value);
+	std::shared_ptr<Object> putIfAbsent(std::shared_ptr<Object> key,
+			std::shared_ptr<Object> value);
+	std::shared_ptr<Object> get(std::shared_ptr<Object> key);
+	std::shared_ptr<Object> remove(std::shared_ptr<Object> key);
 
 	EntrySet entrySet();
 
@@ -45,7 +44,7 @@ public:
 	int getCapacity();
 	bool isEmpty();
 
-	std::string toString(entry* e, int capacity);
+	std::string toString(std::shared_ptr<Entry>* e, int capacity);
 
 	//Override
 	int hashCode();
@@ -56,7 +55,7 @@ public:
 private:
 	int hash(int keyHashCode);
 	int tableSizeFor(int capacity);
-	entry* resize();
+	std::shared_ptr<Entry>* resize();
 };
 
 #endif /* VIOLA_UTIL_HASHMAP_H_ */

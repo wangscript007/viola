@@ -13,7 +13,7 @@ Entry::Entry(Entry* e) {
 	this->next = e->getNext();
 }
 
-Entry::Entry(object key, object value) {
+Entry::Entry(std::shared_ptr<Object> key, std::shared_ptr<Object> value) {
 	this->key = key;
 	this->value = value;
 	this->next = NULL;
@@ -23,22 +23,22 @@ Entry::~Entry() {
 //	printf("deleted.\n");
 }
 
-object Entry::getKey() {
+std::shared_ptr<Object> Entry::getKey() {
 	return key;
 }
-object Entry::getValue() {
+std::shared_ptr<Object> Entry::getValue() {
 	return value;
 }
 
-void Entry::setValue(object value) {
+void Entry::setValue(std::shared_ptr<Object> value) {
 	this->value = value;
 }
 
-object Entry::getNext() {
+std::shared_ptr<Object> Entry::getNext() {
 	return next;
 }
 
-void Entry::setNext(object next) {
+void Entry::setNext(std::shared_ptr<Object> next) {
 	this->next = next;
 }
 

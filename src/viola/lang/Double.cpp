@@ -40,7 +40,7 @@ bool Double::equals(Double* obj) {
 }
 
 //Override
-bool Double::equals(object obj) {
+bool Double::equals(std::shared_ptr<Object> obj) {
 	return this->equals((Double*) obj.get());
 }
 

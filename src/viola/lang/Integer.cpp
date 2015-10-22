@@ -26,7 +26,7 @@ bool Integer::equals(Integer* obj) {
 }
 
 //Override
-bool Integer::equals(object obj) {
+bool Integer::equals(std::shared_ptr<Object> obj) {
 	return this->equals((Integer*) obj.get());
 }
 

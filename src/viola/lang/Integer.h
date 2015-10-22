@@ -10,8 +10,6 @@
 
 #include "Object.h"
 
-typedef std::shared_ptr<Object> object;
-
 class Integer: public Object {
 private:
 	int i;
@@ -22,7 +20,7 @@ public:
 	int get();
 
 	bool equals(Integer* obj);
-	bool equals(object obj);
+	bool equals(std::shared_ptr<Object> obj);
 	bool equals(int arg);
 
 	//Override

@@ -39,7 +39,7 @@ bool Strings::equals(Strings* str) {
 	return this->equals(str->toString());
 }
 
-bool Strings::equals(object obj) {
+bool Strings::equals(std::shared_ptr<Object> obj) {
 	return this->equals((Strings*) obj.get());
 }
 

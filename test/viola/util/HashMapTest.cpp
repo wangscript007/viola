@@ -28,7 +28,7 @@ int containsKey() {
 	_String key = std::make_shared<Strings>("foobar");
 	_String value = std::make_shared<Strings>("hoge");
 
-	object previous = map->put(key, value);
+	_Object previous = map->put(key, value);
 	if (previous != NULL) {
 		ret = ret + 1;
 	}

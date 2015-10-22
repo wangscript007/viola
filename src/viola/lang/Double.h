@@ -9,10 +9,7 @@
 #define VIOLA_LANG_DOUBLE_H_
 
 #include <bitset>
-
 #include "Object.h"
-
-typedef std::shared_ptr<Object> object;
 
 class Double: public Object {
 private:
@@ -26,7 +23,7 @@ public:
 	unsigned long doubleToLongBits();
 
 	bool equals(Double* obj);
-	bool equals(object obj);
+	bool equals(std::shared_ptr<Object> obj);
 	bool equals(double arg);
 
 	//Override

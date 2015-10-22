@@ -10,8 +10,6 @@
 
 #include "Object.h"
 
-typedef std::shared_ptr<Object> object;
-
 class Queue: public Object {
 public:
 	Queue();

@@ -11,11 +11,9 @@
 #include "File.h"
 #include "Object.h"
 
-typedef std::shared_ptr<File> file;
-
 class FileReader: public Object {
 public:
-	FileReader(file file);
+	FileReader(std::shared_ptr<File> file);
 	~FileReader();
 
 	std::string read();

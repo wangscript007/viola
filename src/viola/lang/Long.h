@@ -10,8 +10,6 @@
 
 #include "Object.h"
 
-typedef std::shared_ptr<Object> object;
-
 class Long: public Object {
 private:
 	long value;
@@ -22,7 +20,7 @@ public:
 	long get();
 
 	bool equals(Long* obj);
-	bool equals(object obj);
+	bool equals(std::shared_ptr<Object> obj);
 	bool equals(long arg);
 
 	//Override

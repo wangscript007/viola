@@ -14,21 +14,21 @@ ArrayList::~ArrayList() {
 	this->clear();
 }
 
-void ArrayList::add(object obj) {
+void ArrayList::add(std::shared_ptr<Object> obj) {
 	list.push_back(obj);
 }
 
-object ArrayList::get(int i) {
+std::shared_ptr<Object> ArrayList::get(int i) {
 	if (size() <= i) {
 		return NULL;
 	}
 
-	std::list<object>::iterator it = list.begin();
+	std::list<std::shared_ptr<Object> >::iterator it = list.begin();
 	for (int j = 0; j < i; j++) {
 		it++;
 	}
 
-	object obj = *it;
+	std::shared_ptr<Object> obj = *it;
 	return obj;
 }
 
@@ -52,9 +52,9 @@ bool ArrayList::isEmpty() {
 int ArrayList::hashCode() {
 	int hashCode = 1;
 
-	std::list<object>::iterator it = list.begin();
+	std::list<std::shared_ptr<Object> >::iterator it = list.begin();
 	for (int i = 0; i < list.size(); i++) {
-		object obj = *it;
+		std::shared_ptr<Object> obj = *it;
 		int tmp = 0;
 		if (obj.get() != NULL) {
 			tmp = obj.get()->hashCode();

@@ -11,12 +11,10 @@
 #include "File.h"
 #include "Object.h"
 
-typedef std::shared_ptr<File> file;
-
 class FileWriter: public Object {
 public:
-	FileWriter(file file);
-	FileWriter(file file, bool append);
+	FileWriter(std::shared_ptr<File> file);
+	FileWriter(std::shared_ptr<File> file, bool append);
 	~FileWriter();
 
 	void close();

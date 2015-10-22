@@ -22,7 +22,7 @@ long Long::get() {
 bool Long::equals(Long* obj) {
 	return this->equals(obj->get());
 }
-bool Long::equals(object obj) {
+bool Long::equals(std::shared_ptr<Object> obj) {
 	return this->equals((Long*) obj.get());
 
 }

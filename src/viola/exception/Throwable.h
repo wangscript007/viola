@@ -10,8 +10,6 @@
 
 #include "Object.h"
 
-typedef std::shared_ptr<Object> object;
-
 class Throwable: public Object {
 protected:
 	std::string message;

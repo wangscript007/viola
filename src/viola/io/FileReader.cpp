@@ -7,7 +7,7 @@
 
 #include "FileReader.h"
 
-FileReader::FileReader(file file) {
+FileReader::FileReader(std::shared_ptr<File> file) {
 	// TODO Auto-generated constructor stub
 
 }
@@ -23,7 +23,6 @@ int FileReader::hashCode() {
 bool FileReader::equals(Object* obj) {
 	return true;
 }
-
 
 std::string FileReader::getClassName() {
 	return "FileReader";

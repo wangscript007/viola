@@ -10,27 +10,25 @@
 
 #include "Object.h"
 
-typedef std::shared_ptr<Object> object;
-
 //template<class T>
 class Entry: public Object {
 private:
-	object key;
-	object value;
-	object next;
+	std::shared_ptr<Object> key;
+	std::shared_ptr<Object> value;
+	std::shared_ptr<Object> next;
 public:
 
-	Entry(object key, object value);
+	Entry(std::shared_ptr<Object> key, std::shared_ptr<Object> value);
 	Entry(Entry* e);
 	~Entry();
 
-	object getKey();
+	std::shared_ptr<Object> getKey();
 
-	object getValue();
-	void setValue(object value);
+	std::shared_ptr<Object> getValue();
+	void setValue(std::shared_ptr<Object> value);
 
-	object getNext();
-	void setNext(object next);
+	std::shared_ptr<Object> getNext();
+	void setNext(std::shared_ptr<Object> next);
 
 	//Override
 	int hashCode();

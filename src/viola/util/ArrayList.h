@@ -11,17 +11,15 @@
 #include <list>
 #include "Object.h"
 
-typedef std::shared_ptr<Object> object;
-
 class ArrayList: public Object {
 private:
-	std::list<object> list;
+	std::list<std::shared_ptr<Object>> list;
 public:
 	ArrayList();
 	~ArrayList();
 
-	void add(object obj);
-	object get(int i);
+	void add(std::shared_ptr<Object> obj);
+	std::shared_ptr<Object> get(int i);
 
 	void clear();
 	int size();

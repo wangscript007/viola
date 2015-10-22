@@ -10,13 +10,13 @@
 HashMap::HashMap() {
 	capacity = 16;
 	threshold = tableSizeFor(capacity);
-	table = new entry[threshold];
+	table = new std::shared_ptr<Entry>[threshold];
 }
 
 HashMap::HashMap(int capacity) {
 	this->capacity = capacity;
 	threshold = tableSizeFor(capacity);
-	table = new entry[threshold];
+	table = new std::shared_ptr<Entry>[threshold];
 }
 
 HashMap::~HashMap() {
@@ -24,32 +24,34 @@ HashMap::~HashMap() {
 	delete[] table;
 }
 
-bool HashMap::containsKey(object key) {
-	object val = this->get(key);
+bool HashMap::containsKey(std::shared_ptr<Object> key) {
+	std::shared_ptr<Object> val = this->get(key);
 	if (val == NULL) {
 		return false;
 	}
 	return true;
 }
 
-object HashMap::put(object key, object value) {
+std::shared_ptr<Object> HashMap::put(std::shared_ptr<Object> key,
+		std::shared_ptr<Object> value) {
 	int h = hash(key->hashCode());
 	int index = (capacity - 1) & h;
-	object p = table[index];
+	std::shared_ptr<Object> p = table[index];
 	if (p == NULL) {
 		table[index] = std::make_shared<Entry>(key, value);
 		return NULL;
 	} else {
-		object e = NULL;
-		object k = ((Entry*) p.get())->getKey();
+		std::shared_ptr<Object> e = NULL;
+		std::shared_ptr<Object> k = ((Entry*) p.get())->getKey();
 		int phash = hash(k->hashCode());
 		if (phash == h && key->equals(k.get())) {
 			e = p;
 		} else {
 			for (int binCount = 0;; ++binCount) {
-				object e = ((Entry*) p.get())->getNext();
+				std::shared_ptr<Object> e = ((Entry*) p.get())->getNext();
 				if (e == NULL) {
-					entry ent = std::make_shared<Entry>(key, value);
+					std::shared_ptr<Entry> ent = std::make_shared<Entry>(key,
+							value);
 					((Entry*) p.get())->setNext(ent);
 					break;
 				}
@@ -63,7 +65,7 @@ object HashMap::put(object key, object value) {
 		}
 		if (e != NULL) {
 			Entry* ep = (Entry*) e.get();
-			object oldValue = ep->getValue();
+			std::shared_ptr<Object> oldValue = ep->getValue();
 			ep->setValue(value);
 			return oldValue;
 		}
@@ -76,7 +78,8 @@ object HashMap::put(object key, object value) {
 
 }
 
-object HashMap::putIfAbsent(object key, object value) {
+std::shared_ptr<Object> HashMap::putIfAbsent(std::shared_ptr<Object> key,
+		std::shared_ptr<Object> value) {
 	if (this->containsKey(key)) {
 		return this->get(key);
 	}
@@ -84,10 +87,10 @@ object HashMap::putIfAbsent(object key, object value) {
 	return NULL;
 }
 
-object HashMap::get(object key) {
+std::shared_ptr<Object> HashMap::get(std::shared_ptr<Object> key) {
 	int h = hash(key->hashCode());
 	int index = (capacity - 1) & h;
-	object first = table[index];
+	std::shared_ptr<Object> first = table[index];
 	if (first == NULL) {
 		return NULL;
 	}
@@ -96,7 +99,7 @@ object HashMap::get(object key) {
 	if (fHash == h && key->equals(ep->getKey().get())) {
 		return ep->getValue();
 	}
-	object e = ep->getNext();
+	std::shared_ptr<Object> e = ep->getNext();
 	if (e == NULL) {
 		return NULL;
 	}
@@ -110,16 +113,17 @@ object HashMap::get(object key) {
 
 	return NULL;
 }
-object HashMap::remove(object key) {
+
+std::shared_ptr<Object> HashMap::remove(std::shared_ptr<Object> key) {
 	int h = hash(key->hashCode());
 	int index = (capacity - 1) & h;
-	object first = table[index];
+	std::shared_ptr<Object> first = table[index];
 	if (first == NULL) {
 		return NULL;
 	}
 
-	object node = NULL;
-	object e = NULL;
+	std::shared_ptr<Object> node = NULL;
+	std::shared_ptr<Object> e = NULL;
 	Entry* fp = (Entry*) first.get();
 	int fHash = hash(fp->getKey()->hashCode());
 	if (fHash == h && key->equals(fp->getKey().get())) {
@@ -173,7 +177,7 @@ int HashMap::getCapacity() {
 int HashMap::size() {
 	int size = 0;
 	for (int i = 0; i < capacity; i++) {
-		entry e = table[i];
+		std::shared_ptr<Entry> e = table[i];
 		if (e == NULL) {
 			continue;
 		}
@@ -184,6 +188,7 @@ int HashMap::size() {
 	}
 	return size;
 }
+
 bool HashMap::isEmpty() {
 	return size() == 0;
 }
@@ -209,11 +214,11 @@ bool HashMap::equals(Object* obj) {
 	return false;
 }
 
-std::string HashMap::toString(entry* e, int capa) {
+std::string HashMap::toString(std::shared_ptr<Entry>* e, int capa) {
 	Strings str;
 	str.append("HashMap[");
 	for (int i = 0; i < capa; i++) {
-		entry n = e[i];
+		std::shared_ptr<Entry> n = e[i];
 
 		if (n == NULL) {
 			continue;
@@ -238,7 +243,7 @@ std::string HashMap::toString() {
 	Strings str;
 	str.append("HashMap[");
 	for (int i = 0; i < capacity; i++) {
-		entry e = table[i];
+		std::shared_ptr<Entry> e = table[i];
 
 		if (e == NULL) {
 			continue;
@@ -291,8 +296,8 @@ int HashMap::tableSizeFor(int capacity) {
 	}
 	return n + 1;
 }
-entry* HashMap::resize() {
-	entry* oldTable = table;
+std::shared_ptr<Entry>* HashMap::resize() {
+	std::shared_ptr<Entry> * oldTable = table;
 	int oldCapacity = capacity;
 	int oldThreshold = threshold;
 
@@ -323,14 +328,14 @@ entry* HashMap::resize() {
 	}
 	threshold = newThreshold;
 	capacity = newCapacity;
-	entry* newTable = new entry[newCapacity];
+	std::shared_ptr<Entry>* newTable = new std::shared_ptr<Entry>[newCapacity];
 	table = newTable;
 
 	if (oldTable == NULL) {
 		return newTable;
 	}
 	for (int i = 0; i < oldCapacity; i++) {
-		entry e = oldTable[i];
+		std::shared_ptr<Entry> e = oldTable[i];
 		if (e == NULL) {
 			continue;
 		}
@@ -352,7 +357,8 @@ entry* HashMap::resize() {
 					if (loTail == NULL) {
 						loHead = ent;
 					} else {
-						entry tmp = std::make_shared<Entry>(ent);
+						std::shared_ptr<Entry> tmp = std::make_shared<Entry>(
+								ent);
 						loTail->setNext(tmp);
 					}
 					loTail = ent;
@@ -360,7 +366,8 @@ entry* HashMap::resize() {
 					if (hiTail == NULL) {
 						hiHead = ent;
 					} else {
-						entry tmp = std::make_shared<Entry>(ent);
+						std::shared_ptr<Entry> tmp = std::make_shared<Entry>(
+								ent);
 						hiTail->setNext(tmp);
 					}
 					hiTail = ent;
@@ -369,17 +376,18 @@ entry* HashMap::resize() {
 			} while ((ent = next) != NULL);
 			if (loTail != NULL) {
 				loTail->setNext(NULL);
-				entry tmp = std::make_shared<Entry>(loHead);
+				std::shared_ptr<Entry> tmp = std::make_shared<Entry>(loHead);
 				newTable[i] = tmp;
 			}
 			if (hiTail != NULL) {
 				hiTail->setNext(NULL);
-				entry tmp = std::make_shared<Entry>(hiHead);
+				std::shared_ptr<Entry> tmp = std::make_shared<Entry>(hiHead);
 				newTable[i + oldCapacity] = tmp;
 			}
 		}
 	}
 
+	delete[] oldTable;
 	return newTable;
 
 }

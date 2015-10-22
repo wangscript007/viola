@@ -64,8 +64,8 @@ HashMap
 
 _HashMap map = std::make_shared<HashMap>();
 
-_String key = std::make_shared<Strings>("foobar");
-_String value = std::make_shared<Strings>("hoge");
+_Strings key = std::make_shared<Strings>("foobar");
+_Strings value = std::make_shared<Strings>("hoge");
 
 map->put(key, value);
 _Object got = map->get(key);

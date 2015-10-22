@@ -25,8 +25,8 @@ int containsKey() {
 	_HashMap map = std::make_shared<HashMap>(100);
 	dump(map);
 
-	_String key = std::make_shared<Strings>("foobar");
-	_String value = std::make_shared<Strings>("hoge");
+	_Strings key = std::make_shared<Strings>("foobar");
+	_Strings value = std::make_shared<Strings>("hoge");
 
 	_Object previous = map->put(key, value);
 	if (previous != NULL) {
@@ -38,7 +38,7 @@ int containsKey() {
 	printf("containsKey: <%d>\n", contains);
 	ret = ret + !contains;
 
-	_String key2 = std::make_shared<Strings>("foobar");
+	_Strings key2 = std::make_shared<Strings>("foobar");
 	bool contains2 = map->containsKey(key2);
 	printf("key2.hashCode: <%d>\n", key2->hashCode());
 	printf("key2.containsKey: <%d>\n", contains2);
@@ -54,8 +54,8 @@ int put() {
 	_HashMap map = std::make_shared<HashMap>(130);
 	dump(map);
 
-	_String key = std::make_shared<Strings>("foobar");
-	_String value = std::make_shared<Strings>("hoge");
+	_Strings key = std::make_shared<Strings>("foobar");
+	_Strings value = std::make_shared<Strings>("hoge");
 
 	_Object previous = map->put(key, value);
 	if (previous != NULL) {
@@ -79,8 +79,8 @@ int remove() {
 	_HashMap map = std::make_shared<HashMap>(300);
 	dump(map);
 
-	_String key = std::make_shared<Strings>("foobar");
-	_String value = std::make_shared<Strings>("hoge");
+	_Strings key = std::make_shared<Strings>("foobar");
+	_Strings value = std::make_shared<Strings>("hoge");
 
 	_Object previous = map->put(key, value);
 	if (previous != NULL) {
@@ -114,12 +114,12 @@ int capacity() {
 	int ret = 0;
 	_HashMap map = std::make_shared<HashMap>(2);
 
-	_String key1 = std::make_shared<Strings>("foobar1");
-	_String key2 = std::make_shared<Strings>("foobar2");
-	_String key3 = std::make_shared<Strings>("foobar3");
-	_String key4 = std::make_shared<Strings>("foobar4");
-	_String value = std::make_shared<Strings>("hoge1");
-	_String value2 = std::make_shared<Strings>("hoge2");
+	_Strings key1 = std::make_shared<Strings>("foobar1");
+	_Strings key2 = std::make_shared<Strings>("foobar2");
+	_Strings key3 = std::make_shared<Strings>("foobar3");
+	_Strings key4 = std::make_shared<Strings>("foobar4");
+	_Strings value = std::make_shared<Strings>("hoge1");
+	_Strings value2 = std::make_shared<Strings>("hoge2");
 
 	_Object previous1 = map->put(key1, value);
 	if (previous1 != NULL) {

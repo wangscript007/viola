@@ -10,7 +10,7 @@
 int isEmptyTest() {
 	int ret = 0;
 
-	_String str = std::make_shared<Strings>();
+	_Strings str = std::make_shared<Strings>();
 	printf("bool: <%d>\n", str->isEmpty());
 	ret = ret + !str->isEmpty();
 
@@ -24,7 +24,7 @@ int isEmptyTest() {
 int hashCodeTest() {
 	int ret = 0;
 
-	_String str = std::make_shared<Strings>();
+	_Strings str = std::make_shared<Strings>();
 	printf("hashCode: <%d>\n", str->hashCode());
 	ret = ret + str->hashCode();
 
@@ -41,7 +41,7 @@ int equalsTest() {
 	int ret = 0;
 	std::string s = "foobar";
 
-	_String str = std::make_shared<Strings>();
+	_Strings str = std::make_shared<Strings>();
 	printf("className: <%s>\n", str->getClassName().c_str());
 
 	str->append(s);
@@ -57,7 +57,7 @@ int equalsTest() {
 	ret = ret + !bool1;
 	ret = ret + bool2;
 
-	_String str2 = std::make_shared<Strings>();
+	_Strings str2 = std::make_shared<Strings>();
 	printf("foobar->equals(foobar): <%d>\n", str->equals(str2));
 
 	return ret;

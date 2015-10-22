@@ -40,7 +40,7 @@ typedef std::shared_ptr<Double> _Double;
 typedef std::shared_ptr<Integer> _Integer;
 typedef std::shared_ptr<Long> _Long;
 typedef std::shared_ptr<Object> _Object;
-typedef std::shared_ptr<Strings> _String;
+typedef std::shared_ptr<Strings> _Strings;
 typedef std::shared_ptr<ArrayList> _ArrayList;
 typedef std::shared_ptr<HashMap> _HashMap;
 typedef std::shared_ptr<Entry> _Entry;

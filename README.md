@@ -35,19 +35,14 @@ printf("foobar->equals(notsame): <%d>\n", bool2); // -> 0
 
 ArrayList
 ```
-#include "Integer.h"
-#include "ArrayList.h"
-
-using namespace std;
-typedef std::shared_ptr<Integer> integer;
-typedef std::shared_ptr<ArrayList> arrayList;
+#include "viola.h"
 
 ...
 
-arrayList list = make_shared<ArrayList>();
+_ArrayList list = std::make_shared<ArrayList>();
 
-integer arg1 = make_shared<Integer>(1234);
-integer arg2 = make_shared<Integer>(5678);
+_Integer arg1 = std::make_shared<Integer>(1234);
+_Integer arg2 = std::make_shared<Integer>(5678);
 
 list->add(arg1);
 list->add(arg2);
@@ -63,22 +58,17 @@ printf("size: <%d>\n", list->size()); // -> 0
 
 HashMap
 ```
-#include "HashMap.h"
-#include "Strings.h"
-
-using namespace std;
-typedef std::shared_ptr<Strings> strings;
-typedef std::shared_ptr<HashMap> hashMap;
+#include "viola.h"
 
 ...
 
-hashMap map = make_shared<HashMap>();
+_HashMap map = std::make_shared<HashMap>();
 
-strings key = make_shared<Strings>("foobar");
-strings value = make_shared<Strings>("hoge");
+_String key = std::make_shared<Strings>("foobar");
+_String value = std::make_shared<Strings>("hoge");
 
 map->put(key, value);
-object got = map->get(key);
+_Object got = map->get(key);
 printf("got: <%s>\n", ((Strings*) got.get())->toString().c_str()); // -> hoge
 
 bool contains = map->containsKey(key);

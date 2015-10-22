@@ -15,14 +15,11 @@ file open/close, read/write.
 
 Strings
 ```
-#include "Strings.h"
-
-using namespace std;
-typedef std::shared_ptr<Strings> strings;
+#include "viola.h"
 
 ...
 
-strings str = make_shared<Strings>();
+_String str = std::make_shared<Strings>();
 
 str->append("foobar");
 printf("str: <%s>\n", str->toString().c_str()); // -> foobar

@@ -19,7 +19,7 @@ Strings
 
 ...
 
-_String str = std::make_shared<Strings>();
+_Strings str = std::make_shared<Strings>();
 
 str->append("foobar");
 printf("str: <%s>\n", str->toString().c_str()); // -> foobar

@@ -14,6 +14,8 @@ class BindException: public SocketException {
 public:
 	BindException();
 	~BindException();
+
+	virtual std::string getClassName();
 };
 
 #endif /* VIOLA_EXCEPTION_BINDEXCEPTION_H_ */

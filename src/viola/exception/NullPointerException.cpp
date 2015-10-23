@@ -16,3 +16,6 @@ NullPointerException::~NullPointerException() {
 	// TODO Auto-generated destructor stub
 }
 
+std::string NullPointerException::getClassName() {
+	return "NullPointerException";
+}

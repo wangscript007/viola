@@ -14,6 +14,8 @@ class FileNotFoundException: public IOException {
 public:
 	FileNotFoundException();
 	~FileNotFoundException();
+
+	virtual std::string getClassName();
 };
 
 #endif /* VIOLA_IO_FILENOTFOUNDEXCEPTION_H_ */

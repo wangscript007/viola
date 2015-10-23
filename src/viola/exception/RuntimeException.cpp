@@ -16,3 +16,6 @@ RuntimeException::~RuntimeException() {
 	// TODO Auto-generated destructor stub
 }
 
+std::string RuntimeException::getClassName() {
+	return "RuntimeException";
+}

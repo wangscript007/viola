@@ -16,3 +16,6 @@ IOException::~IOException() {
 	// TODO Auto-generated destructor stub
 }
 
+std::string IOException::getClassName(){
+	return "IOException";
+}

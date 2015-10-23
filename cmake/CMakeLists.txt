@@ -23,8 +23,8 @@ add_library(viola SHARED
  ${ALL_SRC}
 )
 
+include_directories(${src}/assert)
 include_directories(${src}/exception)
-include_directories(${src}/ext)
 include_directories(${src}/io)
 include_directories(${src}/lang)
 include_directories(${src}/math)
@@ -32,6 +32,12 @@ include_directories(${src}/net)
 include_directories(${src}/time)
 include_directories(${src}/util)
 include_directories(${src})
+
+add_executable(AssertTest.out
+ ${test}/assert/AssertTest.cpp
+)
+target_link_libraries(AssertTest.out viola)
+add_test(NAME AssertTest COMMAND ${build}/test/AssertTest.out)
 
 add_executable(ExceptionTest.out
  ${test}/exception/ExceptionTest.cpp

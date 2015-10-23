@@ -14,6 +14,8 @@ class UnknownHostException: public IOException {
 public:
 	UnknownHostException();
 	~UnknownHostException();
+
+	virtual std::string getClassName();
 };
 
 #endif /* VIOLA_EXCEPTION_UNKNOWNHOSTEXCEPTION_H_ */

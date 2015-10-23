@@ -14,6 +14,8 @@ class NullPointerException: public RuntimeException {
 public:
 	NullPointerException();
 	~NullPointerException();
+
+	virtual std::string getClassName();
 };
 
 #endif /* VIOLA_LANG_NULLPOINTEREXCEPTION_H_ */

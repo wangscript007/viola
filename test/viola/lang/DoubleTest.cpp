@@ -10,8 +10,8 @@
 int main() {
 	int ret = 0;
 
-	_Double d1 = std::make_shared < Double > (1.2);
-	_Double d2 = std::make_shared < Double > (3.4);
+	_Double d1 = std::make_shared<Double>(1.2);
+	_Double d2 = std::make_shared<Double>(3.4);
 	printf("obj1.className: <%s>\n", d1.get()->getClassName().c_str());
 
 	printf("obj1.long: <%lu>, obj1.hashCode: <%d>\n",
@@ -27,6 +27,9 @@ int main() {
 	ret = ret + !d1.get()->equals(d4);
 	delete d3;
 	delete d4;
+
+	ret = ret + Assert::assertEquals(d1, d1);
+	ret = ret + !Assert::assertEquals(d1, d2);
 
 	return ret;
 }

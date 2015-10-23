@@ -14,6 +14,8 @@ class RuntimeException: public Exception {
 public:
 	RuntimeException();
 	virtual ~RuntimeException();
+
+	virtual std::string getClassName();
 };
 
 #endif /* VIOLA_LANG_RUNTIMEEXCEPTION_H_ */

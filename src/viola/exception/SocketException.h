@@ -14,6 +14,8 @@ class SocketException: public IOException {
 public:
 	SocketException();
 	virtual ~SocketException();
+
+	virtual std::string getClassName();
 };
 
 #endif /* VIOLA_EXCEPTION_SOCKETEXCEPTION_H_ */

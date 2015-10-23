@@ -16,3 +16,6 @@ UnknownHostException::~UnknownHostException() {
 	// TODO Auto-generated destructor stub
 }
 
+std::string UnknownHostException::getClassName() {
+	return "UnknownHostException";
+}

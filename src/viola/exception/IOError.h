@@ -13,7 +13,9 @@
 class IOError: public Error {
 public:
 	IOError();
-	virtual ~IOError();
+	~IOError();
+
+	virtual std::string getClassName();
 };
 
 #endif /* VIOLA_IO_IOERROR_H_ */

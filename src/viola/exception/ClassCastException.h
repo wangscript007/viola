@@ -14,6 +14,8 @@ class ClassCastException: public RuntimeException {
 public:
 	ClassCastException();
 	~ClassCastException();
+
+	virtual std::string getClassName();
 };
 
 #endif /* VIOLA_LANG_CLASSCASTEXCEPTION_H_ */

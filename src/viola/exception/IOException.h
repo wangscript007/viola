@@ -14,6 +14,8 @@ class IOException: public Exception {
 public:
 	IOException();
 	virtual ~IOException();
+
+	virtual std::string getClassName();
 };
 
 #endif /* VIOLA_IO_IOEXCEPTION_H_ */

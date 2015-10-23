@@ -23,6 +23,9 @@ int main() {
 
 	printf("obj1.toString(): <%s>\n", arg1.get()->toChar());
 
+	ret = ret + Assert::assertEquals(arg1, arg1);
+	ret = ret + !Assert::assertEquals(arg1, arg2);
+
 	return ret;
 }
 

@@ -16,3 +16,6 @@ SocketException::~SocketException() {
 	// TODO Auto-generated destructor stub
 }
 
+std::string SocketException::getClassName() {
+	return "SocketException";
+}

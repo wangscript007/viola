@@ -16,3 +16,6 @@ FileNotFoundException::~FileNotFoundException() {
 	// TODO Auto-generated destructor stub
 }
 
+std::string FileNotFoundException::getClassName(){
+	return "FileNotFoundException";
+}

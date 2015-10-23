@@ -16,3 +16,6 @@ BindException::~BindException() {
 	// TODO Auto-generated destructor stub
 }
 
+std::string BindException::getClassName() {
+	return "BindException";
+}

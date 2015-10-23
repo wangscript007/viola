@@ -60,6 +60,9 @@ int equalsTest() {
 	_Strings str2 = std::make_shared<Strings>();
 	printf("foobar->equals(foobar): <%d>\n", str->equals(str2));
 
+	ret = ret + Assert::assertEquals(str, str);
+	ret = ret + !Assert::assertEquals(str, str2);
+
 	return ret;
 }
 

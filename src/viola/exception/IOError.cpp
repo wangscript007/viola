@@ -16,3 +16,6 @@ IOError::~IOError() {
 	// TODO Auto-generated destructor stub
 }
 
+std::string IOError::getClassName() {
+	return "IOError";
+}

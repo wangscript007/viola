@@ -15,8 +15,7 @@ void dump(_ArrayList list) {
 	printf("toChar: <%s>\n", list->toChar());
 
 	for (int i = 0; i < list->size(); i++) {
-		_Object got = list->get(i);
-		printf("<%s>\n", got->toChar());
+		printf("<%s>\n", list->get(i)->toChar());
 	}
 
 }

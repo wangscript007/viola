@@ -16,3 +16,6 @@ ClassCastException::~ClassCastException() {
 	// TODO Auto-generated destructor stub
 }
 
+std::string ClassCastException::getClassName() {
+	return "ClassCastException";
+}

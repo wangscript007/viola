@@ -40,7 +40,7 @@ _Strings str = std::make_shared<Strings>();
 
 str->append("foobar");
 str->append("hoge");
-printf("<%s>\n", str->toChar()); // -> foobarhoge
+System::out::println(str->toString()); // -> foobarhoge
 
 bool same = str->equals("foobar");
 bool not = str->equals("notsame");
@@ -64,7 +64,7 @@ for(int i = 0; i < 10; i ++){
 }
 
 for(int i = 0; i < list->size(); i++){
-	printf("<%s> ", list->get(i)->toChar());
+	System::out::println(list->get(i)->toString());
 }
 list->clear();
 ```
@@ -82,7 +82,7 @@ _Strings value = std::make_shared<Strings>("hoge");
 
 map->put(key, value);
 printf("containsKey: <%d> ", map->containsKey(key)); // -> 1
-printf("got: <%s> ", map->get(key)->toChar); // -> hoge
+System::out::println("got: " + map->get(key)->toString()); // -> hoge
 
 map->clear();
 ```

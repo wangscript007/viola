@@ -22,9 +22,9 @@ if(file->exists()){
 file->createNewFile();
 
 _FileWriter writer = std::make_shared<FileWriter>(file);
-writer.write("this is first line.");
-writer.flush();
-writer.close();
+writer->write("this is first line.");
+writer->flush();
+writer->close();
 
 ```
 
@@ -58,13 +58,10 @@ ArrayList
 
 _ArrayList list = std::make_shared<ArrayList>();
 
-_Integer arg1 = std::make_shared<Integer>(123);
-_Integer arg2 = std::make_shared<Integer>(456);
-_Integer arg3 = std::make_shared<Integer>(789);
-
-list->add(arg1);
-list->add(arg2);
-list->add(arg3);
+for(int i = 0; i < 10; i ++){
+	_Integer arg = std::make_shared<Integer>(i);
+	list->add(arg);
+}
 
 for(int i = 0; i < list->size(); i++){
 	printf("<%s> ", list->get(i)->toChar());

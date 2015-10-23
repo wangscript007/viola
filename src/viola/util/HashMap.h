@@ -8,7 +8,6 @@
 #ifndef VIOLA_UTIL_HASHMAP_H_
 #define VIOLA_UTIL_HASHMAP_H_
 
-#include <vector>
 #include "Object.h"
 #include "Strings.h"
 #include "Entry.h"
@@ -51,7 +50,6 @@ public:
 	bool equals(Object* obj);
 	std::string toString();
 	std::string getClassName();
-
 
 private:
 	int hash(int keyHashCode);

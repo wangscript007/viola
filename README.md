@@ -81,7 +81,6 @@ _Strings key = std::make_shared<Strings>("foobar");
 _Strings value = std::make_shared<Strings>("hoge");
 
 map->put(key, value);
-printf("containsKey: <%d> ", map->containsKey(key)); // -> 1
 System::out::println("got: " + map->get(key)->toString()); // -> hoge
 
 map->clear();

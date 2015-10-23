@@ -9,7 +9,24 @@ shared object like JDK interface.
 ## viola.io.*
 
 File
-file open/close, read/write.
+```
+#include "viola.h"
+
+...
+
+_File file = std::make_shared<File>("/tmp/test.log");
+
+if(file->exists()){
+	file->delete();
+}
+file->createNewFile();
+
+_FileWriter writer = std::make_shared<FileWriter>(file);
+writer.write("this is first line.");
+writer.flush();
+writer.close();
+
+```
 
 ## viola.lang.*
 
@@ -23,7 +40,7 @@ _Strings str = std::make_shared<Strings>();
 
 str->append("foobar");
 str->append("hoge");
-printf("<%s>\n", str->toString().c_str()); // -> foobarhoge
+printf("<%s>\n", str->toChar()); // -> foobarhoge
 
 bool same = str->equals("foobar");
 bool not = str->equals("notsame");
@@ -41,15 +58,16 @@ ArrayList
 
 _ArrayList list = std::make_shared<ArrayList>();
 
-_Integer arg1 = std::make_shared<Integer>(1234);
-_Integer arg2 = std::make_shared<Integer>(5678);
+_Integer arg1 = std::make_shared<Integer>(123);
+_Integer arg2 = std::make_shared<Integer>(456);
+_Integer arg3 = std::make_shared<Integer>(789);
 
 list->add(arg1);
 list->add(arg2);
+list->add(arg3);
 
 for(int i = 0; i < list->size(); i++){
-	_Object got = list->get(i);
-	printf("<%s>\n", got->toString().c_str());
+	printf("<%s> ", list->get(i)->toChar());
 }
 list->clear();
 ```
@@ -66,11 +84,8 @@ _Strings key = std::make_shared<Strings>("foobar");
 _Strings value = std::make_shared<Strings>("hoge");
 
 map->put(key, value);
-_Object got = map->get(key);
-printf("got: <%s>\n", got->toString().c_str()); // -> hoge
-
-bool contains = map->containsKey(key);
-printf("containsKey: <%d>\n", contains); // -> 1
+printf("containsKey: <%d> ", map->containsKey(key)); // -> 1
+printf("got: <%s> ", map->get(key)->toChar); // -> hoge
 
 map->clear();
 ```

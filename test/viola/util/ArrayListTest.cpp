@@ -12,11 +12,11 @@ void dump(_ArrayList list) {
 	printf("className: <%s>\n", list->getClassName().c_str());
 	printf("size: <%d>\n", list->size());
 	printf("hashCode: <%d>\n", list->hashCode());
-	printf("toString: <%s>\n", list->toString().c_str());
+	printf("toChar: <%s>\n", list->toChar());
 
 	for (int i = 0; i < list->size(); i++) {
-		Integer* obj = (Integer*) list->get(i).get();
-		printf("obj<%d>: <%d>\n", i, obj->get());
+		_Object got = list->get(i);
+		printf("<%s>\n", got->toChar());
 	}
 
 }

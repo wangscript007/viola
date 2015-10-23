@@ -42,3 +42,7 @@ std::string Object::toString() {
 	str.append("]");
 	return str;
 }
+
+const char* Object::toChar() {
+	return this->toString().c_str();
+}

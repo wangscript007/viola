@@ -22,13 +22,13 @@ Strings
 _Strings str = std::make_shared<Strings>();
 
 str->append("foobar");
-printf("str: <%s>\n", str->toString().c_str()); // -> foobar
-printf("hashCode: <%d>\n", str->hashCode());
+str->append("hoge");
+printf("<%s>\n", str->toString().c_str()); // -> foobarhoge
 
-bool bool1 = str->equals("foobar");
-bool bool2 = str->equals("notsame");
-printf("foobar->equals(foobar): <%d>\n", bool1); // -> 1
-printf("foobar->equals(notsame): <%d>\n", bool2); // -> 0
+bool same = str->equals("foobar");
+bool not = str->equals("notsame");
+printf("<%d>\n", same); // -> 1
+printf("<%d>\n", not); // -> 0
 ```
 
 ## viola.util.*
@@ -46,14 +46,12 @@ _Integer arg2 = std::make_shared<Integer>(5678);
 
 list->add(arg1);
 list->add(arg2);
-printf("size: <%d>\n", list->size()); // -> 2
 
 for(int i = 0; i < list->size(); i++){
-	Integer\* obj = (Integer*)list->get(i).get();
-	printf("obj: <%d>\n", obj->get()); // -> 1234, 5678
+	_Object got = list->get(i);
+	printf("<%s>\n", got->toString().c_str());
 }
 list->clear();
-printf("size: <%d>\n", list->size()); // -> 0
 ```
 
 HashMap
@@ -69,11 +67,10 @@ _Strings value = std::make_shared<Strings>("hoge");
 
 map->put(key, value);
 _Object got = map->get(key);
-printf("got: <%s>\n", ((Strings*) got.get())->toString().c_str()); // -> hoge
+printf("got: <%s>\n", got->toString().c_str()); // -> hoge
 
 bool contains = map->containsKey(key);
 printf("containsKey: <%d>\n", contains); // -> 1
 
 map->clear();
-printf("size: <%d>\n", map->size()); // -> 0
 ```

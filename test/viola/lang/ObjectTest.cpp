@@ -21,7 +21,7 @@ int main() {
 	printf("obj1.equals(obj1): <%d>\n", arg1.get()->equals(arg1.get()));
 	printf("obj1.equals(obj2): <%d>\n", arg1.get()->equals(arg2.get()));
 
-	printf("obj1.toString(): <%s>\n", arg1.get()->toString().c_str());
+	printf("obj1.toString(): <%s>\n", arg1.get()->toChar());
 
 	return ret;
 }

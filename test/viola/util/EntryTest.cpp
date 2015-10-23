@@ -13,7 +13,7 @@ void dump(Entry* entry) {
 	printf("hashCode: <%d>\n", entry->hashCode());
 	printf("key: <%d>\n", ((Integer*) entry->getKey().get())->get());
 	printf("value: <%d>\n", ((Integer*) entry->getValue().get())->get());
-	printf("toString: <%s>\n", entry->toString().c_str());
+	printf("toChar: <%s>\n", entry->toChar());
 }
 
 int hashCode() {

@@ -42,10 +42,10 @@ int equalsTest() {
 	std::string s = "foobar";
 
 	_Strings str = std::make_shared<Strings>();
-	printf("className: <%s>\n", str->getClassName().c_str());
+	printf("className: <%s>\n", str->toChar());
 
 	str->append(s);
-	printf("str: <%s>\n", str->toString().c_str());
+	printf("str: <%s>\n", str->toChar());
 	printf("hashCode: <%d>\n", str->hashCode());
 
 	bool bool1 = str->equals("foobar");

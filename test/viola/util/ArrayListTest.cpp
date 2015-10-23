@@ -12,10 +12,10 @@ void dump(_ArrayList list) {
 	printf("className: <%s>\n", list->getClassName().c_str());
 	printf("size: <%d>\n", list->size());
 	printf("hashCode: <%d>\n", list->hashCode());
-	printf("toChar: <%s>\n", list->toChar());
+	printf("toString: <%s>\n", list->toString().c_str());
 
 	for (int i = 0; i < list->size(); i++) {
-		printf("<%s>\n", list->get(i)->toChar());
+		printf("<%s>\n", list->get(i)->toString().c_str());
 	}
 
 }

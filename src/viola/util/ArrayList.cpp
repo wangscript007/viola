@@ -75,14 +75,14 @@ bool ArrayList::equals(Object* obj) {
 
 //Override
 std::string ArrayList::toString() {
-	std::string str("ArrayList[");
+	std::string str("{");
 	for (int i = 0; i < size(); i++) {
 		str.append(this->get(i)->toString());
 		if (i < size() - 1) {
 			str.append(", ");
 		}
 	}
-	str.append("]");
+	str.append("}");
 	return str;
 }
 

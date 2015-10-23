@@ -15,7 +15,7 @@ void dump(_HashMap map) {
 	printf("threshold: <%d>\n", map->getThreshold());
 	printf("size: <%d>\n", map->size());
 	printf("isEmpty: <%d>\n", map->isEmpty());
-	printf("toChar: <%s>\n", map->toChar());
+	printf("toString: <%s>\n", map->toString().c_str());
 	printf("[dump] out. --------\n");
 }
 
@@ -63,8 +63,8 @@ int put() {
 	}
 
 	_Object got = map->get(key);
-	printf("got.hashCode<%d>\n", got->hashCode());
-	printf("got: <%s>\n", got->toChar());
+	printf("got.hashCode: <%d>\n", got->hashCode());
+	printf("got: <%s>\n", got->toString().c_str());
 	if (!value->equals(got.get())) {
 		ret = ret + 1;
 	}
@@ -87,8 +87,8 @@ int remove() {
 		ret = ret + 1;
 	}
 	_Object got = map->get(key);
-	printf("got.hashCode<%d>\n", got->hashCode());
-	printf("got: <%s>\n", got->toChar());
+	printf("got.hashCode: <%d>\n", got->hashCode());
+	System::out::println("got: " + got->toString());
 	if (!value->equals(got.get())) {
 		ret = ret + 1;
 	}
@@ -96,8 +96,8 @@ int remove() {
 
 	_Object removed = map->remove(key);
 	if (removed != NULL) {
-		printf("removed.hashCode<%d>\n", removed->hashCode());
-		printf("removed: <%s>\n", removed->toChar());
+		printf("removed.hashCode: <%d>\n", removed->hashCode());
+		printf("removed: <%s>\n", removed->toString().c_str());
 	} else {
 		ret = ret + 1;
 	}

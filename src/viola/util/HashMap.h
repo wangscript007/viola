@@ -52,6 +52,7 @@ public:
 	std::string toString();
 	std::string getClassName();
 
+
 private:
 	int hash(int keyHashCode);
 	int tableSizeFor(int capacity);

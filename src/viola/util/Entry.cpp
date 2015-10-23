@@ -72,11 +72,10 @@ bool Entry::equals(Object* obj) {
 
 //Override
 std::string Entry::toString() {
-	std::string str("Entry[");
+	std::string str;
 	str.append(this->key->toString());
 	str.append(": ");
 	str.append(this->value->toString());
-	str.append("]");
 	return str;
 }
 

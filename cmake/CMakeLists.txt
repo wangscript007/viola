@@ -69,6 +69,12 @@ add_executable(StringsTest.out
 target_link_libraries(StringsTest.out viola)
 add_test(NAME StringsTest COMMAND ${build}/test/StringsTest.out)
 
+add_executable(SystemTest.out
+ ${test}/lang/SystemTest.cpp
+)
+target_link_libraries(SystemTest.out viola)
+add_test(NAME SystemTest COMMAND ${build}/test/SystemTest.out)
+
 add_executable(ArrayListTest.out
  ${test}/util/ArrayListTest.cpp
 )

@@ -43,6 +43,4 @@ std::string Object::toString() {
 	return str;
 }
 
-const char* Object::toChar() {
-	return this->toString().c_str();
-}
+

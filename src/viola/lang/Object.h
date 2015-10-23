@@ -22,7 +22,6 @@ public:
 	virtual bool equals(Object* obj);
 	virtual std::string getClassName();
 	virtual std::string toString();
-	const char* toChar();
 };
 
 #endif /* VIOLA_LANG_OBJECT_H_ */

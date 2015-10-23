@@ -216,7 +216,7 @@ bool HashMap::equals(Object* obj) {
 
 std::string HashMap::toString(std::shared_ptr<Entry>* e, int capa) {
 	Strings str;
-	str.append("HashMap[");
+	str.append("{");
 	for (int i = 0; i < capa; i++) {
 		std::shared_ptr<Entry> n = e[i];
 
@@ -233,15 +233,15 @@ std::string HashMap::toString(std::shared_ptr<Entry>* e, int capa) {
 			str.append(", ");
 		}
 	}
-	str.append("]");
+	str.append("}");
 	str.replace(", , ", ", ");
-	str.replace(", ]", "]");
+	str.replace(", }", "}");
 	return str.toString();
 }
 
 std::string HashMap::toString() {
 	Strings str;
-	str.append("HashMap[");
+	str.append("{");
 	for (int i = 0; i < capacity; i++) {
 		std::shared_ptr<Entry> e = table[i];
 
@@ -258,9 +258,9 @@ std::string HashMap::toString() {
 			str.append(", ");
 		}
 	}
-	str.append("]");
+	str.append("}");
 	str.replace(", , ", ", ");
-	str.replace(", ]", "]");
+	str.replace(", }", "}");
 	return str.toString();
 }
 

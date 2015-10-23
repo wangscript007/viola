@@ -24,3 +24,10 @@ bool File::equals(Object* obj) {
 std::string File::getClassName() {
 	return "File";
 }
+std::string File::toString() {
+	std::string str(getClassName());
+	str.append("[");
+	str.append(path);
+	str.append("]");
+	return str;
+}

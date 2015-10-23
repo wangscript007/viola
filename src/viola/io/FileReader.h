@@ -10,24 +10,24 @@
 
 #include "File.h"
 #include "Object.h"
+#include "Closeable.h"
+#include "Flushable.h"
+#include "FileNotFoundException.h"
 
-class FileReader: public Object {
+class FileReader: public Object, public Closeable, public Flushable {
 public:
-	FileReader(std::shared_ptr<File> file);
+	FileReader(std::shared_ptr<File> file) throw (std::shared_ptr<FileNotFoundException>);
 	~FileReader();
 
 	std::string read();
-	bool close();
 
 	//Override
+	void flush() throw (std::shared_ptr<IOException>);
+	void close() throw (std::shared_ptr<IOException>);
 	int hashCode();
-
-	//Override
 	bool equals(Object* obj);
-
-	//Override
 	std::string getClassName();
-
+	std::string toString();
 };
 
 #endif /* VIOLA_IO_FILEREADER_H_ */

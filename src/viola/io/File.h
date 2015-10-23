@@ -11,13 +11,16 @@
 #include <stdio.h>
 #include "Object.h"
 #include "Strings.h"
+#include "IOException.h"
 
 class File: public Object {
+private:
+	std::string path;
 public:
 	File(std::string path);
 	~File();
 
-	bool createNewFile();
+	bool createNewFile() throw (std::shared_ptr<IOException>);
 	bool deleteFile();
 	bool exists();
 	std::string getAbsolutePath();
@@ -29,12 +32,9 @@ public:
 
 	//Override
 	int hashCode();
-
-	//Override
 	bool equals(Object* obj);
-
-	//Override
 	std::string getClassName();
+	std::string toString();
 
 };
 

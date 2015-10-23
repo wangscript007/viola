@@ -7,13 +7,23 @@
 
 #include "FileReader.h"
 
-FileReader::FileReader(std::shared_ptr<File> file) {
+FileReader::FileReader(
+		std::shared_ptr<File> file)
+				throw (std::shared_ptr<FileNotFoundException>) {
 	// TODO Auto-generated constructor stub
 
 }
 
 FileReader::~FileReader() {
 	// TODO Auto-generated destructor stub
+}
+
+void FileReader::flush() throw (std::shared_ptr<IOException>) {
+
+}
+
+void FileReader::close() throw (std::shared_ptr<IOException>) {
+
 }
 
 int FileReader::hashCode() {
@@ -26,4 +36,8 @@ bool FileReader::equals(Object* obj) {
 
 std::string FileReader::getClassName() {
 	return "FileReader";
+}
+
+std::string FileReader::toString() {
+	return "";
 }

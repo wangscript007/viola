@@ -75,9 +75,5 @@ std::string Double::getClassName() {
 
 //Override
 std::string Double::toString() {
-	std::string str(getClassName());
-	str.append("]");
-	str.append(std::to_string(this->hashCode()));
-	str.append("]");
-	return str;
+	return std::to_string(this->hashCode());
 }

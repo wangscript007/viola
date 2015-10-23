@@ -10,26 +10,33 @@
 
 #include "File.h"
 #include "Object.h"
+#include "Closeable.h"
+#include "Flushable.h"
+#include "Appendable.h"
+#include "FileNotFoundException.h"
+#include "IOException.h"
 
-class FileWriter: public Object {
+class FileWriter: public Object,
+		public Closeable,
+		public Flushable,
+		public Appendable {
 public:
-	FileWriter(std::shared_ptr<File> file);
-	FileWriter(std::shared_ptr<File> file, bool append);
+	FileWriter(
+			std::shared_ptr<File> file) throw (std::shared_ptr<
+					FileNotFoundException>);
+	FileWriter(std::shared_ptr<File> file,
+			bool append) throw (std::shared_ptr<FileNotFoundException>);
 	~FileWriter();
 
-	void close();
-	void append(std::string line);
-	void flush();
-	void write(std::string line);
-
 	//Override
+	void append(std::string line) throw (std::shared_ptr<IOException>);
+	void write(std::string line) throw (std::shared_ptr<IOException>);
+	void flush() throw (std::shared_ptr<IOException>);
+	void close() throw (std::shared_ptr<IOException>);
 	int hashCode();
-
-	//Override
 	bool equals(Object* obj);
-
-	//Override
 	std::string getClassName();
+	std::string toString();
 
 };
 

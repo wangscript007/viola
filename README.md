@@ -17,7 +17,7 @@ File
 _File file = std::make_shared<File>("/tmp/test.log");
 
 if(file->exists()){
-	file->delete();
+	file->deleteFile();
 }
 file->createNewFile();
 

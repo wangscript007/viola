@@ -21,7 +21,7 @@ public:
 	~File();
 
 	bool createNewFile() throw (std::shared_ptr<IOException>);
-	bool deleteFile();
+	bool delete();
 	bool exists();
 	std::string getAbsolutePath();
 	std::string getName();

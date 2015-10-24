@@ -8,16 +8,11 @@
 #include "viola.h"
 
 void dump(_ArrayList list) {
-	printf("[dump]\n");
-	printf("className: <%s>\n", list->getClassName().c_str());
-	printf("size: <%d>\n", list->size());
-	printf("hashCode: <%d>\n", list->hashCode());
-	printf("toString: <%s>\n", list->toString().c_str());
-
-	for (int i = 0; i < list->size(); i++) {
-		printf("<%s>\n", list->get(i)->toString().c_str());
-	}
-
+	std::string str = "[dump] ";
+	str.append("class: " + list->getClassName() + ", ");
+	str.append("hash: " + Integer(list->hashCode()).toString() + ".");
+	System::out::println(str);
+	System::out::println("[dump] " + list->toString() + ".");
 }
 
 int hashCode() {

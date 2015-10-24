@@ -8,15 +8,15 @@
 #include "viola.h"
 
 void dump(_HashMap map) {
-	printf("[dump] in. ---------\n");
-	printf("className: <%s>\n", map->getClassName().c_str());
-	printf("hashCode: <%d>\n", map->hashCode());
-	printf("capacity: <%d>\n", map->getCapacity());
-	printf("threshold: <%d>\n", map->getThreshold());
-	printf("size: <%d>\n", map->size());
-	printf("isEmpty: <%d>\n", map->isEmpty());
-	printf("toString: <%s>\n", map->toString().c_str());
-	printf("[dump] out. --------\n");
+	std::string str = "[dump] ";
+	str.append("class: " + map->getClassName() + ", ");
+	str.append("hash: " + Integer(map->hashCode()).toString() + ", ");
+	str.append("capacity: " + Integer(map->getCapacity()).toString() + ", ");
+	str.append("threshold: " + Integer(map->getThreshold()).toString() + ", ");
+	str.append("size: " + Integer(map->size()).toString() + ", ");
+	str.append("empty:" + Boolean(map->isEmpty()).toString() + ".");
+	System::out::println(str);
+	System::out::println("[dump] " + map->toString() + ".");
 }
 
 int containsKey() {

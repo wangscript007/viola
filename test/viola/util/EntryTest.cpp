@@ -8,12 +8,13 @@
 #include "viola.h"
 
 void dump(Entry* entry) {
-	printf("[dump]\n");
-	printf("className: <%s>\n", entry->getClassName().c_str());
-	printf("hashCode: <%d>\n", entry->hashCode());
-	printf("key: <%d>\n", ((Integer*) entry->getKey().get())->get());
-	printf("value: <%d>\n", ((Integer*) entry->getValue().get())->get());
-	printf("toString: <%s>\n", entry->toString().c_str());
+	std::string str = "[dump] ";
+	str.append("class: " + entry->getClassName() + ", ");
+	str.append("hash: " + Integer(entry->hashCode()).toString() + ", ");
+	str.append("key: " + entry->getKey()->toString() + ", ");
+	str.append("val: " + entry->getValue()->toString() + ".");
+	System::out::println(str);
+	System::out::println("[dump] " + entry->toString() + ".");
 }
 
 int hashCode() {

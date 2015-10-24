@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include <lang/Appendable.h>
+#include "Appendable.h"
 
 Appendable::Appendable() {
 	// TODO Auto-generated constructor stub

@@ -12,12 +12,12 @@ int main() {
 
 	_Double d1 = std::make_shared<Double>(1.2);
 	_Double d2 = std::make_shared<Double>(3.4);
-	printf("obj1.className: <%s>\n", d1.get()->getClassName().c_str());
 
-	printf("obj1.long: <%lu>, obj1.hashCode: <%d>\n",
-			d1.get()->doubleToLongBits(), d1.get()->hashCode());
-	printf("obj2.long: <%lu>, obj2.hashCode: <%d>\n",
-			d2.get()->doubleToLongBits(), d2.get()->hashCode());
+	System::out::println("d1.class: " + d1->getClassName());
+	System::out::println("d1.long: " + Long(d1->doubleToLongBits()).toString());
+	System::out::println("d2.long: " + Long(d2->doubleToLongBits()).toString());
+	System::out::println("d1.hash: " + Integer(d1->hashCode()).toString());
+	System::out::println("d2.hash: " + Integer(d2->hashCode()).toString());
 
 	Double* d3 = new Double(1.2);
 	Object* d4 = new Double(1.2);

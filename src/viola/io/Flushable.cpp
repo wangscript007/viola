@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include <io/Flushable.h>
+#include "Flushable.h"
 
 Flushable::Flushable() {
 	// TODO Auto-generated constructor stub

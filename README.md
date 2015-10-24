@@ -6,7 +6,23 @@ shared object like JDK interface.
 -std=c++11 -stdlib=libc++
 ```
 
-## viola.io.*
+## viola.exception
+
+Exception
+```
+#include "viola.h"
+
+...
+
+try {
+	throw new Exception("foobar");
+} catch (Exception* e) {
+	System::out::println(e); // -> Exception[message: foobar]
+	delete e;
+}
+```
+
+## viola.io
 
 File
 ```
@@ -28,7 +44,7 @@ writer->close();
 
 ```
 
-## viola.lang.*
+## viola.lang
 
 Strings
 ```
@@ -40,7 +56,7 @@ _Strings str = std::make_shared<Strings>();
 
 str->append("foobar");
 str->append("hoge");
-System::out::println(str->toString()); // -> foobarhoge
+System::out::println(str); // -> foobarhoge
 
 bool same = str->equals("foobar");
 bool not = str->equals("notsame");
@@ -48,7 +64,7 @@ printf("<%d>\n", same); // -> 1
 printf("<%d>\n", not); // -> 0
 ```
 
-## viola.util.*
+## viola.util
 
 ArrayList
 ```
@@ -64,7 +80,7 @@ for(int i = 0; i < 10; i ++){
 }
 
 for(int i = 0; i < list->size(); i++){
-	System::out::println(list->get(i)->toString());
+	System::out::println(list->get(i));
 }
 list->clear();
 ```
@@ -81,7 +97,7 @@ _Strings key = std::make_shared<Strings>("foobar");
 _Strings value = std::make_shared<Strings>("hoge");
 
 map->put(key, value);
-System::out::println("got: " + map->get(key)->toString()); // -> hoge
+System::out::println(map->get(key)); // -> hoge
 
 map->clear();
 ```

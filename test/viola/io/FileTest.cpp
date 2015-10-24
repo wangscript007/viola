@@ -9,8 +9,7 @@
 
 int main() {
 	File* file = new File("./foobar.txt");
-	printf("className: <%s>\n", file->getClassName().c_str());
-
+	System::out::println(file);
 	delete file;
 	return 0;
 }

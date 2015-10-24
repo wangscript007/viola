@@ -34,14 +34,14 @@ int containsKey() {
 	}
 
 	bool contains = map->containsKey(key);
-	printf("key.hashCode: <%d>\n", key->hashCode());
-	printf("containsKey: <%d>\n", contains);
+	System::out::println("key1.hash: " + Integer(key->hashCode()).toString());
+	System::out::println("contains: " + Boolean(contains).toString());
 	ret = ret + !contains;
 
 	_Strings key2 = std::make_shared<Strings>("foobar");
 	bool contains2 = map->containsKey(key2);
-	printf("key2.hashCode: <%d>\n", key2->hashCode());
-	printf("key2.containsKey: <%d>\n", contains2);
+	System::out::println("key2.hash: " + Integer(key2->hashCode()).toString());
+	System::out::println("contains: " + Boolean(contains2).toString());
 	ret = ret + !contains2;
 
 	map->clear();
@@ -63,8 +63,7 @@ int put() {
 	}
 
 	_Object got = map->get(key);
-	printf("got.hashCode: <%d>\n", got->hashCode());
-	printf("got: <%s>\n", got->toString().c_str());
+	System::out::println("got: " + got->toString());
 	if (!value->equals(got.get())) {
 		ret = ret + 1;
 	}
@@ -87,7 +86,6 @@ int remove() {
 		ret = ret + 1;
 	}
 	_Object got = map->get(key);
-	printf("got.hashCode: <%d>\n", got->hashCode());
 	System::out::println("got: " + got->toString());
 	if (!value->equals(got.get())) {
 		ret = ret + 1;
@@ -96,8 +94,7 @@ int remove() {
 
 	_Object removed = map->remove(key);
 	if (removed != NULL) {
-		printf("removed.hashCode: <%d>\n", removed->hashCode());
-		printf("removed: <%s>\n", removed->toString().c_str());
+		System::out::println("removed: " + removed->toString());
 	} else {
 		ret = ret + 1;
 	}

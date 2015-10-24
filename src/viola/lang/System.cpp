@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include <lang/System.h>
+#include "System.h"
 
 System::System() {
 	// TODO Auto-generated constructor stub

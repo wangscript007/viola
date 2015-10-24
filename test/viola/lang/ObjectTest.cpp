@@ -13,15 +13,13 @@ int main() {
 	_Object arg1 = std::make_shared<Object>();
 	_Object arg2 = std::make_shared<Object>();
 
-	printf("obj1.className: <%s>\n", arg1->getClassName().c_str());
-
-	printf("obj1.hashCode: <%d>\n", arg1->hashCode());
-	printf("obj2.hashCode: <%d>\n", arg2->hashCode());
-
-	printf("obj1.equals(obj1): <%d>\n", arg1->equals(arg1.get()));
-	printf("obj1.equals(obj2): <%d>\n", arg1->equals(arg2.get()));
-
-	printf("obj1.toString(): <%s>\n", arg1->toString().c_str());
+	System::out::println("o1.class: " + arg1->getClassName());
+	System::out::println("o1.hash: " + Integer(arg1->hashCode()).toString());
+	System::out::println("o2.hash: " + Integer(arg2->hashCode()).toString());
+	System::out::println(
+			"o1.eq(o1): " + Boolean(arg1->equals(arg1.get())).toString());
+	System::out::println(
+			"o1.eq(o2): " + Boolean(arg1->equals(arg2.get())).toString());
 
 	ret = ret + Assert::assertEquals(arg1, arg1);
 	ret = ret + !Assert::assertEquals(arg1, arg2);

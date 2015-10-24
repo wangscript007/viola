@@ -17,12 +17,21 @@ public:
 
 	class out {
 	public:
-		static void print(std::string line) {
-			printf("%s", line.c_str());
+
+		static void println() {
+			printf("\n");
 		}
 
 		static void println(std::string line) {
 			printf("%s\n", line.c_str());
+		}
+
+		static void println(Object* line) {
+			printf("%s\n", line->toString().c_str());
+		}
+
+		static void println(std::shared_ptr<Object> line) {
+			printf("%s\n", line->toString().c_str());
 		}
 	};
 };

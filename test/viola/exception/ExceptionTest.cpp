@@ -12,7 +12,7 @@ int main() {
 	try {
 		throw new Exception("foobar");
 	} catch (Exception* e) {
-		printf("Exception: <%s>\n", e->toString().c_str());
+		System::out::println(e);
 		delete e;
 	}
 

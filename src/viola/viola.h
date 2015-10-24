@@ -22,6 +22,8 @@
 #include "Flushable.h"
 
 //lang
+#include "Appendable.h"
+#include "Boolean.h"
 #include "Double.h"
 #include "Integer.h"
 #include "Long.h"

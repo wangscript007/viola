@@ -9,7 +9,7 @@
 
 int main() {
 	int ret = 0;
-	System::out::println("foobar");
+	System::out::println("foobar" + Long(1).toString());
 
 	return ret;
 }

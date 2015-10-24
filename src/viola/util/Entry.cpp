@@ -26,6 +26,11 @@ Entry::~Entry() {
 std::shared_ptr<Object> Entry::getKey() {
 	return key;
 }
+
+void Entry::setKey(std::shared_ptr<Object> key) {
+	this->key = key;
+}
+
 std::shared_ptr<Object> Entry::getValue() {
 	return value;
 }

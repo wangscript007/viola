@@ -58,10 +58,8 @@ str->append("foobar");
 str->append("hoge");
 System::out::println(str); // -> foobarhoge
 
-bool same = str->equals("foobar");
-bool not = str->equals("notsame");
-printf("<%d>\n", same); // -> 1
-printf("<%d>\n", not); // -> 0
+System::out::println(str->equals("foobar")); // -> 1
+System::out::println(str->equals("notsame")); // -> 0
 ```
 
 ## viola.util

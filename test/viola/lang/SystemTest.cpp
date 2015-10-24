@@ -8,8 +8,6 @@
 #include "viola.h"
 
 int main() {
-	int ret = 0;
 	System::out::println("foobar" + Long(1).toString());
-
-	return ret;
+	return 0;
 }

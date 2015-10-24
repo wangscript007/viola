@@ -10,19 +10,18 @@
 
 #include "Object.h"
 
-//template<class T>
 class Entry: public Object {
 private:
 	std::shared_ptr<Object> key;
 	std::shared_ptr<Object> value;
 	std::shared_ptr<Object> next;
 public:
-
 	Entry(std::shared_ptr<Object> key, std::shared_ptr<Object> value);
 	Entry(Entry* e);
 	~Entry();
 
 	std::shared_ptr<Object> getKey();
+	void setKey(std::shared_ptr<Object> key);
 
 	std::shared_ptr<Object> getValue();
 	void setValue(std::shared_ptr<Object> value);

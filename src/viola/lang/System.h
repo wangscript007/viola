@@ -22,6 +22,10 @@ public:
 			printf("\n");
 		}
 
+		static void println(bool tof) {
+			printf("%d\n", tof);
+		}
+
 		static void println(std::string line) {
 			printf("%s\n", line.c_str());
 		}

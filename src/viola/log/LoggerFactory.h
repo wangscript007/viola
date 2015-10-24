@@ -20,6 +20,8 @@ public:
 		std::shared_ptr<Logger> logger = std::make_shared<Logger>(name);
 		return logger;
 	}
+
+
 };
 
 #endif /* SRC_VIOLA_LOG_LOGGERFACTORY_H_ */

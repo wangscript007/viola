@@ -31,6 +31,10 @@
 #include "Strings.h"
 #include "System.h"
 
+//log
+#include "Logger.h"
+#include "LoggerFactory.h"
+
 //util
 #include "ArrayList.h"
 #include "Entry.h"
@@ -45,6 +49,7 @@ typedef std::shared_ptr<Integer> _Integer;
 typedef std::shared_ptr<Long> _Long;
 typedef std::shared_ptr<Object> _Object;
 typedef std::shared_ptr<Strings> _Strings;
+typedef std::shared_ptr<Logger> _Logger;
 typedef std::shared_ptr<ArrayList> _ArrayList;
 typedef std::shared_ptr<HashMap> _HashMap;
 typedef std::shared_ptr<Entry> _Entry;

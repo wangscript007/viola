@@ -30,6 +30,7 @@ include_directories(${src}/lang)
 include_directories(${src}/math)
 include_directories(${src}/net)
 include_directories(${src}/time)
+include_directories(${src}/log)
 include_directories(${src}/util)
 include_directories(${src})
 
@@ -74,6 +75,12 @@ add_executable(SystemTest.out
 )
 target_link_libraries(SystemTest.out viola)
 add_test(NAME SystemTest COMMAND ${build}/test/SystemTest.out)
+
+add_executable(LoggerTest.out
+ ${test}/log/LoggerTest.cpp
+)
+target_link_libraries(LoggerTest.out viola)
+add_test(NAME LoggerTest COMMAND ${build}/test/LoggerTest.out)
 
 add_executable(ArrayListTest.out
  ${test}/util/ArrayListTest.cpp

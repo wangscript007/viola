@@ -11,9 +11,13 @@
 #include "Object.h"
 
 class Logger {
+private:
+	std::string name;
 public:
 	Logger(std::string name);
 	virtual ~Logger();
+
+	std::string getName();
 
 	void info(std::string message);
 	void debug(std::string message);

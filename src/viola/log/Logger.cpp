@@ -8,11 +8,13 @@
 #include "Logger.h"
 
 Logger::Logger(std::string name) {
-	// TODO Auto-generated constructor stub
-
+	this->name = name;
 }
 
 Logger::~Logger() {
-	// TODO Auto-generated destructor stub
+
 }
 
+std::string Logger::getName() {
+	return name;
+}

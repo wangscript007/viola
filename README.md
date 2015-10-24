@@ -58,7 +58,7 @@ str->append("foobar");
 str->append("hoge");
 System::out::println(str); // -> foobarhoge
 
-System::out::println(str->equals("foobar")); // -> 1
+System::out::println(str->equals("foobarhoge")); // -> 1
 System::out::println(str->equals("notsame")); // -> 0
 ```
 

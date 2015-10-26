@@ -10,8 +10,8 @@
 
 #include "Object.h"
 
-class Logger {
-private:
+class Logger: public Object {
+protected:
 	std::string name;
 public:
 	Logger(std::string name);
@@ -19,11 +19,14 @@ public:
 
 	std::string getName();
 
-	void info(std::string message);
-	void debug(std::string message);
-	void trace(std::string message);
-	void warn(std::string message);
-	void error(std::string message);
+	virtual void info(std::string message);
+	virtual void debug(std::string message);
+	virtual void trace(std::string message);
+	virtual void warn(std::string message);
+	virtual void error(std::string message);
+
+	//Override
+	virtual std::string getClassName();
 };
 
 #endif /* SRC_VIOLA_LOG_LOGGER_H_ */

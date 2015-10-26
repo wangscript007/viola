@@ -21,7 +21,12 @@ void Appender::append(std::string message){
 }
 
 void Appender::doAppend(std::string message) {
-	append(message);
+	std::string str;
+	str.append("date ");
+	str.append("level ");
+	str.append(message);
+
+	append(str);
 }
 
 //Override

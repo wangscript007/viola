@@ -10,10 +10,17 @@
 
 #include "Object.h"
 
-class Appender:public Object {
+class Appender: public Object {
 public:
 	Appender();
 	virtual ~Appender();
+
+	void doAppend(std::string message);
+
+	virtual void append(std::string message);
+
+	//Override
+	virtual std::string getClassName();
 };
 
 #endif /* SRC_VIOLA_LOG_APPENDER_H_ */

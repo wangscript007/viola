@@ -16,3 +16,15 @@ Appender::~Appender() {
 	// TODO Auto-generated destructor stub
 }
 
+void Appender::append(std::string message){
+
+}
+
+void Appender::doAppend(std::string message) {
+	append(message);
+}
+
+//Override
+std::string Appender::getClassName() {
+	return "Appender";
+}

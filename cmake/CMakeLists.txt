@@ -76,6 +76,12 @@ add_executable(SystemTest.out
 target_link_libraries(SystemTest.out viola)
 add_test(NAME SystemTest COMMAND ${build}/test/SystemTest.out)
 
+add_executable(AppenderTest.out
+ ${test}/log/AppenderTest.cpp
+)
+target_link_libraries(AppenderTest.out  viola)
+add_test(NAME AppenderTest COMMAND ${build}/test/AppenderTest.out)
+
 add_executable(LoggerTest.out
  ${test}/log/LoggerTest.cpp
 )

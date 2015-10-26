@@ -32,8 +32,12 @@
 #include "System.h"
 
 //log
+#include "Appender.h"
+#include "DefaultLogger.h"
+#include "FileAppender.h"
 #include "Logger.h"
 #include "LoggerFactory.h"
+#include "StandardOutAppender.h"
 
 //util
 #include "ArrayList.h"
@@ -49,7 +53,11 @@ typedef std::shared_ptr<Integer> _Integer;
 typedef std::shared_ptr<Long> _Long;
 typedef std::shared_ptr<Object> _Object;
 typedef std::shared_ptr<Strings> _Strings;
+typedef std::shared_ptr<Appender> _Appender;
+typedef std::shared_ptr<DefaultLogger> _DefaultLogger;
+typedef std::shared_ptr<FileAppender> _FileAppender;
 typedef std::shared_ptr<Logger> _Logger;
+typedef std::shared_ptr<StandardOutAppender> _StandardOutAppender;
 typedef std::shared_ptr<ArrayList> _ArrayList;
 typedef std::shared_ptr<HashMap> _HashMap;
 typedef std::shared_ptr<Entry> _Entry;

@@ -69,6 +69,8 @@ Logger
 ```
 #include "viola.h"
 
+...
+
 _Logger logger = LoggerFactory::getLogger("MyClass");
 logger->info("foobar");
 

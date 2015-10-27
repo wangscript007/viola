@@ -16,14 +16,14 @@ Appender::~Appender() {
 	// TODO Auto-generated destructor stub
 }
 
-void Appender::append(std::string message){
+void Appender::append(std::string message) {
 
 }
 
-void Appender::doAppend(std::string message) {
+void Appender::doAppend(std::string level, std::string message) {
 	std::string str;
-	str.append("date ");
-	str.append("level ");
+	str.append("2015/10/26 21:48:10 ");
+	str.append("[" + level + "] ");
 	str.append(message);
 
 	append(str);

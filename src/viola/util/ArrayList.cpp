@@ -60,7 +60,6 @@ int ArrayList::hashCode() {
 			tmp = obj.get()->hashCode();
 		}
 		hashCode = 31 * hashCode + tmp;
-		i++;
 	}
 	return hashCode;
 }

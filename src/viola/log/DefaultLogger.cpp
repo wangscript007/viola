@@ -9,26 +9,9 @@
 
 DefaultLogger::DefaultLogger(std::string name) :
 		Logger(name) {
-
 }
 
 DefaultLogger::~DefaultLogger() {
-	// TODO Auto-generated destructor stub
-}
-
-void DefaultLogger::info(std::string message) {
-
-}
-void DefaultLogger::debug(std::string message) {
-
-}
-void DefaultLogger::trace(std::string message) {
-
-}
-void DefaultLogger::warn(std::string message) {
-
-}
-void DefaultLogger::error(std::string message) {
 
 }
 

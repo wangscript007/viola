@@ -21,6 +21,9 @@ public:
 		static void println() {
 			printf("\n");
 		}
+		static void println(int value) {
+			printf("%d\n", value);
+		}
 
 		static void println(bool tof) {
 			printf("%d\n", tof);

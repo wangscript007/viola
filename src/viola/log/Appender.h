@@ -11,11 +11,12 @@
 #include "Object.h"
 
 class Appender: public Object {
+
 public:
 	Appender();
 	virtual ~Appender();
 
-	void doAppend(std::string message);
+	void doAppend(std::string level, std::string message);
 
 	virtual void append(std::string message);
 

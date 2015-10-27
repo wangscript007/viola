@@ -13,7 +13,7 @@ int main() {
 
 	_Appender sa = std::make_shared<StandardOutAppender>();
 	System::out::println(sa->getClassName());
-	sa->doAppend("foobar");
+	sa->doAppend("INFO", "foobar");
 
 	return 0;
 }

@@ -62,6 +62,18 @@ System::out::println(str->equals("foobarhoge")); // -> 1
 System::out::println(str->equals("notsame")); // -> 0
 ```
 
+## viola.log
+
+Logger
+
+```
+#include "viola.h"
+
+_Logger logger = LoggerFactory::getLogger("MyClass");
+logger->info("foobar");
+
+```
+
 ## viola.util
 
 ArrayList

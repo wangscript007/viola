@@ -41,7 +41,6 @@ _FileWriter writer = std::make_shared<FileWriter>(file);
 writer->write("this is first line.");
 writer->flush();
 writer->close();
-
 ```
 
 ## viola.lang
@@ -71,9 +70,12 @@ Logger
 
 ...
 
-_Logger logger = LoggerFactory::getLogger("MyClass");
-logger->info("foobar");
+_Logger log = LoggerFactory::getLogger("MyClass");
+log->info("foobar");
 
+if(log->isTraceEnabled){
+	log->trace("foobar");
+}
 ```
 
 ## viola.util

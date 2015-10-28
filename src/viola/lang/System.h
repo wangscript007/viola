@@ -15,6 +15,10 @@ public:
 	System();
 	~System();
 
+	static long currentTimemillis() {
+		return 0;
+	}
+
 	class out {
 	public:
 

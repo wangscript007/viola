@@ -12,7 +12,7 @@
 #include "Logger.h"
 #include "DefaultLogger.h"
 
-class LoggerFactory {
+class LoggerFactory: public Object {
 public:
 	LoggerFactory();
 	~LoggerFactory();

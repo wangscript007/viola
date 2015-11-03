@@ -8,11 +8,17 @@
 #include "Date.h"
 
 Date::Date() {
-	// TODO Auto-generated constructor stub
+	this->timestamp = System::currentTimemillis();
+}
 
+Date::Date(long timestamp) {
+	this->timestamp = timestamp;
 }
 
 Date::~Date() {
-	// TODO Auto-generated destructor stub
+
 }
 
+long Date::getTime() {
+	return timestamp;
+}

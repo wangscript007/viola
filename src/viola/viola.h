@@ -41,6 +41,7 @@
 
 //util
 #include "ArrayList.h"
+#include "Date.h"
 #include "Entry.h"
 #include "EntrySet.h"
 #include "HashMap.h"
@@ -59,6 +60,7 @@ typedef std::shared_ptr<FileAppender> _FileAppender;
 typedef std::shared_ptr<Logger> _Logger;
 typedef std::shared_ptr<StandardOutAppender> _StandardOutAppender;
 typedef std::shared_ptr<ArrayList> _ArrayList;
+typedef std::shared_ptr<Date> _Date;
 typedef std::shared_ptr<HashMap> _HashMap;
 typedef std::shared_ptr<Entry> _Entry;
 typedef std::shared_ptr<Queue> _Queue;

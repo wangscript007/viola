@@ -71,10 +71,10 @@ Logger
 ...
 
 _Logger log = LoggerFactory::getLogger("MyClass");
-log->info("foobar");
+log->info("this is info level log.");
 
-if(log->isTraceEnabled){
-	log->trace("foobar");
+if(log->isTraceEnabled()){
+	log->trace("this is trace level log.");
 }
 ```
 

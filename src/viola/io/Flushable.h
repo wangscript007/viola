@@ -11,7 +11,7 @@
 #include "Object.h"
 #include "IOException.h"
 
-class Flushable {
+class Flushable: public Object {
 public:
 	Flushable();
 	virtual ~Flushable();

@@ -11,7 +11,7 @@
 #include "Object.h"
 #include "IOException.h"
 
-class Closeable {
+class Closeable: public Object {
 public:
 	Closeable();
 	virtual ~Closeable();

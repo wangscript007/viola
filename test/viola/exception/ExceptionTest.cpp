@@ -12,7 +12,7 @@ int main() {
 	try {
 		throw Exception("foobar");
 	} catch (Exception& e) {
-		System::out::println(e.getMessage());
+		System::out::println(e);
 	}
 
 	return 0;

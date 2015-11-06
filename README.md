@@ -15,10 +15,9 @@ Exception
 ...
 
 try {
-	throw new Exception("foobar");
-} catch (Exception* e) {
+	throw Exception("foobar");
+} catch (Exception& e) {
 	System::out::println(e); // -> Exception[message: foobar]
-	delete e;
 }
 ```
 

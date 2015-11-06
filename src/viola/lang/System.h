@@ -48,6 +48,10 @@ public:
 			printf("%s\n", line->toString().c_str());
 		}
 
+		static void println(Object& line) {
+			printf("%s\n", line.toString().c_str());
+		}
+
 		static void println(std::shared_ptr<Object> line) {
 			printf("%s\n", line->toString().c_str());
 		}

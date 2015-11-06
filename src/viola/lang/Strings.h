@@ -28,6 +28,8 @@ public:
 	bool startWith(std::string prefix);
 	bool endWith(std::string suffix);
 
+	static std::string valueOf(long value);
+
 	int length();
 	bool isEmpty();
 

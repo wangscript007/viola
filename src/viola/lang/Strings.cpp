@@ -66,6 +66,10 @@ int Strings::length() {
 	return internal.length();
 }
 
+std::string Strings::valueOf(long value) {
+	return std::to_string(value);
+}
+
 //Override
 int Strings::hashCode() {
 	int hashCode = 0;

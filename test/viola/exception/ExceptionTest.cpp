@@ -10,10 +10,9 @@
 int main() {
 
 	try {
-		throw new Exception("foobar");
-	} catch (Exception* e) {
-		System::out::println(e);
-		delete e;
+		throw Exception("foobar");
+	} catch (Exception& e) {
+		System::out::println(e.getMessage());
 	}
 
 	return 0;

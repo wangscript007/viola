@@ -8,6 +8,7 @@
 #ifndef SRC_VIOLA_LANG_SYSTEM_H_
 #define SRC_VIOLA_LANG_SYSTEM_H_
 
+#include <time.h>
 #include "Object.h"
 
 class System: public Object {
@@ -16,7 +17,8 @@ public:
 	~System();
 
 	static long currentTimemillis() {
-		return 0;
+		time_t now = time(NULL);
+		return (long) (((double) now) * 1000);
 	}
 
 	class out {
@@ -25,8 +27,13 @@ public:
 		static void println() {
 			printf("\n");
 		}
+
 		static void println(int value) {
 			printf("%d\n", value);
+		}
+
+		static void println(long value) {
+			printf("%ld\n", value);
 		}
 
 		static void println(bool tof) {

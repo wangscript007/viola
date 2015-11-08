@@ -12,10 +12,14 @@ FileNotFoundException::FileNotFoundException() {
 
 }
 
+FileNotFoundException::FileNotFoundException(std::string message) {
+	this->message = message;
+}
+
 FileNotFoundException::~FileNotFoundException() {
 	// TODO Auto-generated destructor stub
 }
 
-std::string FileNotFoundException::getClassName(){
+std::string FileNotFoundException::getClassName() {
 	return "FileNotFoundException";
 }

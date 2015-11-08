@@ -7,10 +7,11 @@
 
 #include "FileReader.h"
 
-FileReader::FileReader(
-		std::shared_ptr<File> file)
-				throw (std::shared_ptr<FileNotFoundException>) {
-	// TODO Auto-generated constructor stub
+FileReader::FileReader(std::shared_ptr<File> file) throw (FileNotFoundException) {
+
+	if (!file->exists()) {
+		throw FileNotFoundException("file not found. " + file->toString());
+	}
 
 }
 
@@ -18,11 +19,11 @@ FileReader::~FileReader() {
 	// TODO Auto-generated destructor stub
 }
 
-void FileReader::flush() throw (std::shared_ptr<IOException>) {
+void FileReader::flush() throw (IOException) {
 
 }
 
-void FileReader::close() throw (std::shared_ptr<IOException>) {
+void FileReader::close() throw (IOException) {
 
 }
 

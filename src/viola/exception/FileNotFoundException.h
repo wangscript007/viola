@@ -13,6 +13,7 @@
 class FileNotFoundException: public IOException {
 public:
 	FileNotFoundException();
+	FileNotFoundException(std::string message);
 	~FileNotFoundException();
 
 	virtual std::string getClassName();

@@ -20,7 +20,7 @@ public:
 	File(std::string path);
 	~File();
 
-	bool createNewFile() throw (std::shared_ptr<IOException>);
+	bool createNewFile() throw (IOException);
 	bool deleteFile();
 	bool exists();
 	std::string getAbsolutePath();

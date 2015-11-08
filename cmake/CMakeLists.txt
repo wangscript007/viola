@@ -46,6 +46,12 @@ add_executable(ExceptionTest.out
 target_link_libraries(ExceptionTest.out viola)
 add_test(NAME ExceptionTest COMMAND ${build}/test/ExceptionTest.out)
 
+add_executable(FileReaderTest.out
+ ${test}/io/FileReaderTest.cpp
+)
+target_link_libraries(FileReaderTest.out viola)
+add_test(NAME FileReaderTest COMMAND ${build}/test/FileReaderTest.out)
+
 add_executable(FileTest.out
  ${test}/io/FileTest.cpp
 )

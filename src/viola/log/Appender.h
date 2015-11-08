@@ -9,6 +9,8 @@
 #define SRC_VIOLA_LOG_APPENDER_H_
 
 #include "Object.h"
+#include "Strings.h"
+#include "System.h"
 
 class Appender: public Object {
 

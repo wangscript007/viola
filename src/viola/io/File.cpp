@@ -8,9 +8,15 @@
 #include "File.h"
 
 File::File(std::string path) {
+	this->path = path;
 }
 
 File::~File() {
+
+}
+
+bool File::exists() {
+	return false;
 }
 
 int File::hashCode() {

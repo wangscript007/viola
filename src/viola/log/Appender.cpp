@@ -22,8 +22,8 @@ void Appender::append(std::string message) {
 
 void Appender::doAppend(std::string level, std::string message) {
 	std::string str;
-	str.append("2015-10-06 21:48:10.123 ");
-	str.append("[" + level + "] ");
+	str.append(Strings::valueOf(System::currentTimemillis()));
+	str.append(" [" + level + "] ");
 	str.append(message);
 
 	append(str);

@@ -16,6 +16,6 @@ Flushable::~Flushable() {
 	// TODO Auto-generated destructor stub
 }
 
-void Flushable::flush() throw (std::shared_ptr<IOException>) {
+void Flushable::flush() throw (IOException) {
 }
 

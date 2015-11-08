@@ -16,14 +16,14 @@
 
 class FileReader: public Object, public Closeable, public Flushable {
 public:
-	FileReader(std::shared_ptr<File> file) throw (std::shared_ptr<FileNotFoundException>);
+	FileReader(std::shared_ptr<File> file) throw (FileNotFoundException);
 	~FileReader();
 
 	std::string read();
 
 	//Override
-	void flush() throw (std::shared_ptr<IOException>);
-	void close() throw (std::shared_ptr<IOException>);
+	void flush() throw (IOException);
+	void close() throw (IOException);
 	int hashCode();
 	bool equals(Object* obj);
 	std::string getClassName();

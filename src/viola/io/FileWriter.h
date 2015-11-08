@@ -21,18 +21,16 @@ class FileWriter: public Object,
 		public Flushable,
 		public Appendable {
 public:
-	FileWriter(
-			std::shared_ptr<File> file) throw (std::shared_ptr<
-					FileNotFoundException>);
-	FileWriter(std::shared_ptr<File> file,
-			bool append) throw (std::shared_ptr<FileNotFoundException>);
+	FileWriter(std::shared_ptr<File> file) throw (FileNotFoundException);
+	FileWriter(std::shared_ptr<File> file, bool append)
+			throw (FileNotFoundException);
 	~FileWriter();
 
 	//Override
-	void append(std::string line) throw (std::shared_ptr<IOException>);
-	void write(std::string line) throw (std::shared_ptr<IOException>);
-	void flush() throw (std::shared_ptr<IOException>);
-	void close() throw (std::shared_ptr<IOException>);
+	void append(std::string line) throw (IOException);
+	void write(std::string line) throw (IOException);
+	void flush() throw (IOException);
+	void close() throw (IOException);
 	int hashCode();
 	bool equals(Object* obj);
 	std::string getClassName();

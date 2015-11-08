@@ -16,7 +16,7 @@ public:
 	Closeable();
 	virtual ~Closeable();
 
-	virtual void close() throw (std::shared_ptr<IOException>);
+	virtual void close() throw (IOException);
 };
 
 #endif /* SRC_VIOLA_IO_CLOSEABLE_H_ */

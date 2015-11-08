@@ -16,6 +16,6 @@ Appendable::~Appendable() {
 	// TODO Auto-generated destructor stub
 }
 
-void Appendable::append(std::string line) throw (std::shared_ptr<IOException>) {
+void Appendable::append(std::string line) throw (IOException) {
 
 }

@@ -49,6 +49,8 @@
 
 //typedef
 typedef std::shared_ptr<File> _File;
+typedef std::shared_ptr<FileReader> _FileReader;
+typedef std::shared_ptr<FileWriter> _FileWriter;
 typedef std::shared_ptr<Double> _Double;
 typedef std::shared_ptr<Integer> _Integer;
 typedef std::shared_ptr<Long> _Long;

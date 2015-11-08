@@ -16,6 +16,6 @@ Closeable::~Closeable() {
 	// TODO Auto-generated destructor stub
 }
 
-void Closeable::close() throw (std::shared_ptr<IOException>) {
+void Closeable::close() throw (IOException) {
 	// noop
 }

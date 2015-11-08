@@ -16,7 +16,7 @@ public:
 	Flushable();
 	virtual ~Flushable();
 
-	virtual void flush() throw (std::shared_ptr<IOException>);
+	virtual void flush() throw (IOException);
 };
 
 #endif /* SRC_VIOLA_IO_FLUSHABLE_H_ */

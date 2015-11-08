@@ -16,7 +16,7 @@ public:
 	Appendable();
 	virtual ~Appendable();
 
-	virtual void append(std::string line) throw (std::shared_ptr<IOException>);
+	virtual void append(std::string line) throw (IOException);
 };
 
 #endif /* SRC_VIOLA_LANG_APPENDABLE_H_ */

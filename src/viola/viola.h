@@ -14,6 +14,11 @@
 #include "Throwable.h"
 #include "UnknownHostException.h"
 
+//http
+#include "HttpClient.h"
+#include "HttpRequest.h"
+#include "HttpResponse.h"
+
 //io
 #include "Closeable.h"
 #include "File.h"
@@ -48,6 +53,10 @@
 #include "Queue.h"
 
 //typedef
+typedef std::shared_ptr<HttpClient> _HttpClient;
+typedef std::shared_ptr<HttpProxy> _HttpProxy;
+typedef std::shared_ptr<HttpRequest> _HttpRequest;
+typedef std::shared_ptr<HttpResponse> _HttpResponse;
 typedef std::shared_ptr<File> _File;
 typedef std::shared_ptr<FileReader> _FileReader;
 typedef std::shared_ptr<FileWriter> _FileWriter;

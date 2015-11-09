@@ -25,6 +25,7 @@ add_library(viola SHARED
 
 include_directories(${src}/assert)
 include_directories(${src}/exception)
+include_directories(${src}/http)
 include_directories(${src}/io)
 include_directories(${src}/lang)
 include_directories(${src}/math)

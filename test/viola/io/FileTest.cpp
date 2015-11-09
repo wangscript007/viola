@@ -8,9 +8,8 @@
 #include "viola.h"
 
 int main() {
-	File* file = new File("./foobar.txt");
+	_File file = std::make_shared<File>("./foobar.txt");
 	System::out::println(file);
-	delete file;
 	return 0;
 }
 

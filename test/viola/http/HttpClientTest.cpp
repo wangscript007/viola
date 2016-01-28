@@ -13,6 +13,7 @@ int main() {
 
 	_HttpRequest request = std::make_shared<HttpRequest>();
 	_HttpResponse response = client.execute(request);
+	System::out::println(response);
 
 	return 0;
 }

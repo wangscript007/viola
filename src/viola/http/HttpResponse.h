@@ -10,6 +10,7 @@
 
 #include <string>
 #include "Object.h"
+#include "Strings.h"
 
 class HttpResponse: public Object {
 private:
@@ -25,6 +26,10 @@ public:
 
 	void setMessage(std::string message);
 	std::string getMessage();
+
+	//Override
+	std::string getClassName();
+	std::string toString();
 };
 
 #endif /* SRC_VIOLA_HTTP_HTTPRESPONSE_H_ */

@@ -10,7 +10,6 @@
 
 #include "Object.h"
 #include "Logger.h"
-#include "DefaultLogger.h"
 
 class LoggerFactory: public Object {
 public:
@@ -18,7 +17,7 @@ public:
 	~LoggerFactory();
 
 	static std::shared_ptr<Logger> getLogger(std::string name) {
-		std::shared_ptr<Logger> logger = std::make_shared<DefaultLogger>(name);
+		std::shared_ptr<Logger> logger = std::make_shared<Logger>(name);
 		return logger;
 	}
 

@@ -14,7 +14,6 @@ class IOException: public Exception {
 public:
 	IOException();
 	IOException(std::string message);
-
 	virtual ~IOException();
 
 	virtual std::string getClassName();

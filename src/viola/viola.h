@@ -38,7 +38,6 @@
 
 //log
 #include "Appender.h"
-#include "DefaultLogger.h"
 #include "FileAppender.h"
 #include "Logger.h"
 #include "LoggerFactory.h"
@@ -66,7 +65,6 @@ typedef std::shared_ptr<Long> _Long;
 typedef std::shared_ptr<Object> _Object;
 typedef std::shared_ptr<Strings> _Strings;
 typedef std::shared_ptr<Appender> _Appender;
-typedef std::shared_ptr<DefaultLogger> _DefaultLogger;
 typedef std::shared_ptr<FileAppender> _FileAppender;
 typedef std::shared_ptr<Logger> _Logger;
 typedef std::shared_ptr<StandardOutAppender> _StandardOutAppender;

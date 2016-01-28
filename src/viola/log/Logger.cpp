@@ -105,6 +105,7 @@ void Logger::warn(std::string message) {
 
 	appendAll("WARN", message);
 }
+
 void Logger::error(std::string message) {
 	if (!isErrorEnabled()) {
 		return;
@@ -112,6 +113,8 @@ void Logger::error(std::string message) {
 
 	appendAll("ERROR", message);
 }
+
+
 
 std::string Logger::getClassName() {
 	return "Logger";

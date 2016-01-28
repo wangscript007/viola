@@ -8,8 +8,7 @@
 #include <http/HttpProxy.h>
 
 HttpProxy::HttpProxy() {
-	// TODO Auto-generated constructor stub
-
+	port = -1;
 }
 
 HttpProxy::~HttpProxy() {

@@ -35,3 +35,13 @@ void HttpResponse::setMessage(std::string message) {
 std::string HttpResponse::getMessage() {
 	return message;
 }
+
+//Override
+std::string HttpResponse::getClassName() {
+	return "HttpResponse";
+}
+
+//Override
+std::string HttpResponse::toString() {
+	return "status: " + Strings::valueOf(status) + ", message: " + message;
+}

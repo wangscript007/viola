@@ -18,6 +18,12 @@ private:
 public:
 	HttpRequest();
 	~HttpRequest();
+
+	void setUrl(std::string url);
+	std::string getUrl();
+
+	void setMethod(std::string method);
+	std::string getMethod();
 };
 
 #endif /* SRC_VIOLA_HTTP_HTTPREQUEST_H_ */

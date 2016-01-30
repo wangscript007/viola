@@ -13,6 +13,7 @@ int main() {
 	FileReader* reader;
 	try {
 		reader = new FileReader(f);
+		delete reader;
 	} catch (Exception& e) {
 		System::out::println(e);
 	}

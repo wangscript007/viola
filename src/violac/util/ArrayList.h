@@ -8,7 +8,6 @@
 #ifndef SRC_VIOLAC_UTIL_ARRAYLIST_H_
 #define SRC_VIOLAC_UTIL_ARRAYLIST_H_
 
-#include <stdio.h>
 #include <stdlib.h>
 
 typedef struct {

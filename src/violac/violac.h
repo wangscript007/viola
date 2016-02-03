@@ -8,6 +8,7 @@
 #ifndef SRC_VIOLAC_VIOLAC_H_
 #define SRC_VIOLAC_VIOLAC_H_
 
+#include <stdio.h>
 #include "ArrayList.h"
 
 #endif /* SRC_VIOLAC_VIOLAC_H_ */

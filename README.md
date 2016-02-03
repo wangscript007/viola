@@ -117,10 +117,14 @@ System::out::println(map->get(key)); // -> hoge
 map->clear();
 ```
 
-## Example violac
+## Example violac (viola c implementation)
 
 ArrayList
 ```
+#include "violac.h"
+
+...
+
 ArrayList* list = ArrayList_new();
 
 ArrayList_add(list, data);

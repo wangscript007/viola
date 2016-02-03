@@ -116,3 +116,16 @@ System::out::println(map->get(key)); // -> hoge
 
 map->clear();
 ```
+
+## Example violac
+
+ArrayList
+```
+ArrayList* list = ArrayList_new();
+
+ArrayList_add(list, data);
+void* data = ArrayList_get(list, 0);
+int size = ArrayList_size(list);
+
+ArrayList_free(list);
+```

@@ -14,16 +14,16 @@ set(build ${root}/build/violac CACHE STRING description FORCE)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${build}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${build}/test)
 
-file(GLOB MY_PUBLIC_HEADERS "${src}/**/*.h")
-file(COPY ${MY_PUBLIC_HEADERS} DESTINATION ${build}/include)
-file(COPY ${src}/violac.h DESTINATION ${build}/include)
-file(GLOB ALL_SRC "${src}/**/*.c")
 
+file(GLOB ALL_SRC "${src}/**/*.c")
 add_library(violac SHARED
  ${ALL_SRC}
 )
 
 # test
+file(GLOB MY_PUBLIC_HEADERS "${src}/**/*.h")
+file(COPY ${MY_PUBLIC_HEADERS} DESTINATION ${build}/include)
+file(COPY ${src}/violac.h DESTINATION ${build}/include)
 include_directories(${build}/include)
 
 add_executable(ArrayListTest.out

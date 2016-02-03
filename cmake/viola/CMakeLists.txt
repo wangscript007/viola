@@ -15,16 +15,15 @@ set(build ${root}/build/viola CACHE STRING description FORCE)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${build}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${build}/test)
 
-file(GLOB MY_PUBLIC_HEADERS "${src}/**/*.h")
-file(COPY ${MY_PUBLIC_HEADERS} DESTINATION ${build}/include)
-file(COPY ${src}/viola.h DESTINATION ${build}/include)
 file(GLOB ALL_SRC "${src}/**/*.cpp")
-
 add_library(viola SHARED
  ${ALL_SRC}
 )
 
 # test
+file(GLOB MY_PUBLIC_HEADERS "${src}/**/*.h")
+file(COPY ${MY_PUBLIC_HEADERS} DESTINATION ${build}/include)
+file(COPY ${src}/viola.h DESTINATION ${build}/include)
 include_directories(${build}/include)
 
 #include_directories(${src})

@@ -6,13 +6,14 @@ set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
 set(CMAKE_BUILD_TYPE Release)
 set(SERIAL "0.0.1")
 set(SOSERIAL "1")
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ../build/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../build/test)
 set(CMAKE_CXX_FLAGS "-Wall -O2 -std=c++11 -stdlib=libc++")
 
-set(src ../src/viola CACHE STRING description FORCE)
-set(test ../test/viola CACHE STRING description FORCE)
-set(build ../build CACHE STRING description FORCE)
+set(root ../.. CACHE STRING description FORCE)
+set(src ${root}/src/viola CACHE STRING description FORCE)
+set(test ${root}/test/viola CACHE STRING description FORCE)
+set(build ${root}/build/viola CACHE STRING description FORCE)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${build}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${build}/test)
 
 file(GLOB MY_PUBLIC_HEADERS "${src}/**/*.h")
 file(COPY ${MY_PUBLIC_HEADERS} DESTINATION ${build}/include)
@@ -23,17 +24,21 @@ add_library(viola SHARED
  ${ALL_SRC}
 )
 
-include_directories(${src}/assert)
-include_directories(${src}/exception)
-include_directories(${src}/http)
-include_directories(${src}/io)
-include_directories(${src}/lang)
-include_directories(${src}/math)
-include_directories(${src}/net)
-include_directories(${src}/time)
-include_directories(${src}/log)
-include_directories(${src}/util)
-include_directories(${src})
+# test
+include_directories(${build}/include)
+
+#include_directories(${src})
+#include_directories(${src}/assert)
+#include_directories(${src}/exception)
+#include_directories(${src}/http)
+#include_directories(${src}/io)
+#include_directories(${src}/lang)
+#include_directories(${src}/math)
+#include_directories(${src}/net)
+#include_directories(${src}/time)
+#include_directories(${src}/log)
+#include_directories(${src}/util)
+
 
 add_executable(AssertTest.out
  ${test}/assert/AssertTest.cpp

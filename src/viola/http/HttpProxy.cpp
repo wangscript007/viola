@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include <http/HttpProxy.h>
+#include "HttpProxy.h"
 
 HttpProxy::HttpProxy() {
 	port = -1;

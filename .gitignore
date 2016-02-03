@@ -33,10 +33,16 @@
 /.project
 /.settings
 /build
-/cmake/Testing
-/cmake/CTestTestfile.cmake
-/cmake/CMakeFiles/
-/cmake/cmake_install.cmake
-/cmake/CMakeCache.txt
-/cmake/Makefile
+/cmake/viola/Testing
+/cmake/viola/CTestTestfile.cmake
+/cmake/viola/CMakeFiles/
+/cmake/viola/cmake_install.cmake
+/cmake/viola/CMakeCache.txt
+/cmake/viola/Makefile
 
+/cmake/violac/Testing
+/cmake/violac/CTestTestfile.cmake
+/cmake/violac/CMakeFiles/
+/cmake/violac/cmake_install.cmake
+/cmake/violac/CMakeCache.txt
+/cmake/violac/Makefile

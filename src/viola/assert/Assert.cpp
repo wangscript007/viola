@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include <assert/Assert.h>
+#include "Assert.h"
 
 Assert::Assert() {
  //noop

@@ -6,9 +6,9 @@ shared object like JDK interface.
 -std=c++11 -stdlib=libc++
 ```
 
-# Example
+## Example
 
-## viola.exception
+### viola.exception
 
 Exception
 ```
@@ -23,7 +23,7 @@ try {
 }
 ```
 
-## viola.io
+### viola.io
 
 File
 ```
@@ -44,7 +44,7 @@ writer->flush();
 writer->close();
 ```
 
-## viola.lang
+### viola.lang
 
 Strings
 ```
@@ -62,7 +62,7 @@ System::out::println(str->equals("foobarhoge")); // -> 1
 System::out::println(str->equals("notsame")); // -> 0
 ```
 
-## viola.log
+### viola.log
 
 Logger
 
@@ -79,7 +79,7 @@ if(log->isTraceEnabled()){
 }
 ```
 
-## viola.util
+### viola.util
 
 ArrayList
 ```

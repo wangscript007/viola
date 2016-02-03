@@ -2,8 +2,7 @@
 
 int main() {
 	ArrayList* list = ArrayList_new();
-	printf("size: %d\n", list->size);
-	printf("maxSize: %d\n", list->maxSize);
+	printf("size: %d\n", ArrayList_size(list));
 	ArrayList_free(list);
 	return 0;
 }

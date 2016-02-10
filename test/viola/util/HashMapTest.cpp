@@ -68,6 +68,17 @@ int put() {
 		ret = ret + 1;
 	}
 
+	_Object p = map->put("foo", "bar");
+	if (p != NULL) {
+		ret = ret + 1;
+	}
+
+	_Object foo = map->get("foo");
+	System::out::println("got: " + foo->toString());
+	if ("bar" != foo->toString()) {
+		ret = ret + 1;
+	}
+
 	map->clear();
 	return ret;
 }

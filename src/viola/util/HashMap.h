@@ -35,6 +35,9 @@ public:
 	std::shared_ptr<Object> get(std::shared_ptr<Object> key);
 	std::shared_ptr<Object> remove(std::shared_ptr<Object> key);
 
+	std::shared_ptr<Object> put(std::string key, std::string value);
+	std::shared_ptr<Object> get(std::string key);
+
 	EntrySet entrySet();
 
 	void clear();

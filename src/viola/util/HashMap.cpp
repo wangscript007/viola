@@ -32,6 +32,12 @@ bool HashMap::containsKey(std::shared_ptr<Object> key) {
 	return true;
 }
 
+std::shared_ptr<Object> HashMap::put(std::string key, std::string value) {
+	std::shared_ptr<Object> skey = std::make_shared<Strings>(key);
+	std::shared_ptr<Object> sval = std::make_shared<Strings>(value);
+	return put(skey, sval);
+}
+
 std::shared_ptr<Object> HashMap::put(std::shared_ptr<Object> key,
 		std::shared_ptr<Object> value) {
 	int h = hash(key->hashCode());
@@ -85,6 +91,10 @@ std::shared_ptr<Object> HashMap::putIfAbsent(std::shared_ptr<Object> key,
 	}
 	put(key, value);
 	return NULL;
+}
+std::shared_ptr<Object> HashMap::get(std::string key) {
+	std::shared_ptr<Object> skey = std::make_shared<Strings>(key);
+	return get(skey);
 }
 
 std::shared_ptr<Object> HashMap::get(std::shared_ptr<Object> key) {

@@ -17,9 +17,13 @@ typedef struct {
 } ArrayList;
 
 ArrayList* ArrayList_new();
+
 void ArrayList_add(ArrayList* list, void* data);
+
 void* ArrayList_get(ArrayList* list, int idx);
+
 int ArrayList_size(ArrayList* list);
+
 void ArrayList_free(ArrayList* list);
 
 #endif /* SRC_VIOLAC_UTIL_ARRAYLIST_H_ */

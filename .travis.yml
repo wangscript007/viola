@@ -3,5 +3,5 @@ language: cpp
 install: make cmake
 
 script:
-  - build.sh
-  - build.sh violac
+  - ./build.sh
+  - ./build.sh violac

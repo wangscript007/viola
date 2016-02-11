@@ -1,6 +1,6 @@
 language: cpp
 
-install: make get-deps
+install: make cmake
 
 script:
   - build.sh

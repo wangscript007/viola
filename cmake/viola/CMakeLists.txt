@@ -6,7 +6,7 @@ set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
 set(CMAKE_BUILD_TYPE Release)
 set(SERIAL "0.0.1")
 set(SOSERIAL "1")
-set(CMAKE_CXX_FLAGS "-Wall -O2 -std=c++11 -stdlib=libc++")
+set(CMAKE_CXX_FLAGS "-Wall -Wnon-virtual-dtor -Woverloaded-virtual -O2 -std=c++11 -stdlib=libc++")
 
 set(root ../.. CACHE STRING description FORCE)
 set(src ${root}/src/viola CACHE STRING description FORCE)

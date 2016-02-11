@@ -1,0 +1,7 @@
+language: cpp
+
+install: make get-deps
+
+script:
+  - build.sh
+  - build.sh violac

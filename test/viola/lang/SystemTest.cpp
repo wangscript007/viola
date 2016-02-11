@@ -9,7 +9,11 @@
 
 int main() {
 	System::out::println("foobar" + Long(1).toString());
-	System::out::println(
-			"timestamp: " + Strings::valueOf(System::currentTimemillis()));
+	System::out::println("t: " + Strings::valueOf(System::currentTimemillis()));
+
+	Object* obj = NULL;
+	System::out::println(obj);
+	delete obj;
+
 	return 0;
 }

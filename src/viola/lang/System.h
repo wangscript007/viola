@@ -45,6 +45,10 @@ public:
 		}
 
 		static void println(Object* line) {
+			if (line == NULL) {
+				printf("NULL\n");
+				return;
+			}
 			printf("%s\n", line->toString().c_str());
 		}
 
@@ -53,8 +57,13 @@ public:
 		}
 
 		static void println(std::shared_ptr<Object> line) {
+			if (line == NULL) {
+				printf("NULL\n");
+				return;
+			}
 			printf("%s\n", line->toString().c_str());
 		}
+
 	};
 };
 

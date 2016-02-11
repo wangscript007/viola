@@ -172,12 +172,27 @@ int capacity() {
 	return ret;
 }
 
+int get() {
+	printf("[get]\n");
+	int ret = 0;
+	_HashMap map = std::make_shared<HashMap>(2);
+	if (map->get("foo") != NULL) {
+		ret = ret + 1;
+	} else {
+		System::out::println(map->get("foo"));
+	}
+	dump(map);
+
+	return ret;
+}
+
 int main() {
 	int ret = 0;
 	ret = ret + containsKey();
 	ret = ret + put();
 	ret = ret + remove();
 	ret = ret + capacity();
+	ret = ret + get();
 
 	return ret;
 }

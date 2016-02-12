@@ -9,6 +9,7 @@
 #define SRC_VIOLA_LANG_SYSTEM_H_
 
 #include <time.h>
+#include <sys/time.h>
 #include "Object.h"
 
 class System: public Object {
@@ -17,8 +18,16 @@ public:
 	~System();
 
 	static long currentTimemillis() {
+		struct timeval tv;
+		gettimeofday(&tv, NULL);
+		long sec = tv.tv_sec;
+		long usec = tv.tv_usec;
+		return sec * 1000 + (usec / 1000);
+	}
+
+	static long currentTimeseconds() {
 		time_t now = time(NULL);
-		return (long) (((double) now) * 1000);
+		return (long) now;
 	}
 
 	class out {

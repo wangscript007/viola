@@ -1,6 +1,10 @@
-cmake_minimum_required(VERSION 3.4)
+cmake_minimum_required(VERSION 2.8.7)
 project(violac C)
 enable_testing()
+
+if(POLICY CMP0042)
+  cmake_policy(SET CMP0042 OLD)
+endif()
 
 set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
 set(CMAKE_BUILD_TYPE Release)

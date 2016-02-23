@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_LANG_LONG_H_
-#define VIOLA_LANG_LONG_H_
-
+#pragma once
 #include "Object.h"
 
 class Long: public Object {
@@ -29,5 +27,3 @@ public:
 	std::string getClassName();
 	std::string toString();
 };
-
-#endif /* VIOLA_LANG_LONG_H_ */

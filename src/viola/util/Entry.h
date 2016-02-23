@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_UTIL_ENTRY_H_
-#define VIOLA_UTIL_ENTRY_H_
-
+#pragma once
 #include "Object.h"
 
 class Entry: public Object {
@@ -35,5 +33,3 @@ public:
 	std::string toString();
 	std::string getClassName();
 };
-
-#endif /* VIOLA_UTIL_ENTRY_H_ */

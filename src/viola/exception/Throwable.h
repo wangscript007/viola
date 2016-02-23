@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_LANG_THROWABLE_H_
-#define VIOLA_LANG_THROWABLE_H_
-
+#pragma once
 #include "Object.h"
 
 class Throwable: public Object {
@@ -27,4 +25,3 @@ public:
 	virtual std::string toString();
 };
 
-#endif /* VIOLA_LANG_THROWABLE_H_ */

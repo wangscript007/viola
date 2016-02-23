@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_LANG_BOOLEAN_H_
-#define SRC_VIOLA_LANG_BOOLEAN_H_
-
+#pragma once
 #include "Object.h"
 
 class Boolean: public Object {
@@ -29,5 +27,3 @@ public:
 	std::string getClassName();
 	std::string toString();
 };
-
-#endif /* SRC_VIOLA_LANG_BOOLEAN_H_ */

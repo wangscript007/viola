@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_HTTP_HTTPRESPONSE_H_
-#define SRC_VIOLA_HTTP_HTTPRESPONSE_H_
-
+#pragma once
 #include <string>
 #include "Object.h"
 #include "Strings.h"
@@ -31,5 +29,3 @@ public:
 	std::string getClassName();
 	std::string toString();
 };
-
-#endif /* SRC_VIOLA_HTTP_HTTPRESPONSE_H_ */

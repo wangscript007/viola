@@ -5,9 +5,8 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_LANG_OBJECT_H_
-#define VIOLA_LANG_OBJECT_H_
 
+#pragma once
 #include <string>
 #include <memory>
 #include <limits.h>
@@ -23,5 +22,3 @@ public:
 	virtual std::string getClassName();
 	virtual std::string toString();
 };
-
-#endif /* VIOLA_LANG_OBJECT_H_ */

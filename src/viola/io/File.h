@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_FILE_H_
-#define VIOLA_FILE_H_
-
+#pragma once
 #include <stdio.h>
 #include "Object.h"
 #include "Strings.h"
@@ -37,5 +35,3 @@ public:
 	std::string toString();
 
 };
-
-#endif /* VIOLA_FILE_H_ */

@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_IO_CLOSEABLE_H_
-#define SRC_VIOLA_IO_CLOSEABLE_H_
-
+#pragma once
 #include "Object.h"
 #include "IOException.h"
 
@@ -18,5 +16,3 @@ public:
 
 	virtual void close() throw (IOException);
 };
-
-#endif /* SRC_VIOLA_IO_CLOSEABLE_H_ */

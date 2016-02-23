@@ -5,13 +5,10 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_UTIL_ENTRYSET_H_
-#define VIOLA_UTIL_ENTRYSET_H_
+#pragma once
 
 class EntrySet {
 public:
 	EntrySet();
 	~EntrySet();
 };
-
-#endif /* VIOLA_UTIL_ENTRYSET_H_ */

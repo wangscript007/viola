@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_LANG_RUNTIMEEXCEPTION_H_
-#define VIOLA_LANG_RUNTIMEEXCEPTION_H_
-
+#pragma once
 #include "Exception.h"
 
 class RuntimeException: public Exception {
@@ -17,5 +15,3 @@ public:
 
 	virtual std::string getClassName();
 };
-
-#endif /* VIOLA_LANG_RUNTIMEEXCEPTION_H_ */

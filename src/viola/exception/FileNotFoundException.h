@@ -5,9 +5,8 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_IO_FILENOTFOUNDEXCEPTION_H_
-#define VIOLA_IO_FILENOTFOUNDEXCEPTION_H_
 
+#pragma once
 #include "IOException.h"
 
 class FileNotFoundException: public IOException {
@@ -18,5 +17,3 @@ public:
 
 	virtual std::string getClassName();
 };
-
-#endif /* VIOLA_IO_FILENOTFOUNDEXCEPTION_H_ */

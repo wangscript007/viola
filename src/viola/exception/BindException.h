@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_EXCEPTION_BINDEXCEPTION_H_
-#define VIOLA_EXCEPTION_BINDEXCEPTION_H_
-
+#pragma once
 #include "SocketException.h"
 
 class BindException: public SocketException {
@@ -17,5 +15,3 @@ public:
 
 	virtual std::string getClassName();
 };
-
-#endif /* VIOLA_EXCEPTION_BINDEXCEPTION_H_ */

@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_EXCEPTION_UNKNOWNHOSTEXCEPTION_H_
-#define VIOLA_EXCEPTION_UNKNOWNHOSTEXCEPTION_H_
-
+#pragma once
 #include "IOException.h"
 
 class UnknownHostException: public IOException {
@@ -18,4 +16,3 @@ public:
 	virtual std::string getClassName();
 };
 
-#endif /* VIOLA_EXCEPTION_UNKNOWNHOSTEXCEPTION_H_ */

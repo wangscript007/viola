@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_LANG_DOUBLE_H_
-#define VIOLA_LANG_DOUBLE_H_
-
+#pragma once
 #include <bitset>
 #include "Object.h"
 
@@ -33,5 +31,3 @@ public:
 	std::string toString();
 
 };
-
-#endif /* VIOLA_LANG_DOUBLE_H_ */

@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_IO_FILEWRITER_H_
-#define VIOLA_IO_FILEWRITER_H_
-
+#pragma once
 #include "File.h"
 #include "Object.h"
 #include "Closeable.h"
@@ -37,5 +35,3 @@ public:
 	std::string toString();
 
 };
-
-#endif /* VIOLA_IO_FILEWRITER_H_ */

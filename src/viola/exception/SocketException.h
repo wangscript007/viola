@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_EXCEPTION_SOCKETEXCEPTION_H_
-#define VIOLA_EXCEPTION_SOCKETEXCEPTION_H_
-
+#pragma once
 #include "IOException.h"
 
 class SocketException: public IOException {
@@ -17,5 +15,3 @@ public:
 
 	virtual std::string getClassName();
 };
-
-#endif /* VIOLA_EXCEPTION_SOCKETEXCEPTION_H_ */

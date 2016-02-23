@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_HTTP_HTTPCLIENT_H_
-#define SRC_VIOLA_HTTP_HTTPCLIENT_H_
-
+#pragma once
 #include <string>
 #include "Object.h"
 #include "HttpRequest.h"
@@ -29,5 +27,3 @@ public:
 	//Override
 	std::string getClassName();
 };
-
-#endif /* SRC_VIOLA_HTTP_HTTPCLIENT_H_ */

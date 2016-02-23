@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_IO_FILEREADER_H_
-#define VIOLA_IO_FILEREADER_H_
-
+#pragma once
 #include "File.h"
 #include "Object.h"
 #include "Closeable.h"
@@ -29,5 +27,3 @@ public:
 	std::string getClassName();
 	std::string toString();
 };
-
-#endif /* VIOLA_IO_FILEREADER_H_ */

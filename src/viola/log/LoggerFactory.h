@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_LOG_LOGGERFACTORY_H_
-#define SRC_VIOLA_LOG_LOGGERFACTORY_H_
-
+#pragma once
 #include "Object.h"
 #include "Logger.h"
 
@@ -22,5 +20,3 @@ public:
 	}
 
 };
-
-#endif /* SRC_VIOLA_LOG_LOGGERFACTORY_H_ */

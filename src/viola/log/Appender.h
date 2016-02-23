@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_LOG_APPENDER_H_
-#define SRC_VIOLA_LOG_APPENDER_H_
-
+#pragma once
 #include "Object.h"
 #include "Strings.h"
 #include "System.h"
@@ -25,5 +23,3 @@ public:
 	//Override
 	virtual std::string getClassName();
 };
-
-#endif /* SRC_VIOLA_LOG_APPENDER_H_ */

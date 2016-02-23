@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_LOG_FILEAPPENDER_H_
-#define SRC_VIOLA_LOG_FILEAPPENDER_H_
-
+#pragma once
 #include "Appender.h"
 
 class FileAppender: public Appender {
@@ -20,4 +18,3 @@ public:
 	std::string getClassName();
 };
 
-#endif /* SRC_VIOLA_LOG_FILEAPPENDER_H_ */

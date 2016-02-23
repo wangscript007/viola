@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_LANG_ERROR_H_
-#define VIOLA_LANG_ERROR_H_
-
+#pragma once
 #include "Throwable.h"
 
 class Error: public Throwable {
@@ -19,5 +17,3 @@ public:
 
 	virtual std::string getClassName();
 };
-
-#endif /* VIOLA_LANG_ERROR_H_ */

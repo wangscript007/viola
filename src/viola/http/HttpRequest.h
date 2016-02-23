@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_HTTP_HTTPREQUEST_H_
-#define SRC_VIOLA_HTTP_HTTPREQUEST_H_
-
+#pragma once
 #include <string>
 #include "Object.h"
 
@@ -26,4 +24,3 @@ public:
 	std::string getMethod();
 };
 
-#endif /* SRC_VIOLA_HTTP_HTTPREQUEST_H_ */

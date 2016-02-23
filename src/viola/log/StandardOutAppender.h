@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_LOG_STANDARDOUTAPPENDER_H_
-#define SRC_VIOLA_LOG_STANDARDOUTAPPENDER_H_
-
+#pragma once
 #include "Appender.h"
 #include "System.h"
 
@@ -20,5 +18,3 @@ public:
 	void append(std::string message);
 	std::string getClassName();
 };
-
-#endif /* SRC_VIOLA_LOG_STANDARDOUTAPPENDER_H_ */

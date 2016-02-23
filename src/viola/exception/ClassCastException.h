@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_LANG_CLASSCASTEXCEPTION_H_
-#define VIOLA_LANG_CLASSCASTEXCEPTION_H_
-
+#pragma once
 #include "RuntimeException.h"
 
 class ClassCastException: public RuntimeException {
@@ -18,4 +16,3 @@ public:
 	virtual std::string getClassName();
 };
 
-#endif /* VIOLA_LANG_CLASSCASTEXCEPTION_H_ */

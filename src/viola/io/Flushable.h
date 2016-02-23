@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_IO_FLUSHABLE_H_
-#define SRC_VIOLA_IO_FLUSHABLE_H_
-
+#pragma once
 #include "Object.h"
 #include "IOException.h"
 
@@ -19,4 +17,3 @@ public:
 	virtual void flush() throw (IOException);
 };
 
-#endif /* SRC_VIOLA_IO_FLUSHABLE_H_ */

@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_LANG_INTEGER_H_
-#define VIOLA_LANG_INTEGER_H_
-
+#pragma once
 #include "Object.h"
 
 class Integer: public Object {
@@ -30,5 +28,3 @@ public:
 	std::string toString();
 
 };
-
-#endif /* VIOLA_LANG_INTEGER_H_ */

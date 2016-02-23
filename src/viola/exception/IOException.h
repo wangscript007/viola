@@ -5,9 +5,8 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_IO_IOEXCEPTION_H_
-#define VIOLA_IO_IOEXCEPTION_H_
 
+#pragma once
 #include "Exception.h"
 
 class IOException: public Exception {
@@ -18,5 +17,3 @@ public:
 
 	virtual std::string getClassName();
 };
-
-#endif /* VIOLA_IO_IOEXCEPTION_H_ */

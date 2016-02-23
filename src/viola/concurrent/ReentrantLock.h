@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_CONCURRENT_REENTRANTLOCK_H_
-#define SRC_VIOLA_CONCURRENT_REENTRANTLOCK_H_
-
+#pragma once
 #include "Object.h"
 
 class ReentrantLock: public Object {
@@ -15,5 +13,3 @@ public:
 	ReentrantLock();
 	virtual ~ReentrantLock();
 };
-
-#endif /* SRC_VIOLA_CONCURRENT_REENTRANTLOCK_H_ */

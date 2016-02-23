@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_UTIL_QUEUE_H_
-#define VIOLA_UTIL_QUEUE_H_
-
+#pragma once
 #include "Object.h"
 
 class Queue: public Object {
@@ -15,5 +13,3 @@ public:
 	Queue();
 	~Queue();
 };
-
-#endif /* VIOLA_UTIL_QUEUE_H_ */

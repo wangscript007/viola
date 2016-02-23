@@ -5,10 +5,18 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_EXT_ASSERT_H_
-#define VIOLA_EXT_ASSERT_H_
+#pragma once
+#include "Double.h"
+#include "Integer.h"
+#include "Long.h"
+#include "Object.h"
+#include "Strings.h"
 
-#include "viola.h"
+typedef std::shared_ptr<Double> _Double;
+typedef std::shared_ptr<Integer> _Integer;
+typedef std::shared_ptr<Long> _Long;
+typedef std::shared_ptr<Object> _Object;
+typedef std::shared_ptr<Strings> _Strings;
 
 class Assert {
 public:
@@ -72,5 +80,3 @@ public:
 	}
 
 };
-
-#endif /* VIOLA_EXT_ASSERT_H_ */

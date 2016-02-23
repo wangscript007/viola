@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_UTIL_ARRAYLIST_H_
-#define VIOLA_UTIL_ARRAYLIST_H_
-
+#pragma once
 #include <list>
 #include "Object.h"
 
@@ -32,5 +30,3 @@ public:
 	std::string getClassName();
 
 };
-
-#endif /* VIOLA_UTIL_ARRAYLIST_H_ */

@@ -5,18 +5,13 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_LANG_APPENDABLE_H_
-#define SRC_VIOLA_LANG_APPENDABLE_H_
-
-#include "Object.h"
+#pragma once
 #include "IOException.h"
 
-class Appendable {
+class Appendable: public Object {
 public:
 	Appendable();
 	virtual ~Appendable();
 
 	virtual void append(std::string line) throw (IOException);
 };
-
-#endif /* SRC_VIOLA_LANG_APPENDABLE_H_ */

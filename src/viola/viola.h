@@ -1,3 +1,5 @@
+#pragma once
+
 //assert
 #include "Assert.h"
 

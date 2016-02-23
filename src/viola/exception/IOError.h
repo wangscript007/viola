@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_IO_IOERROR_H_
-#define VIOLA_IO_IOERROR_H_
-
+#pragma once
 #include "Error.h"
 
 class IOError: public Error {
@@ -18,4 +16,3 @@ public:
 	virtual std::string getClassName();
 };
 
-#endif /* VIOLA_IO_IOERROR_H_ */

@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef VIOLA_UTIL_HASHMAP_H_
-#define VIOLA_UTIL_HASHMAP_H_
-
+#pragma once
 #include "Object.h"
 #include "Strings.h"
 #include "Entry.h"
@@ -59,5 +57,3 @@ private:
 	int tableSizeFor(int capacity);
 	std::shared_ptr<Entry>* resize();
 };
-
-#endif /* VIOLA_UTIL_HASHMAP_H_ */

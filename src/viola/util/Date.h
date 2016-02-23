@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_UTIL_DATE_H_
-#define SRC_VIOLA_UTIL_DATE_H_
-
+#pragma once
 #include "Object.h"
 #include "System.h"
 
@@ -21,5 +19,3 @@ public:
 
 	long getTime();
 };
-
-#endif /* SRC_VIOLA_UTIL_DATE_H_ */

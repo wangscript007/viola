@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_LANG_SYSTEM_H_
-#define SRC_VIOLA_LANG_SYSTEM_H_
-
+#pragma once
 #include <time.h>
 #include <sys/time.h>
 #include "Object.h"
@@ -75,5 +73,3 @@ public:
 
 	};
 };
-
-#endif /* SRC_VIOLA_LANG_SYSTEM_H_ */

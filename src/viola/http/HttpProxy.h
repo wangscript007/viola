@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLA_HTTP_HTTPPROXY_H_
-#define SRC_VIOLA_HTTP_HTTPPROXY_H_
-
+#pragma once
 #include "Object.h"
 
 class HttpProxy: public Object {
@@ -25,4 +23,3 @@ public:
 	int getPort();
 };
 
-#endif /* SRC_VIOLA_HTTP_HTTPPROXY_H_ */

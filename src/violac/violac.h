@@ -5,10 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLAC_VIOLAC_H_
-#define SRC_VIOLAC_VIOLAC_H_
-
+#pragma once
 #include <stdio.h>
 #include "ArrayList.h"
 
-#endif /* SRC_VIOLAC_VIOLAC_H_ */

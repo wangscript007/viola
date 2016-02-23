@@ -5,9 +5,7 @@
  *      Author: tsubaki
  */
 
-#ifndef SRC_VIOLAC_UTIL_ARRAYLIST_H_
-#define SRC_VIOLAC_UTIL_ARRAYLIST_H_
-
+#pragma once
 #include <stdlib.h>
 
 typedef struct {
@@ -26,4 +24,3 @@ int ArrayList_size(ArrayList* list);
 
 void ArrayList_free(ArrayList* list);
 
-#endif /* SRC_VIOLAC_UTIL_ARRAYLIST_H_ */

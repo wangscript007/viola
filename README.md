@@ -1,10 +1,16 @@
 # viola: c++ development kit
 shared object like JDK interface.
 
-## Required
+## About
+
+## Requirements
 ```
 -std=c++11 -stdlib=libc++
 ```
+
+## Building
+
+cmake
 
 ## Example
 

@@ -9,8 +9,7 @@ shared object like JDK interface.
 ```
 
 ## Building
-
-cmake
+ - cmake
 
 ## Example
 

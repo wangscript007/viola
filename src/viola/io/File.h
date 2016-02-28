@@ -29,7 +29,7 @@ public:
 	bool mkdirs();
 
 	//Override
-	int hashCode();
+	uint32_t hashCode();
 	bool equals(Object* obj);
 	std::string getClassName();
 	std::string toString();

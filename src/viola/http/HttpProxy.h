@@ -19,7 +19,7 @@ public:
 	void setHost(std::string host);
 	std::string getHost();
 
-	void setPort(int port);
-	int getPort();
+	void setPort(uint32_t port);
+	uint32_t getPort();
 };
 

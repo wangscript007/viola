@@ -38,7 +38,7 @@ void FileWriter::close() throw (IOException) {
 
 }
 
-int FileWriter::hashCode() {
+uint32_t FileWriter::hashCode() {
 	return 0;
 }
 

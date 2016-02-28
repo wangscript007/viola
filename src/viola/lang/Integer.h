@@ -10,19 +10,20 @@
 
 class Integer: public Object {
 private:
-	int i;
+	int32_t i;
 public:
-	Integer(int value);
+	//Integer(int value);
+	Integer(int32_t value);
 	~Integer();
 
-	int get();
+	int32_t get();
 
 	bool equals(Integer* obj);
 	bool equals(std::shared_ptr<Object> obj);
 	bool equals(int arg);
 
 	//Override
-	int hashCode();
+	uint32_t hashCode();
 	bool equals(Object* obj);
 	std::string getClassName();
 	std::string toString();

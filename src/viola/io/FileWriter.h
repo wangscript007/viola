@@ -29,7 +29,7 @@ public:
 	void write(std::string line) throw (IOException);
 	void flush() throw (IOException);
 	void close() throw (IOException);
-	int hashCode();
+	uint32_t hashCode();
 	bool equals(Object* obj);
 	std::string getClassName();
 	std::string toString();

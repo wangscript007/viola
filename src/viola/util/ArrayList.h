@@ -17,14 +17,14 @@ public:
 	~ArrayList();
 
 	void add(std::shared_ptr<Object> obj);
-	std::shared_ptr<Object> get(int i);
+	std::shared_ptr<Object> get(uint32_t i);
 
 	void clear();
-	int size();
+	uint32_t size();
 	bool isEmpty();
 
 	//Override
-	int hashCode();
+	uint32_t hashCode();
 	bool equals(Object* obj);
 	std::string toString();
 	std::string getClassName();

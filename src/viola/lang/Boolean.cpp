@@ -32,7 +32,7 @@ bool Boolean::equals(bool arg) {
 }
 
 //Override
-int Boolean::hashCode() {
+uint32_t Boolean::hashCode() {
 	return value;
 }
 bool Boolean::equals(Object* obj) {

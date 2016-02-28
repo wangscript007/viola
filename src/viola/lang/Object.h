@@ -10,6 +10,7 @@
 #include <string>
 #include <memory>
 #include <limits.h>
+#include <stdint.h>
 
 class Object {
 
@@ -17,7 +18,7 @@ public:
 	Object();
 	virtual ~Object();
 
-	virtual int hashCode();
+	virtual uint32_t hashCode();
 	virtual bool equals(Object* obj);
 	virtual std::string getClassName();
 	virtual std::string toString();

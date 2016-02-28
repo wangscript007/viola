@@ -7,7 +7,11 @@
 
 #include "Integer.h"
 
-Integer::Integer(int value) {
+//Integer::Integer(int value) {
+//	this->i = value;
+//}
+
+Integer::Integer(int32_t value) {
 	this->i = value;
 }
 
@@ -16,7 +20,7 @@ Integer::~Integer() {
 	//printf("deleted\n");
 }
 
-int Integer::get() {
+int32_t Integer::get() {
 	return this->i;
 }
 
@@ -41,7 +45,7 @@ bool Integer::equals(int obj) {
 }
 
 //Override
-int Integer::hashCode() {
+uint32_t Integer::hashCode() {
 	return this->i;
 }
 

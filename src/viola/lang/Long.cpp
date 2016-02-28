@@ -7,7 +7,11 @@
 
 #include <Long.h>
 
-Long::Long(long value) {
+//Long::Long(long value) {
+//	this->value = value;
+//}
+
+Long::Long(int64_t value) {
 	this->value = value;
 }
 
@@ -15,7 +19,7 @@ Long::~Long() {
 	//noop
 }
 
-long Long::get() {
+int64_t Long::get() {
 	return value;
 }
 
@@ -35,7 +39,7 @@ bool Long::equals(long arg) {
 }
 
 //Override
-int Long::hashCode() {
+uint32_t Long::hashCode() {
 	return this->value;
 }
 

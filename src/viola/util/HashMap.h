@@ -14,13 +14,13 @@
 class HashMap: public Object {
 private:
 	std::shared_ptr<Entry>* table;
-	int capacity;
-	int threshold;
-	int maxCapacity = 1 << 30;
+	uint32_t capacity;
+	uint32_t threshold;
+	uint32_t maxCapacity = 1 << 30;
 
 public:
 	HashMap();
-	HashMap(int capacity);
+	HashMap(uint32_t capacity);
 	~HashMap();
 
 	bool containsKey(std::shared_ptr<Object> key);
@@ -39,21 +39,21 @@ public:
 	EntrySet entrySet();
 
 	void clear();
-	int size();
-	int getThreshold();
-	int getCapacity();
+	uint32_t size();
+	uint32_t getThreshold();
+	uint32_t getCapacity();
 	bool isEmpty();
 
-	std::string toString(std::shared_ptr<Entry>* e, int capacity);
+	std::string toString(std::shared_ptr<Entry>* e, uint32_t capacity);
 
 	//Override
-	int hashCode();
+	uint32_t hashCode();
 	bool equals(Object* obj);
 	std::string toString();
 	std::string getClassName();
 
 private:
-	int hash(int keyHashCode);
-	int tableSizeFor(int capacity);
+	uint32_t hash(uint32_t keyHashCode);
+	uint32_t tableSizeFor(uint32_t capacity);
 	std::shared_ptr<Entry>* resize();
 };

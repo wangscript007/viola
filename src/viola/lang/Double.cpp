@@ -19,17 +19,17 @@ double Double::get() {
 	return this->value;
 }
 
-unsigned long Double::doubleToLongBits() {
+uint64_t Double::doubleToLongBits() {
 	union {
 		double input;
-		long output;
+		int64_t output;
 	} data;
 
 	data.input = this->value;
 
 	std::bitset<sizeof(double) * CHAR_BIT> bits(data.output);
 
-	unsigned long ret = bits.to_ulong();
+	uint64_t ret = bits.to_ulong();
 
 	return ret;
 }
@@ -55,12 +55,12 @@ bool Double::equals(double obj) {
 }
 
 //Override
-int Double::hashCode() {
-	int ret = 0;
+uint32_t Double::hashCode() {
+	uint32_t ret = 0;
 
-	unsigned long v = this->doubleToLongBits();
+	uint64_t v = this->doubleToLongBits();
 
-	ret = (int) (v ^ (v >> 32));
+	ret = (uint32_t) (v ^ (v >> 32));
 	return ret;
 }
 //Override

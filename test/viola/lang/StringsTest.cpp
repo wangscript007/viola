@@ -63,11 +63,25 @@ int equalsTest() {
 	return ret;
 }
 
+int uint32tochar() {
+	uint32_t ch = 'a';
+	printf("%c\n", ch);
+
+	_Strings s = std::make_shared<Strings>("foobar");
+	_Integer ii = std::make_shared<Integer>(1);
+	std::string plus = *s.get() + ii;
+	System::out::println(plus);
+
+	return 0;
+}
+
 int main() {
 	int ret = 0;
 	ret = ret + isEmptyTest();
 	ret = ret + hashCodeTest();
 	ret = ret + equalsTest();
+	ret = ret + uint32tochar();
+
 	return ret;
 }
 

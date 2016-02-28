@@ -13,7 +13,7 @@ HashMap::HashMap() {
 	table = new std::shared_ptr<Entry>[threshold];
 }
 
-HashMap::HashMap(int capacity) {
+HashMap::HashMap(uint32_t capacity) {
 	this->capacity = capacity;
 	threshold = tableSizeFor(capacity);
 	table = new std::shared_ptr<Entry>[threshold];
@@ -40,8 +40,8 @@ std::shared_ptr<Object> HashMap::put(std::string key, std::string value) {
 
 std::shared_ptr<Object> HashMap::put(std::shared_ptr<Object> key,
 		std::shared_ptr<Object> value) {
-	int h = hash(key->hashCode());
-	int index = (capacity - 1) & h;
+	uint32_t h = hash(key->hashCode());
+	uint32_t index = (capacity - 1) & h;
 	std::shared_ptr<Object> p = table[index];
 	if (p == NULL) {
 		table[index] = std::make_shared<Entry>(key, value);
@@ -49,7 +49,7 @@ std::shared_ptr<Object> HashMap::put(std::shared_ptr<Object> key,
 	} else {
 		std::shared_ptr<Object> e = NULL;
 		std::shared_ptr<Object> k = ((Entry*) p.get())->getKey();
-		int phash = hash(k->hashCode());
+		uint32_t phash = hash(k->hashCode());
 		if (phash == h && key->equals(k.get())) {
 			e = p;
 		} else {
@@ -62,7 +62,7 @@ std::shared_ptr<Object> HashMap::put(std::shared_ptr<Object> key,
 					break;
 				}
 				Entry* ep = (Entry*) e.get();
-				int ehash = hash(ep->getKey()->hashCode());
+				uint32_t ehash = hash(ep->getKey()->hashCode());
 				if (ehash == h && key->equals(ep->getKey().get())) {
 					break;
 				}
@@ -98,14 +98,14 @@ std::shared_ptr<Object> HashMap::get(std::string key) {
 }
 
 std::shared_ptr<Object> HashMap::get(std::shared_ptr<Object> key) {
-	int h = hash(key->hashCode());
-	int index = (capacity - 1) & h;
+	uint32_t h = hash(key->hashCode());
+	uint32_t index = (capacity - 1) & h;
 	std::shared_ptr<Object> first = table[index];
 	if (first == NULL) {
 		return NULL;
 	}
 	Entry* ep = (Entry*) first.get();
-	int fHash = hash(ep->getKey()->hashCode());
+	uint32_t fHash = hash(ep->getKey()->hashCode());
 	if (fHash == h && key->equals(ep->getKey().get())) {
 		return ep->getValue();
 	}
@@ -115,7 +115,7 @@ std::shared_ptr<Object> HashMap::get(std::shared_ptr<Object> key) {
 	}
 	do {
 		Entry* ep = (Entry*) e.get();
-		int eHash = hash(ep->getKey()->hashCode());
+		uint32_t eHash = hash(ep->getKey()->hashCode());
 		if (eHash == h && key->equals(ep->getKey().get())) {
 			return ep->getValue();
 		}
@@ -125,8 +125,8 @@ std::shared_ptr<Object> HashMap::get(std::shared_ptr<Object> key) {
 }
 
 std::shared_ptr<Object> HashMap::remove(std::shared_ptr<Object> key) {
-	int h = hash(key->hashCode());
-	int index = (capacity - 1) & h;
+	uint32_t h = hash(key->hashCode());
+	uint32_t index = (capacity - 1) & h;
 	std::shared_ptr<Object> first = table[index];
 	if (first == NULL) {
 		return NULL;
@@ -135,7 +135,7 @@ std::shared_ptr<Object> HashMap::remove(std::shared_ptr<Object> key) {
 	std::shared_ptr<Object> node = NULL;
 	std::shared_ptr<Object> e = NULL;
 	Entry* fp = (Entry*) first.get();
-	int fHash = hash(fp->getKey()->hashCode());
+	uint32_t fHash = hash(fp->getKey()->hashCode());
 	if (fHash == h && key->equals(fp->getKey().get())) {
 		node = first;
 	} else if ((e = fp->getNext()) != NULL) {
@@ -176,17 +176,17 @@ void HashMap::clear() {
 	}
 }
 
-int HashMap::getThreshold() {
+uint32_t HashMap::getThreshold() {
 	return threshold;
 }
 
-int HashMap::getCapacity() {
+uint32_t HashMap::getCapacity() {
 	return capacity;
 }
 
-int HashMap::size() {
-	int size = 0;
-	for (int i = 0; i < capacity; i++) {
+uint32_t HashMap::size() {
+	uint32_t size = 0;
+	for (uint32_t i = 0; i < capacity; i++) {
 		std::shared_ptr<Entry> e = table[i];
 		if (e == NULL) {
 			continue;
@@ -203,9 +203,9 @@ bool HashMap::isEmpty() {
 	return size() == 0;
 }
 
-int HashMap::hashCode() {
-	int hashCode = 1;
-	for (int i = 0; i < capacity; i++) {
+uint32_t HashMap::hashCode() {
+	uint32_t hashCode = 1;
+	for (uint32_t i = 0; i < capacity; i++) {
 		int tmp = 0;
 		if (table[i] != NULL) {
 			tmp = table[i].get()->hashCode();
@@ -224,10 +224,10 @@ bool HashMap::equals(Object* obj) {
 	return false;
 }
 
-std::string HashMap::toString(std::shared_ptr<Entry>* e, int capa) {
+std::string HashMap::toString(std::shared_ptr<Entry>* e, uint32_t capa) {
 	Strings str;
 	str.append("{");
-	for (int i = 0; i < capa; i++) {
+	for (uint32_t i = 0; i < capa; i++) {
 		std::shared_ptr<Entry> n = e[i];
 
 		if (n == NULL) {
@@ -252,7 +252,7 @@ std::string HashMap::toString(std::shared_ptr<Entry>* e, int capa) {
 std::string HashMap::toString() {
 	Strings str;
 	str.append("{");
-	for (int i = 0; i < capacity; i++) {
+	for (uint32_t i = 0; i < capacity; i++) {
 		std::shared_ptr<Entry> e = table[i];
 
 		if (e == NULL) {
@@ -278,12 +278,12 @@ std::string HashMap::getClassName() {
 	return "HashMap";
 }
 
-int HashMap::hash(int keyHashCode) {
+uint32_t HashMap::hash(uint32_t keyHashCode) {
 	return keyHashCode ^ (keyHashCode >> 16);
 }
 
 /*
- int n = cap - 1;
+ uint32_t n = cap - 1;
  n |= n >>> 1;
  n |= n >>> 2;
  n |= n >>> 4;
@@ -291,28 +291,31 @@ int HashMap::hash(int keyHashCode) {
  n |= n >>> 16;
  return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
  */
-int HashMap::tableSizeFor(int capacity) {
-	int n = capacity - 1;
+uint32_t HashMap::tableSizeFor(uint32_t capacity) {
+	uint32_t n = capacity - 1;
 	n |= n >> 1;
 	n |= n >> 2;
 	n |= n >> 4;
 	n |= n >> 8;
 	n |= n >> 16;
-	if (n < 0) {
-		return 1;
-	}
+
+	//always false
+//	if (n < 0) {
+//		return 1;
+//	}
 	if (n >= maxCapacity) {
 		return maxCapacity;
 	}
 	return n + 1;
 }
+
 std::shared_ptr<Entry>* HashMap::resize() {
 	std::shared_ptr<Entry> * oldTable = table;
-	int oldCapacity = capacity;
-	int oldThreshold = threshold;
+	uint32_t oldCapacity = capacity;
+	uint32_t oldThreshold = threshold;
 
-	int newCapacity = 0;
-	int newThreshold = 0;
+	uint32_t newCapacity = 0;
+	uint32_t newThreshold = 0;
 	if (oldCapacity > 0) {
 		if (oldCapacity >= maxCapacity) {
 			threshold = INT_MAX;
@@ -344,14 +347,14 @@ std::shared_ptr<Entry>* HashMap::resize() {
 	if (oldTable == NULL) {
 		return newTable;
 	}
-	for (int i = 0; i < oldCapacity; i++) {
+	for (uint32_t i = 0; i < oldCapacity; i++) {
 		std::shared_ptr<Entry> e = oldTable[i];
 		if (e == NULL) {
 			continue;
 		}
 		oldTable[i] = NULL;
 		if (e->getNext() == NULL) {
-			int ehash = hash(e->getKey()->hashCode());
+			uint32_t ehash = hash(e->getKey()->hashCode());
 			newTable[ehash & (newCapacity - 1)] = e;
 		} else {
 			Entry* ent = (Entry*) e.get();

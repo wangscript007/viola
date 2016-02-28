@@ -11,11 +11,11 @@
 
 class Date: public Object {
 private:
-	long timestamp;
+	uint64_t timestamp;
 public:
 	Date();
-	Date(long timestamp);
+	Date(uint64_t timestamp);
 	virtual ~Date();
 
-	long getTime();
+	uint64_t getTime();
 };

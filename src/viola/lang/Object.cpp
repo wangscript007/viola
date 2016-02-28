@@ -15,7 +15,7 @@ Object::~Object() {
 	//noop
 }
 
-int Object::hashCode() {
+uint32_t Object::hashCode() {
 	return reinterpret_cast<uintptr_t>(this);
 }
 

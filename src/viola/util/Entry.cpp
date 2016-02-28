@@ -48,13 +48,13 @@ void Entry::setNext(std::shared_ptr<Object> next) {
 }
 
 //Override
-int Entry::hashCode() {
-	int keyHash = 0;
+uint32_t Entry::hashCode() {
+	uint32_t keyHash = 0;
 	if (this->key.get() != NULL) {
 		keyHash = key.get()->hashCode();
 	}
 
-	int valueHash = 0;
+	uint32_t valueHash = 0;
 	if (this->value.get() != NULL) {
 		valueHash = value.get()->hashCode();
 	}

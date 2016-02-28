@@ -11,7 +11,7 @@ Date::Date() {
 	this->timestamp = System::currentTimemillis();
 }
 
-Date::Date(long timestamp) {
+Date::Date(uint64_t timestamp) {
 	this->timestamp = timestamp;
 }
 
@@ -19,6 +19,6 @@ Date::~Date() {
 
 }
 
-long Date::getTime() {
+uint64_t Date::getTime() {
 	return timestamp;
 }

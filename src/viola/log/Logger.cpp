@@ -22,7 +22,7 @@ void Logger::addAppender(std::shared_ptr<Appender> appender) {
 
 void Logger::appendAll(std::string level, std::string message) {
 	std::list<std::shared_ptr<Appender> >::iterator it = list.begin();
-	for (int i = 0; i < list.size(); i++) {
+	for (uint32_t i = 0; i < list.size(); i++) {
 		std::shared_ptr<Appender> appender = *it;
 		appender->doAppend(level, message);
 	}
@@ -36,10 +36,10 @@ std::string Logger::getName() {
 	return name;
 }
 
-int Logger::getLevel() {
+uint32_t Logger::getLevel() {
 	return level;
 }
-void Logger::setLevel(int level) {
+void Logger::setLevel(uint32_t level) {
 	this->level = level;
 }
 

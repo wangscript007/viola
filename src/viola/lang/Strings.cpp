@@ -44,8 +44,8 @@ bool Strings::equals(std::shared_ptr<Object> obj) {
 }
 
 bool Strings::equals(std::string str) {
-	int size = str.size();
-	int internalSize = internal.size();
+	uint32_t size = str.size();
+	uint32_t internalSize = internal.size();
 
 	if (size != internalSize) {
 		return false;
@@ -71,19 +71,19 @@ std::string Strings::valueOf(long value) {
 }
 
 //Override
-int Strings::hashCode() {
-	int hashCode = 0;
+uint32_t Strings::hashCode() {
+	uint32_t hashCode = 0;
 	if (this->isEmpty()) {
 		return hashCode;
 	}
 
-	int n = this->length();
-	for (int i = 0; i < n; i++) {
-		int root = 31;
-		for (int j = 0; j < (n - 1); j++) {
+	uint32_t n = this->length();
+	for (uint32_t i = 0; i < n; i++) {
+		uint32_t root = 31;
+		for (uint32_t j = 0; j < (n - 1); j++) {
 			root = root * root;
 		}
-		char c = internal.at(i);
+		int32_t c = internal.at(i);
 		hashCode = hashCode + c * root;
 	}
 

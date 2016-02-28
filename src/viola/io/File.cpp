@@ -19,7 +19,7 @@ bool File::exists() {
 	return false;
 }
 
-int File::hashCode() {
+uint32_t File::hashCode() {
 	return 0;
 }
 

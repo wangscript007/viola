@@ -18,13 +18,13 @@ void ArrayList::add(std::shared_ptr<Object> obj) {
 	list.push_back(obj);
 }
 
-std::shared_ptr<Object> ArrayList::get(int i) {
+std::shared_ptr<Object> ArrayList::get(uint32_t i) {
 	if (size() <= i) {
 		return NULL;
 	}
 
 	std::list<std::shared_ptr<Object> >::iterator it = list.begin();
-	for (int j = 0; j < i; j++) {
+	for (uint32_t j = 0; j < i; j++) {
 		it++;
 	}
 
@@ -36,7 +36,7 @@ void ArrayList::clear() {
 	list.clear();
 }
 
-int ArrayList::size() {
+uint32_t ArrayList::size() {
 	return list.size();
 }
 
@@ -45,17 +45,17 @@ bool ArrayList::isEmpty() {
 }
 
 /*
- * int hashCode = 1;
+ * uint32_t hashCode = 1;
  * for (E e : list)
  * hashCode = 31*hashCode + (e==null ? 0 : e.hashCode());
  */
-int ArrayList::hashCode() {
+uint32_t ArrayList::hashCode() {
 	int hashCode = 1;
 
 	std::list<std::shared_ptr<Object> >::iterator it = list.begin();
-	for (int i = 0; i < list.size(); i++) {
+	for (uint32_t i = 0; i < list.size(); i++) {
 		std::shared_ptr<Object> obj = *it;
-		int tmp = 0;
+		uint32_t tmp = 0;
 		if (obj.get() != NULL) {
 			tmp = obj.get()->hashCode();
 		}
@@ -75,7 +75,7 @@ bool ArrayList::equals(Object* obj) {
 //Override
 std::string ArrayList::toString() {
 	std::string str("{");
-	for (int i = 0; i < size(); i++) {
+	for (uint32_t i = 0; i < size(); i++) {
 		str.append(this->get(i)->toString());
 		if (i < size() - 1) {
 			str.append(", ");

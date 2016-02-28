@@ -27,7 +27,7 @@ void FileReader::close() throw (IOException) {
 
 }
 
-int FileReader::hashCode() {
+uint32_t FileReader::hashCode() {
 	return 0;
 }
 

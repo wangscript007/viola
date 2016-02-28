@@ -23,56 +23,63 @@ public:
 	Assert();
 	virtual ~Assert();
 
-	static int assertEquals(double expected, double actual) {
+	static uint32_t assertEquals(double expected, double actual) {
 		if (expected == actual) {
 			return 0;
 		}
 		return 1;
 	}
 
-	static int assertEquals(int expected, int actual) {
+	static uint32_t assertEquals(int32_t expected, int32_t actual) {
 		if (expected == actual) {
 			return 0;
 		}
 		return 1;
 	}
 
-	static int assertEquals(long expected, long actual) {
+	static uint32_t assertEquals(long expected, long actual) {
 		if (expected == actual) {
 			return 0;
 		}
 		return 1;
 	}
 
-	static int assertEquals(_Double expected, _Double actual) {
+	static uint32_t assertEquals(int64_t expected, int64_t actual) {
+		if (expected == actual) {
+			return 0;
+		}
+		return 1;
+	}
+
+	static uint32_t assertEquals(_Double expected, _Double actual) {
 		if (expected->equals(actual)) {
 			return 0;
 		}
 		return 1;
 	}
 
-	static int assertEquals(_Integer expected, _Integer actual) {
+	static uint16_t assertEquals(_Integer expected, _Integer actual) {
 		if (expected->equals(actual)) {
 			return 0;
 		}
 		return 1;
 	}
 
-	static int assertEquals(_Long expected, _Long actual) {
+	static uint32_t assertEquals(_Long expected, _Long actual) {
 		if (expected->equals(actual)) {
 			return 0;
 		}
 		return 1;
 	}
 
-	static int assertEquals(_Object expected, _Object actual) {
+	static uint32_t assertEquals(_Object expected, _Object actual) {
 		if (expected.get()->equals(actual.get())) {
 			return 0;
 		}
 		return 1;
 	}
 
-	static int assertEquals(_Strings expected, _Strings actual) {
+	static uint32_t assertEquals(_Strings expected, _Strings actual) {
 		if (expected->equals(actual)) {
 			return 0;
 		}

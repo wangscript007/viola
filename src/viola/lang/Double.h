@@ -18,14 +18,14 @@ public:
 	~Double();
 
 	double get();
-	unsigned long doubleToLongBits();
+	uint64_t doubleToLongBits();
 
 	bool equals(Double* obj);
 	bool equals(std::shared_ptr<Object> obj);
 	bool equals(double arg);
 
 	//Override
-	int hashCode();
+	uint32_t hashCode();
 	bool equals(Object* obj);
 	std::string getClassName();
 	std::string toString();

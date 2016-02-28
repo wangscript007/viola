@@ -16,11 +16,11 @@ private:
 	std::string message;
 public:
 	HttpResponse();
-	HttpResponse(int status, std::string message);
+	HttpResponse(uint32_t status, std::string message);
 	~HttpResponse();
 
-	void setStatusCode(int status);
-	int getStatusCode();
+	void setStatusCode(uint32_t status);
+	uint32_t getStatusCode();
 
 	void setMessage(std::string message);
 	std::string getMessage();

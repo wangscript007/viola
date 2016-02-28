@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.7)
+cmake_minimum_required(VERSION 3.4.0)
 project(viola CXX)
 enable_testing()
 
@@ -10,7 +10,7 @@ set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
 set(CMAKE_BUILD_TYPE Release)
 set(SERIAL "0.0.1")
 set(SOSERIAL "1")
-set(CMAKE_CXX_FLAGS "-Wall -Wnon-virtual-dtor -Woverloaded-virtual -O2 -std=c++11 -stdlib=libc++")
+set(CMAKE_CXX_FLAGS "-O2 -std=c++11 -stdlib=libc++ -Wall -Wnon-virtual-dtor -Woverloaded-virtual")
 
 set(root ../.. CACHE STRING description FORCE)
 set(src ${root}/src/viola CACHE STRING description FORCE)

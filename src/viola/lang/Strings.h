@@ -8,6 +8,7 @@
 #pragma once
 #include <string>
 #include "Object.h"
+#include "Integer.h"
 
 class Strings: public Object {
 
@@ -37,8 +38,12 @@ public:
 	bool equals(std::shared_ptr<Object> obj);
 	bool equals(std::string str);
 
+	std::string operator+(std::shared_ptr<Object> o) {
+		return this->internal + o->toString();
+	}
+
 	//Override
-	int hashCode();
+	uint32_t hashCode();
 	bool equals(Object* obj);
 	std::string getClassName();
 	std::string toString();

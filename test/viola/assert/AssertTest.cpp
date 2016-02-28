@@ -8,7 +8,7 @@
 #include "viola.h"
 
 int main() {
-	int ret = 0;
+	uint16_t ret = 0;
 
 	ret = ret + Assert::assertEquals(1.2, 1.2);
 	ret = ret + !Assert::assertEquals(1.2, 1.3);

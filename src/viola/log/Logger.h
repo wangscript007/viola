@@ -13,15 +13,15 @@
 class Logger: public Object {
 protected:
 	std::string name;
-	int level;
+	uint32_t level;
 	std::list<std::shared_ptr<Appender>> list;
 public:
 	Logger(std::string name);
 	virtual ~Logger();
 
 	std::string getName();
-	int getLevel();
-	void setLevel(int level);
+	uint32_t getLevel();
+	void setLevel(uint32_t level);
 
 	void addAppender(std::shared_ptr<Appender> appender);
 	void detachAllAppender();

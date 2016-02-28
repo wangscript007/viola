@@ -23,11 +23,11 @@ void ArrayList_add(ArrayList* list, void* data) {
 
 }
 
-void* ArrayList_get(ArrayList* list, int idx) {
+void* ArrayList_get(ArrayList* list, uint32_t idx) {
 	return 0;
 }
 
-int ArrayList_size(ArrayList* list) {
+uint32_t ArrayList_size(ArrayList* list) {
 	return list->size;
 }
 

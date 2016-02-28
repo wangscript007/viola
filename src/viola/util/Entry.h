@@ -28,7 +28,7 @@ public:
 	void setNext(std::shared_ptr<Object> next);
 
 	//Override
-	int hashCode();
+	uint32_t hashCode();
 	bool equals(Object* obj);
 	std::string toString();
 	std::string getClassName();

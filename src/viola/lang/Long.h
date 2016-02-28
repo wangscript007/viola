@@ -10,19 +10,20 @@
 
 class Long: public Object {
 private:
-	long value;
+	int64_t value;
 public:
-	Long(long value);
+	//Long(long value);
+	Long(int64_t value);
 	~Long();
 
-	long get();
+	int64_t get();
 
 	bool equals(Long* obj);
 	bool equals(std::shared_ptr<Object> obj);
 	bool equals(long arg);
 
 	//Override
-	int hashCode();
+	uint32_t hashCode();
 	bool equals(Object* obj);
 	std::string getClassName();
 	std::string toString();

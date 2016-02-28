@@ -15,15 +15,15 @@ public:
 	System();
 	~System();
 
-	static long currentTimemillis() {
+	static uint64_t currentTimemillis() {
 		struct timeval tv;
 		gettimeofday(&tv, NULL);
-		long sec = tv.tv_sec;
-		long usec = tv.tv_usec;
+		uint64_t sec = tv.tv_sec;
+		uint64_t usec = tv.tv_usec;
 		return sec * 1000 + (usec / 1000);
 	}
 
-	static long currentTimeseconds() {
+	static uint64_t currentTimeseconds() {
 		time_t now = time(NULL);
 		return (long) now;
 	}
@@ -41,6 +41,14 @@ public:
 
 		static void println(long value) {
 			printf("%ld\n", value);
+		}
+
+		static void println(uint32_t value) {
+			printf("%d\n", value);
+		}
+
+		static void println(uint64_t value) {
+			printf("%llu\n", value);
 		}
 
 		static void println(bool tof) {

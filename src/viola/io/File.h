@@ -7,6 +7,7 @@
 
 #pragma once
 #include <stdio.h>
+#include <unistd.h>
 #include "Object.h"
 #include "Strings.h"
 #include "IOException.h"

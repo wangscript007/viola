@@ -13,6 +13,14 @@ int main() {
 	FileReader* reader;
 	try {
 		reader = new FileReader(f);
+		int read = reader->read();
+		System::out::println(read);
+
+		char buf[1];
+		sprintf(buf, "%d", read);
+		printf("%s\n", buf);
+
+		reader->close();
 		delete reader;
 	} catch (Exception& e) {
 		System::out::println(e);

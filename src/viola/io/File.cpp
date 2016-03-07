@@ -15,7 +15,15 @@ File::~File() {
 
 }
 
+std::string File::getAbsolutePath() {
+	return path;
+}
+
 bool File::exists() {
+	if (access(path.c_str(), F_OK) != -1) {
+		return true;
+	}
+
 	return false;
 }
 
@@ -30,6 +38,7 @@ bool File::equals(Object* obj) {
 std::string File::getClassName() {
 	return "File";
 }
+
 std::string File::toString() {
 	std::string str(getClassName());
 	str.append("[");

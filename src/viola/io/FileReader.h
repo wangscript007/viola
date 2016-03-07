@@ -6,21 +6,24 @@
  */
 
 #pragma once
+#include <stdio.h>
 #include "File.h"
 #include "Object.h"
 #include "Closeable.h"
-#include "Flushable.h"
+#include "Reader.h"
 #include "FileNotFoundException.h"
 
-class FileReader: public Object, public Closeable, public Flushable {
+class FileReader: public Object, public Closeable, public Reader {
+private:
+	FILE* fp;
 public:
 	FileReader(std::shared_ptr<File> file) throw (FileNotFoundException);
 	~FileReader();
 
-	std::string read();
-
 	//Override
-	void flush() throw (IOException);
+	int read() throw (IOException);
+	int read(char cbuf[]) throw (IOException);
+	int read(char cbuf[], int offset, int length) throw (IOException);
 	void close() throw (IOException);
 	uint32_t hashCode();
 	bool equals(Object* obj);

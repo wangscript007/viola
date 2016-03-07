@@ -5,7 +5,7 @@
  *      Author: tsubaki
  */
 
-#include <net/Socket.h>
+#include "Socket.h"
 
 Socket::Socket() {
 	// TODO Auto-generated constructor stub

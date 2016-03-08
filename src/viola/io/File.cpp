@@ -15,6 +15,22 @@ File::~File() {
 
 }
 
+bool File::createNewFile() throw (IOException) {
+	FILE* fp = fopen(path.c_str(), "w");
+	if (fp == NULL) {
+		throw IOException("unexpected error. FILE* is NULL. path: " + path);
+	}
+	fclose(fp);
+	return true;
+}
+
+bool File::deleteFile() {
+	uint32_t result = remove(path.c_str());
+	if (result == 0) {
+		return true;
+	}
+	return false;
+}
 std::string File::getAbsolutePath() {
 	return path;
 }

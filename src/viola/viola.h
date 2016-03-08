@@ -18,6 +18,7 @@
 
 //http
 #include "HttpClient.h"
+#include "HttpProxy.h"
 #include "HttpRequest.h"
 #include "HttpResponse.h"
 
@@ -27,6 +28,9 @@
 #include "FileReader.h"
 #include "FileWriter.h"
 #include "Flushable.h"
+#include "InputStream.h"
+#include "OutputStream.h"
+#include "Reader.h"
 
 //lang
 #include "Appendable.h"
@@ -37,6 +41,7 @@
 #include "Object.h"
 #include "Strings.h"
 #include "System.h"
+#include "Thread.h"
 
 //log
 #include "Appender.h"
@@ -44,6 +49,9 @@
 #include "Logger.h"
 #include "LoggerFactory.h"
 #include "StandardOutAppender.h"
+
+//net
+#include "Socket.h"
 
 //util
 #include "ArrayList.h"
@@ -61,6 +69,8 @@ typedef std::shared_ptr<HttpResponse> _HttpResponse;
 typedef std::shared_ptr<File> _File;
 typedef std::shared_ptr<FileReader> _FileReader;
 typedef std::shared_ptr<FileWriter> _FileWriter;
+typedef std::shared_ptr<InputStream> _InputStream;
+typedef std::shared_ptr<OutputStream> _OutputStream;
 typedef std::shared_ptr<Double> _Double;
 typedef std::shared_ptr<Integer> _Integer;
 typedef std::shared_ptr<Long> _Long;
@@ -70,6 +80,7 @@ typedef std::shared_ptr<Appender> _Appender;
 typedef std::shared_ptr<FileAppender> _FileAppender;
 typedef std::shared_ptr<Logger> _Logger;
 typedef std::shared_ptr<StandardOutAppender> _StandardOutAppender;
+typedef std::shared_ptr<Socket> _Socket;
 typedef std::shared_ptr<ArrayList> _ArrayList;
 typedef std::shared_ptr<Date> _Date;
 typedef std::shared_ptr<HashMap> _HashMap;

@@ -7,12 +7,20 @@
 
 #include "Socket.h"
 
-Socket::Socket() {
-	// TODO Auto-generated constructor stub
-
+Socket::Socket(std::string host, uint32_t port) {
+	this->host = host;
+	this->port = port;
+	closed = false;
 }
 
 Socket::~Socket() {
-	// TODO Auto-generated destructor stub
+
 }
 
+void Socket::close() throw (IOException) {
+	closed = true;
+}
+
+bool Socket::isClosed() {
+	return closed;
+}

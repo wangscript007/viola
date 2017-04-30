@@ -16,7 +16,7 @@ shared object like JDK interface.
 ### viola.exception
 
 Exception
-```
+```cpp
 #include "viola.h"
 
 ...
@@ -31,7 +31,7 @@ try {
 ### viola.io
 
 File
-```
+```cpp
 #include "viola.h"
 
 ...
@@ -52,7 +52,7 @@ writer->close();
 ### viola.lang
 
 Strings
-```
+```cpp
 #include "viola.h"
 
 ...
@@ -71,7 +71,7 @@ System::out::println(str->equals("notsame")); // -> 0
 
 Logger
 
-```
+```cpp
 #include "viola.h"
 
 ...
@@ -87,7 +87,7 @@ if(log->isTraceEnabled()){
 ### viola.util
 
 ArrayList
-```
+```cpp
 #include "viola.h"
 
 ...
@@ -106,7 +106,7 @@ list->clear();
 ```
 
 HashMap
-```
+```cpp
 #include "viola.h"
 
 ...
@@ -125,7 +125,7 @@ map->clear();
 ## Example violac (viola c implementation)
 
 ArrayList
-```
+```c
 #include "violac.h"
 
 ...
